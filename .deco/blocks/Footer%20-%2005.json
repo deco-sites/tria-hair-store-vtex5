@@ -1,7 +1,6 @@
 {
   "logo": {
-    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/79a5eab5-4a2c-4bf5-a424-ff6f141a430c",
-    "description": "O estilo pensado para você"
+    "description": "Loren Ipsum"
   },
   "layout": {
     "hide": {
@@ -173,10 +172,10 @@
   },
   "newsletter": {
     "form": {
-      "helpText": "<p>Ao se inscrever, você está aceitando nossa <a href=\"/\" class=\"link\">Política de Privacidade</a>.</p>"
-    },
-    "title": "Assine nossa newsletter",
-    "description": "Participe e ganhe 10% de desconto na primeira compra"
+      "helpText": "<p>Ao se inscrever, você está aceitando nossa <a href=\"/\" class=\"link\">Política de Privacidade</a>.</p>",
+      "placeholder": "Digite seu email",
+      "buttonText": "Inscrever"
+    }
   },
   "backToTheTop": {
     "text": "Voltar ao topo"
