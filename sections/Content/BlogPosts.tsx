@@ -140,36 +140,49 @@ function BlogPosts({
   }
 
   return (
-    <div class="w-screen border-t-2 border-primary">
-      <div
-        id={id}
-        class="min-h-min flex flex-col lg:container md:max-w-6xl lg:mx-auto mx-4 py-4 lg:py-12 b"
-      >
+    <div class="w-screen border-t-2 border-primary py-[52px]">
+      <div class="flex flex-col  min-h-min  lg:container md:max-w-6xl lg:mx-auto mx-4  ">
         <h2 class="text-2xl text-primary font-bold pb-5 uppercase">{title}</h2>
         <p class="text-base text-primary">{subtitle}</p>
-        <Slider class="carousel carousel-center w-full col-span-full row-span-full gap-20 pt-10">
-          {testimonials?.map((slide, index) => (
-            <Slider.Item index={index} class="carousel-item">
-              <SliderItem slide={slide} id={`${id}::${index}`} />
-            </Slider.Item>
-          ))}
-        </Slider>
-
+      </div>
+      <div
+        id={id}
+        class={`grid lg:container md:max-w-6xl lg:mx-auto mx-4  ${
+          layout?.showArrows
+            ? "grid-cols-[48px_1fr_48px] items-center"
+            : "grid-cols-1"
+        }`}
+      >
         {layout?.showArrows && (
           <>
-            <div class="relative block z-10 col-start-1 row-start-3">
-              <Slider.PrevButton class="absolute w-12 h-12 flex justify-center items-center">
+            <div class="col-start-1 flex justify-center">
+              <Slider.PrevButton class="w-12 h-12 flex justify-center items-center">
                 <Icon size={24} id="ChevronLeft" strokeWidth={3} class="w-5" />
               </Slider.PrevButton>
             </div>
-            <div class="relative block z-10 col-start-3 row-start-3">
-              <Slider.NextButton class="absolute w-12 h-12 flex justify-center items-center">
+          </>
+        )}
+
+        <div class="col-span-1 lg:w-[1141px]">
+          <Slider class="lg:w-[1141px] carousel carousel-center  col-span-full row-span-full gap-20 pt-10">
+            {testimonials?.map((slide, index) => (
+              <Slider.Item index={index} class="carousel-item">
+                <SliderItem slide={slide} id={`${id}::${index}`} />
+              </Slider.Item>
+            ))}
+          </Slider>
+          <Slider.JS rootId={id} />
+        </div>
+
+        {layout?.showArrows && (
+          <>
+            <div class="col-start-3 flex justify-center">
+              <Slider.NextButton class="w-12 h-12 flex justify-center items-center">
                 <Icon size={24} id="ChevronRight" strokeWidth={3} />
               </Slider.NextButton>
             </div>
           </>
         )}
-        <Slider.JS rootId={id} />
       </div>
     </div>
   );
