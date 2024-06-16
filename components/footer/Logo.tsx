@@ -3,7 +3,8 @@ import Image from "apps/website/components/Image.tsx";
 
 export interface Props {
   logo?: {
-    image: ImageWidget;
+    image?: ImageWidget;
+    textLogo?: string;
     description?: string;
   };
 }
@@ -22,11 +23,17 @@ export default function Logo({ logo }: Props) {
               height={200}
             />
           </div>
-          <div class="">
-            {logo?.description}
-          </div>
         </div>
       )}
+      <div class="">
+        <a
+          class="font-poppins font-bold text-xl block hover:underline link no-underline py-1"
+          href={"/"}
+        >
+          {logo?.textLogo}
+        </a>
+      </div>
+      <div class="text-xs pb-[22px]">{logo?.description}</div>
     </>
   );
 }

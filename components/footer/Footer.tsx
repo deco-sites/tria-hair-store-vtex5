@@ -85,6 +85,7 @@ export interface Layout {
 export interface Props {
   logo?: {
     image: ImageWidget;
+    textLogo: string;
     description?: string;
   };
   newsletter?: {
@@ -223,14 +224,14 @@ function Footer({
   return (
     <footer
       class={clx(
-        "w-full flex flex-col pt-10 pb-2 md:pb-10 gap-10",
+        "font-poppins lg:max-w-none w-screen mx-auto flex-col pt-[53px] pb-2 md:pb-10 flex justify-center items-center",
         LAYOUT[layout?.backgroundColor ?? "Primary"],
       )}
     >
-      <div class="lg:container mx-6 lg:mx-auto">
+      <div class="lg:w-[1153px] flex flex-col ">
         {(!layout?.variation || layout?.variation == "Variation 1") && (
-          <div class="flex flex-col gap-10">
-            <div class="flex flex-col md:flex-row md:justify-between md:flex-wrap lg:flex-nowrap gap-8 lg:gap-12">
+          <div class="flex flex-col ">
+            <div class="flex flex-col md:flex-row md:justify-between md:flex-wrap lg:flex-nowrap gap-8 lg:gap-12 ">
               {_logo}
               {_sectionLinks}
               {_newsletter}
@@ -307,12 +308,8 @@ function Footer({
               {_sectionLinks}
               <div class="flex flex-col md:flex-row lg:flex-col gap-10 lg:gap-10 lg:w-2/5 lg:pl-10">
                 <div class="flex flex-col md:flex-row gap-10 lg:gap-20">
-                  <div class="lg:flex-auto">
-                    {_payments}
-                  </div>
-                  <div class="lg:flex-auto">
-                    {_social}
-                  </div>
+                  <div class="lg:flex-auto">{_payments}</div>
+                  <div class="lg:flex-auto">{_social}</div>
                 </div>
                 <div class="flex flex-col gap-10 lg:gap-10">
                   {_region}
@@ -328,20 +325,23 @@ function Footer({
           </div>
         )}
         {layout?.variation == "Variation 5" && (
-          <div class="flex flex-col gap-10">
+          <div class="flex flex-col mb-3 ">
             {_newsletter}
             {layout?.hide?.newsletter ? <></> : <Divider />}
-            {_logo}
-            <div class="flex flex-col md:flex-row gap-10 lg:gap-20 md:justify-between">
-              {_sectionLinks}
-              <div class="flex flex-col gap-10 md:w-2/5 lg:pl-10">
+
+            <div class="flex flex-col justify-between md:flex-row gap-6 lg:gap-20 md:justify-between mb-10 mt-[30px]">
+              <div>
+                {_logo}
+                {_sectionLinks}
+              </div>
+              <div class="flex flex-col gap-[30px] mr-[76px] w-[280px]">
                 {_payments}
                 {_social}
                 {_apps}
               </div>
             </div>
             <Divider />
-            <div class="flex flex-col-reverse md:flex-row md:justify-between gap-10 md:items-center">
+            <div class="flex flex-col-reverse md:flex-row md:justify-between gap-10 md:items-center mt-[30px]">
               <PoweredByDeco />
               <div class="flex flex-col md:flex-row gap-10 md:items-center">
                 {_links}

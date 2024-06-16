@@ -1,4 +1,4 @@
-import Icon, { AvailableIcons } from "../../components/ui/Icon.tsx";
+import Icon from "../../components/ui/Icon.tsx";
 
 export interface SocialItem {
   label:
@@ -21,9 +21,9 @@ export default function Social(
     <>
       {content && content.items && content.items.length > 0 && (
         <div class="flex flex-col gap-4">
-          {content.title && <h3 class="text-lg">{content.title}</h3>}
+          {content.title && <h3 class="text-[14px]">{content.title}</h3>}
           <ul
-            class={`flex gap-4 ${
+            class={`flex gap-3 ${
               vertical ? "lg:flex-col lg:items-start" : "flex-wrap items-center"
             }`}
           >
@@ -37,7 +37,7 @@ export default function Social(
                     aria-label={`${item.label} Logo`}
                     class="flex gap-2 items-center"
                   >
-                    <span class="block p-1 border rounded-full">
+                    <span class="block p-1 ">
                       <Icon size={24} id={item.label} />
                     </span>
                     {vertical && (

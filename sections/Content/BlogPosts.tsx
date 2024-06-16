@@ -1,149 +1,156 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import Icon from "../../components/ui/Icon.tsx";
-import Header from "../../components/ui/SectionHeader.tsx";
+// import Header from "../../components/ui/SectionHeader.tsx";
 import Slider from "../../components/ui/Slider.tsx";
 import { useId } from "../../sdk/useId.ts";
 
+export interface Testimonial {
+  content?: {
+    description: string;
+    avatar: ImageWidget;
+    /** @description Descrição da imagem */
+    alt: string;
+    name: string;
+    position: string;
+    date: string;
+  };
+}
+
 export interface Props {
   title?: string;
-  posts?: Post[];
+  subtitle: string;
+  testimonials?: Testimonial[];
   layout?: {
     numberOfSliders?: {
       mobile?: 1 | 2 | 3 | 4 | 5;
       desktop?: 1 | 2 | 3 | 4 | 5;
     };
-    headerAlignment?: "center" | "left";
-    headerfontSize?: "Normal" | "Large" | "Small";
+    // headerAlignment?: "center" | "left";
+    // headerfontSize?: "Normal" | "Large" | "Small";
     showArrows?: boolean;
   };
 }
 
-export interface Post {
-  href?: string;
-  image: ImageWidget;
-  alt?: string;
-  label?: string;
-  description?: string;
-  author?: string;
-  date?: string;
-}
-
 function BlogPosts({
-  title = "BlogPosts",
+  title = "NOSSOS CLIENTES RECOMENDAM A TRÓIA HAIR",
+  subtitle =
+    "Lorem ipsum dolor sit amet consectetur. Enim est porttitor gravida dolor id. Id ipsum semper euismod euismod. Risus parturient non tempus eget libero ullamcorper ultricies tellus. Accumsan turpis tempor nunc tellus ut.",
   layout = {
     numberOfSliders: {
       mobile: 1,
       desktop: 3,
     },
-    headerAlignment: "center",
-    headerfontSize: "Normal",
+    // headerAlignment: "center",
+    // headerfontSize: "Normal",
     showArrows: false,
   } as Props["layout"],
-  posts = [
+  testimonials = [
     {
-      href: "/",
-      image:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/80a115a2-3623-4e9b-aec7-42601c2ff416",
-      alt: "alternative text",
-      label: "Title Post",
-      description: "Description",
-      author: "Author",
-      date: "Date",
+      content: {
+        description:
+          "Showcase customer feedback that emphasizes your product or service's key features and addresses prospective clients' concerns. Display endorsements from customer groups that mirror your target audience.",
+        avatar:
+          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1527/7286de42-e9c5-4fcb-ae8b-b992eea4b78e",
+        alt: "Avatar",
+        name: "Name Surname",
+        position: "Position, Company name",
+        date: "Avaliado em 04 de maio de 2024 às 16:04",
+      },
     },
     {
-      href: "/",
-      image:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/80a115a2-3623-4e9b-aec7-42601c2ff416",
-      alt: "alternative text",
-      label: "Title Post",
-      description: "Description",
-      author: "Author",
-      date: "Date",
+      content: {
+        description:
+          "Showcase customer feedback that emphasizes your product or service's key features and addresses prospective clients' concerns. Display endorsements from customer groups that mirror your target audience.",
+        avatar:
+          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1527/7286de42-e9c5-4fcb-ae8b-b992eea4b78e",
+        alt: "Avatar",
+        name: "Name Surname",
+        position: "Position, Company name",
+        date: "Avaliado em 04 de maio de 2024 às 16:04",
+      },
     },
     {
-      href: "/",
-      image:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/80a115a2-3623-4e9b-aec7-42601c2ff416",
-      alt: "alternative text",
-      label: "Title Post",
-      description: "Description",
-      author: "Author",
-      date: "Date",
+      content: {
+        description:
+          "Showcase customer feedback that emphasizes your product or service's key features and addresses prospective clients' concerns. Display endorsements from customer groups that mirror your target audience.",
+        avatar:
+          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1527/7286de42-e9c5-4fcb-ae8b-b992eea4b78e",
+        alt: "Avatar",
+        name: "Name Surname",
+        position: "Position, Company name",
+        date: "Avaliado em 04 de maio de 2024 às 16:04",
+      },
     },
   ],
 }: Props) {
   const id = useId();
 
-  if (!posts || posts.length === 0) {
+  if (!testimonials || testimonials.length === 0) {
     return null;
   }
-  const slideDesktop = {
-    1: "md:w-full",
-    2: "md:w-1/2",
-    3: "md:w-1/3",
-    4: "md:w-1/4",
-    5: "md:w-1/5",
-  };
+  // const slideDesktop = {
+  //   1: "md:w-full",
+  //   2: "md:w-1/2",
+  //   3: "md:w-1/3",
+  //   4: "md:w-1/4",
+  //   5: "md:w-1/5",
+  // };
 
-  const slideMobile = {
-    1: "w-full",
-    2: "w-1/2",
-    3: "w-1/3",
-    4: "w-1/4",
-    5: "w-1/5",
-  };
+  // const slideMobile = {
+  //   1: "w-full",
+  //   2: "w-1/2",
+  //   3: "w-1/3",
+  //   4: "w-1/4",
+  //   5: "w-1/5",
+  // };
 
-  const Card = ({ post }: { post: Post }) => (
-    <a href={post.href} class="block px-3">
-      <article class="flex flex-col">
-        <figure class="w-full">
-          <Image
-            class="w-full object-cover"
-            src={post.image}
-            alt={post.alt}
-            width={442}
-            height={266}
-          />
-          <figcaption class="text-2xl mt-4 font-light">{post.label}</figcaption>
-        </figure>
-        <div class="flex flex-col gap-1">
-          <p class="text-base font-light pb-14 pt-2">{post.description}</p>
-          <div class="flex items-center justify-between">
-            <p class="font-light text-xs">
-              {post.author}
-            </p>
-            <p class="font-light text-xs">{post.date}</p>
+  function SliderItem({ slide, id }: { slide: Testimonial; id: string }) {
+    const { content } = slide;
+
+    return (
+      <div id={id} class="relative overflow-y-hidden w-full min-h-[292px]">
+        <div class="flex flex-col justify-center gap-16 p-8 h-[409px] w-[327px]">
+          <div class="flex flex-col items-center gap-5">
+            <Image
+              class="object-cover rounded-full bg-primary"
+              alt={content?.alt}
+              src={content?.avatar || ""}
+              width={186}
+              height={186}
+            />
+            <div class="flex flex-col">
+              <p class="font-semibold  w-[327px] text-primary text-center text-base">
+                {content?.name}
+              </p>
+              <p class="text-primary text-center text-[10px]">
+                {content?.position}
+              </p>
+              <p class="text-xs w-[327px] text-primary text-center pt-6">
+                {content?.description}
+              </p>
+              <p class="text-[10px] w-[327px] text-primary text-center pt-6">
+                {content?.date}
+              </p>
+            </div>
           </div>
         </div>
-      </article>
-    </a>
-  );
+      </div>
+    );
+  }
 
   return (
-    <div class="w-full container py-8 flex flex-col gap-6 pb-16">
-      <div class="px-9">
-        <Header
-          title={title || "BlogPosts"}
-          fontSize={layout?.headerfontSize || "Normal"}
-          alignment={layout?.headerAlignment || "center"}
-        />
-      </div>
+    <div class="w-screen border-t-2 border-primary">
       <div
         id={id}
-        class={`grid ${
-          layout?.showArrows ? "grid-cols-[48px_1fr_48px]" : ""
-        } px-6 container`}
+        class="min-h-min flex flex-col lg:container md:max-w-6xl lg:mx-auto mx-4 py-4 lg:py-12 b"
       >
-        <Slider class="carousel carousel-center sm:carousel-end row-start-2 row-end-5">
-          {posts?.map((post, index) => (
-            <Slider.Item
-              index={index}
-              class={`carousel-item  ${
-                slideDesktop[layout?.numberOfSliders?.desktop ?? 3]
-              } ${slideMobile[layout?.numberOfSliders?.mobile ?? 1]}`}
-            >
-              <Card post={post} />
+        <h2 class="text-2xl text-primary font-bold pb-5 uppercase">{title}</h2>
+        <p class="text-base text-primary">{subtitle}</p>
+        <Slider class="carousel carousel-center w-full col-span-full row-span-full gap-20 pt-10">
+          {testimonials?.map((slide, index) => (
+            <Slider.Item index={index} class="carousel-item">
+              <SliderItem slide={slide} id={`${id}::${index}`} />
             </Slider.Item>
           ))}
         </Slider>
