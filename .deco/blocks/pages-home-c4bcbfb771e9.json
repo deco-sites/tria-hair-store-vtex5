@@ -343,7 +343,10 @@
           "author": "deco.cx",
           "description": "Lorem ipsum dolor sit amet consectetur.  Condimentum dolor ultrices commodo et. Blandit vel est sodales tincidunt aliquam tincidunt. "
         }
-      ]
+      ],
+      "layout": {
+        "showArrows": true
+      }
     },
     {
       "__resolveType": "Footer - 05"
