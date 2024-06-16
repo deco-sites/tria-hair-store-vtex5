@@ -313,7 +313,7 @@
       }
     },
     {
-      "title": "Blogposts",
+      "title": "NOSSOS CLIENTES RECOMENDAM A TRÓIA HAIR",
       "__resolveType": "site/sections/Content/BlogPosts.tsx",
       "posts": [
         {
@@ -346,7 +346,60 @@
       ],
       "layout": {
         "showArrows": true
-      }
+      },
+      "subtitle": "Lorem ipsum dolor sit amet consectetur. Enim est porttitor gravida dolor id. Id ipsum semper euismod euismod. Risus parturient non tempus eget libero ullamcorper ultricies tellus. Accumsan turpis tempor nunc tellus ut.",
+      "testimonials": [
+        {
+          "content": {
+            "avatar": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/72f84150-a76a-4d54-ab07-41970f7990c3",
+            "alt": "imagem",
+            "name": "Larissa Andrade",
+            "position": "Consultora de Vendas",
+            "description": "Lorem ipsum dolor sit amet consectetur. Enim est porttitor gravida dolor id. Id ipsum semper euismod euismod. Risus parturient non tempus eget libero ullamcorper ultricies tellus. Accumsan turpis tempor nunc tellus ut.",
+            "date": "Avaliado em 04 de maio de 2024 às 16:04"
+          }
+        },
+        {
+          "content": {
+            "avatar": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/72f84150-a76a-4d54-ab07-41970f7990c3",
+            "description": "Lorem ipsum dolor sit amet consectetur. Enim est porttitor gravida dolor id. Id ipsum semper euismod euismod. Risus parturient non tempus eget libero ullamcorper ultricies tellus. Accumsan turpis tempor nunc tellus ut.",
+            "alt": "imagem",
+            "name": "Larissa Andrade",
+            "position": "Consultora de Vendas",
+            "date": "Avaliado em 04 de maio de 2024 às 16:04"
+          }
+        },
+        {
+          "content": {
+            "avatar": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/72f84150-a76a-4d54-ab07-41970f7990c3",
+            "description": "Lorem ipsum dolor sit amet consectetur. Enim est porttitor gravida dolor id. Id ipsum semper euismod euismod. Risus parturient non tempus eget libero ullamcorper ultricies tellus. Accumsan turpis tempor nunc tellus ut.",
+            "alt": "imagem",
+            "name": "Larissa Andrade",
+            "position": "Consultora de Vendas",
+            "date": "Avaliado em 04 de maio de 2024 às 16:04"
+          }
+        },
+        {
+          "content": {
+            "avatar": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/72f84150-a76a-4d54-ab07-41970f7990c3",
+            "description": "Lorem ipsum dolor sit amet consectetur. Enim est porttitor gravida dolor id. Id ipsum semper euismod euismod. Risus parturient non tempus eget libero ullamcorper ultricies tellus. Accumsan turpis tempor nunc tellus ut.",
+            "alt": "imagem",
+            "name": "Larissa Andrade",
+            "position": "Consultora de Vendas",
+            "date": "Avaliado em 04 de maio de 2024 às 16:04"
+          }
+        },
+        {
+          "content": {
+            "avatar": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/72f84150-a76a-4d54-ab07-41970f7990c3",
+            "description": "Lorem ipsum dolor sit amet consectetur. Enim est porttitor gravida dolor id. Id ipsum semper euismod euismod. Risus parturient non tempus eget libero ullamcorper ultricies tellus. Accumsan turpis tempor nunc tellus ut.",
+            "alt": "imagem",
+            "name": "Larissa Andrade",
+            "position": "Consultora de Vendas",
+            "date": "Avaliado em 04 de maio de 2024 às 16:04"
+          }
+        }
+      ]
     },
     {
       "__resolveType": "Footer - 05"
