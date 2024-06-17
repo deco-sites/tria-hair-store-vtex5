@@ -129,70 +129,83 @@ function Categories({
     const { content } = slide;
 
     return (
-      <div id={id} class="relative overflow-y-hidden w-full min-h-[292px]">
-        <div class="flex flex-col justify-center gap-16 p-8 h-[409px] w-[327px]">
-          <div class="flex flex-col items-center gap-5">
-            <Image
-              class="object-cover rounded-full bg-primary"
-              alt={content?.alt}
-              src={content?.image || ""}
-              width={186}
-              height={186}
-            />
-
-            <p class="font-semibold  w-[327px] text-primary text-center text-base">
+      <div id={id} class="relative overflow-y-hidden">
+        <div class="flex flex-col items-center">
+          <a
+            href={content?.href}
+            class="flex items-center justify-center w-[115px] h-[115px] rounded-full border border-primary"
+          >
+            <div>
+              <Image
+                class="object-cover"
+                alt={content?.alt}
+                src={content?.image || ""}
+                width={83}
+                height={83}
+              />
+            </div>
+          </a>
+          <a href={content?.href}>
+            <p class="text-[10px] text-primary text-center font-bold pt-2">
               {content?.categorieName}
             </p>
-          </div>
+          </a>
         </div>
       </div>
     );
   }
 
   return (
-    <div class="w-screen border-t-2 border-primary py-[52px]">
-      <div class="flex flex-col  min-h-min  lg:container md:max-w-6xl lg:mx-auto mx-4  ">
-        <h2 class="text-2xl text-primary font-bold pb-5 uppercase">{title}</h2>
-        <p class="text-base text-primary">{subtitle}</p>
-      </div>
-      <div
-        id={id}
-        class={`grid lg:container md:max-w-6xl lg:mx-auto mx-4  ${
-          layout?.showArrows
-            ? "grid-cols-[48px_1fr_48px] items-center"
-            : "grid-cols-1"
-        }`}
-      >
-        {layout?.showArrows && (
-          <>
-            <div class="col-start-1 flex justify-center">
-              <Slider.PrevButton class="w-12 h-12 flex justify-center items-center">
-                <Icon size={24} id="ChevronLeft" strokeWidth={3} class="w-5" />
-              </Slider.PrevButton>
-            </div>
-          </>
-        )}
+    <div class="w-screen flex flex-col items-center ">
+      <div class="w-[1300px]">
+        <h2 class="text-2xl text-primary text-center font-bold uppercase py-20">
+          {title}
+        </h2>
 
-        <div class="col-span-1 lg:w-[1141px]">
-          <Slider class="lg:w-[1141px] carousel carousel-center  col-span-full row-span-full gap-20 pt-10">
-            {categories?.map((slide, index) => (
-              <Slider.Item index={index} class="carousel-item">
-                <SliderItem slide={slide} id={`${id}::${index}`} />
-              </Slider.Item>
-            ))}
-          </Slider>
-          <Slider.JS rootId={id} />
+        <div
+          id={id}
+          class={`grid ${
+            layout?.showArrows
+              ? "grid-cols-[48px_1fr_48px] items-center"
+              : "grid-cols-1"
+          }`}
+        >
+          {layout?.showArrows && (
+            <>
+              <div class="col-start-1 flex justify-center">
+                <Slider.PrevButton class="w-12 h-12 flex justify-center items-center">
+                  <Icon
+                    size={24}
+                    id="ChevronLeft"
+                    strokeWidth={3}
+                    class="w-5"
+                  />
+                </Slider.PrevButton>
+              </div>
+            </>
+          )}
+
+          <div class="col-span-1">
+            <Slider class="lg:w-[1171px] carousel carousel-center  col-span-full row-span-full gap-[61px] ">
+              {categories?.map((slide, index) => (
+                <Slider.Item index={index} class="carousel-item">
+                  <SliderItem slide={slide} id={`${id}::${index}`} />
+                </Slider.Item>
+              ))}
+            </Slider>
+            <Slider.JS rootId={id} />
+          </div>
+
+          {layout?.showArrows && (
+            <>
+              <div class="col-start-3 flex justify-center">
+                <Slider.NextButton class="w-12 h-12 flex justify-center items-center">
+                  <Icon size={24} id="ChevronRight" strokeWidth={3} />
+                </Slider.NextButton>
+              </div>
+            </>
+          )}
         </div>
-
-        {layout?.showArrows && (
-          <>
-            <div class="col-start-3 flex justify-center">
-              <Slider.NextButton class="w-12 h-12 flex justify-center items-center">
-                <Icon size={24} id="ChevronRight" strokeWidth={3} />
-              </Slider.NextButton>
-            </div>
-          </>
-        )}
       </div>
     </div>
   );
