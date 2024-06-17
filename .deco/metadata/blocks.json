@@ -328,5 +328,13 @@
   "/.deco/blocks/Preview%20site%2Fsections%2FCards%2FIconCardsCarousel.tsx.json": {
     "blockType": "sections",
     "__resolveType": "site/sections/Cards/IconCardsCarousel.tsx"
+  },
+  "/.deco/blocks/Preview%20%2Fsections%2FSquareBanners.tsx.json": {
+    "blockType": "sections",
+    "__resolveType": "site/sections/SquareBanners.tsx"
+  },
+  "/.deco/blocks/Preview%20%2Fsections%2FCategories.tsx.json": {
+    "blockType": "sections",
+    "__resolveType": "site/sections/Categories.tsx"
   }
 }

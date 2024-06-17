@@ -102,76 +102,35 @@
       ]
     },
     {
-      "__resolveType": "site/sections/Cards/IconCardsCarousel.tsx",
-      "slider": {
-        "layout": {
-          "hide": {
-            "indicators": false
-          }
-        },
-        "style": {
-          "controlsColor": "Default"
-        }
-      },
-      "items": [
+      "__resolveType": "site/sections/InformationBar.tsx",
+      "informationBar": [
         {
-          "icon": "Bars3",
-          "layout": {
-            "iconPosition": "Top"
-          },
-          "style": {
-            "background": {
-              "bgColor": "Transparent",
-              "bgImage": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec"
-            },
-            "border": {
-              "width": "None",
-              "color": "Transparent",
-              "radius": "None"
-            }
-          },
-          "label": "teste",
-          "description": "teste"
+          "icon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/83e70d67-5beb-43fd-b41e-79d55c24efc7",
+          "title": "Frete Grátis",
+          "subtitle": "Em compras acima de R$200,00"
         },
         {
-          "icon": "Bars3",
-          "layout": {
-            "iconPosition": "Top"
-          },
-          "style": {
-            "background": {
-              "bgColor": "Transparent",
-              "bgImage": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec"
-            },
-            "border": {
-              "width": "None",
-              "color": "Transparent",
-              "radius": "None"
-            }
-          },
-          "label": "teste",
-          "description": "teste"
+          "icon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/83e70d67-5beb-43fd-b41e-79d55c24efc7",
+          "title": "Frete Grátis",
+          "subtitle": "Em compras acima de R$200,00"
         },
         {
-          "icon": "Bars3",
-          "layout": {
-            "iconPosition": "Top"
-          },
-          "style": {
-            "background": {
-              "bgColor": "Transparent",
-              "bgImage": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec"
-            },
-            "border": {
-              "width": "None",
-              "color": "Transparent",
-              "radius": "None"
-            }
-          },
-          "label": "teste",
-          "description": "teste"
+          "icon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/83e70d67-5beb-43fd-b41e-79d55c24efc7",
+          "title": "Frete Grátis",
+          "subtitle": "Em compras acima de R$200,00"
+        },
+        {
+          "icon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/83e70d67-5beb-43fd-b41e-79d55c24efc7",
+          "title": "Frete Grátis",
+          "subtitle": "Em compras acima de R$200,00"
         }
       ]
+    },
+    {
+      "__resolveType": "Preview /sections/Categories.tsx"
+    },
+    {
+      "__resolveType": "Preview /sections/SquareBanners.tsx"
     },
     {
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
