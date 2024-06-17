@@ -4,7 +4,7 @@ import {
   SendEventOnClick,
   SendEventOnView,
 } from "../../components/Analytics.tsx";
-import Button from "../../components/ui/Button.tsx";
+// import Button from "../../components/ui/Button.tsx";
 import Icon from "../../components/ui/Icon.tsx";
 import Slider from "../../components/ui/Slider.tsx";
 import { useId } from "../../sdk/useId.ts";
@@ -13,7 +13,7 @@ import { useId } from "../../sdk/useId.ts";
  * @titleBy alt
  */
 export interface Banner {
-  /** @description desktop otimized image */
+  /** @description Imagem para descktop */
   desktop: ImageWidget;
   /** @description mobile otimized image */
   mobile: ImageWidget;
@@ -22,12 +22,12 @@ export interface Banner {
   action?: {
     /** @description when user clicks on the image, go to this link */
     href: string;
-    /** @description Image text title */
-    title: string;
-    /** @description Image text subtitle */
-    subTitle: string;
-    /** @description Button label */
-    label: string;
+    // /** @description Image text title */
+    // title: string;
+    // /** @description Image text subtitle */
+    // subTitle: string;
+    // /** @description Button label */
+    // label: string;
   };
 }
 
@@ -113,27 +113,11 @@ function BannerItem(
     <a
       id={id}
       href={action?.href ?? "#"}
-      aria-label={action?.label}
-      class="relative overflow-y-hidden w-full"
+      class="relative overflow-y-hidden lg:w-[1300px] lg:h-[360px] mx-auto"
     >
-      {action && (
-        <div class="absolute top-0 md:bottom-0 bottom-1/2 left-0 right-0 sm:right-auto max-w-[407px] flex flex-col justify-end gap-4 px-8 py-12">
-          <span class="text-2xl font-light text-base-100">
-            {action.title}
-          </span>
-          <span class="font-normal text-4xl text-base-100">
-            {action.subTitle}
-          </span>
-          <Button
-            class="bg-base-100 text-sm font-light py-4 px-6 w-fit"
-            aria-label={action.label}
-          >
-            {action.label}
-          </Button>
-        </div>
-      )}
       <Picture preload={lcp}>
         <Source
+          class="object-cover"
           media="(max-width: 767px)"
           fetchPriority={lcp ? "high" : "auto"}
           src={mobile}
@@ -141,11 +125,12 @@ function BannerItem(
           height={590}
         />
         <Source
+          class="object-cover"
           media="(min-width: 768px)"
           fetchPriority={lcp ? "high" : "auto"}
           src={desktop}
-          width={1440}
-          height={600}
+          width={1300}
+          height={360}
         />
         <img
           class="object-cover w-full h-full"
@@ -224,7 +209,7 @@ function BannerCarousel(props: Props) {
   return (
     <div
       id={id}
-      class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px] sm:min-h-min min-h-[660px]"
+      class="lg:w-[1300px] grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px] sm:min-h-min min-h-[360px] mx-auto"
     >
       <Slider class="carousel carousel-center w-full col-span-full row-span-full gap-6">
         {images?.map((image, index) => {
