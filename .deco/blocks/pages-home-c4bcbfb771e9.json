@@ -102,43 +102,6 @@
       ]
     },
     {
-      "__resolveType": "site/sections/Miscellaneous/Slide.tsx",
-      "content": [
-        {
-          "label": "HOT SALE",
-          "repeat": 30
-        }
-      ]
-    },
-    {
-      "__resolveType": "site/sections/Miscellaneous/CampaignTimer.tsx",
-      "link": {
-        "href": "https://github.com/deco-cx",
-        "text": "Visit our GitHub"
-      },
-      "text": "<p>Design, develop and deliver complete experiences</p>",
-      "labels": {
-        "days": "days",
-        "hours": "hours",
-        "expired": " Expired!",
-        "minutes": "minutes",
-        "seconds": "seconds"
-      },
-      "layout": {
-        "textPosition": "After counter"
-      },
-      "expiresAt": "2024-03-15T17:23:00.000Z"
-    },
-    {
-      "__resolveType": "site/sections/Miscellaneous/Slide.tsx",
-      "content": [
-        {
-          "label": "HOT SALE",
-          "repeat": 15
-        }
-      ]
-    },
-    {
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
       "layout": {
         "showArrows": true
@@ -313,8 +276,11 @@
       }
     },
     {
-      "title": "NOSSOS CLIENTES RECOMENDAM A TRÓIA HAIR",
       "__resolveType": "site/sections/Content/BlogPosts.tsx",
+      "title": "NOSSOS CLIENTES RECOMENDAM A TRÓIA HAIR",
+      "layout": {
+        "showArrows": true
+      },
       "posts": [
         {
           "alt": "Item of the Summer",
@@ -344,9 +310,6 @@
           "description": "Lorem ipsum dolor sit amet consectetur.  Condimentum dolor ultrices commodo et. Blandit vel est sodales tincidunt aliquam tincidunt. "
         }
       ],
-      "layout": {
-        "showArrows": true
-      },
       "subtitle": "Lorem ipsum dolor sit amet consectetur. Enim est porttitor gravida dolor id. Id ipsum semper euismod euismod. Risus parturient non tempus eget libero ullamcorper ultricies tellus. Accumsan turpis tempor nunc tellus ut.",
       "testimonials": [
         {
