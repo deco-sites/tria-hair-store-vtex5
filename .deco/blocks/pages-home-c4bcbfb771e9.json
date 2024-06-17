@@ -130,7 +130,25 @@
       "__resolveType": "Preview /sections/Categories.tsx"
     },
     {
-      "__resolveType": "Preview /sections/SquareBanners.tsx"
+      "__resolveType": "site/sections/SquareBanners.tsx",
+      "bannerList": [
+        {
+          "href": "/",
+          "banner": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/cd2f30f9-b6b3-4d3e-ad00-61f9bea14ba2"
+        },
+        {
+          "href": "/",
+          "banner": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/0f2fc985-7692-4d64-93a8-e9ed0992a2fe"
+        },
+        {
+          "banner": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/b03196e7-4179-4b2a-a12a-80138f360b0e",
+          "href": "/"
+        },
+        {
+          "banner": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/efba4e5a-42d7-48ee-bdf6-018da4bfec5f",
+          "href": "/"
+        }
+      ]
     },
     {
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
