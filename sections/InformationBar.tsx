@@ -1,0 +1,44 @@
+import { ImageWidget } from "apps/admin/widgets.ts";
+import Image from "apps/website/components/Image.tsx";
+
+export interface Item {
+  /**
+   * @title título
+   */
+  title: string;
+  /**
+   * @title subtitulo
+   */
+  subtitle?: string;
+  /**
+   * @title icone
+   */
+  icon?: ImageWidget;
+}
+
+export interface Props {
+  informationBar: Item[];
+}
+
+export default function HeroFlats({ informationBar }: Props) {
+  return (
+    <div class="flex justify-between bg-primary w-full h-14 px-10">
+      {informationBar?.map((item) => (
+        <div class="flex justify-center items-center gap-5">
+          <Image
+            width={41}
+            class=""
+            src={item.icon || ""}
+            alt={item.title}
+            decoding="async"
+            loading="lazy"
+          />
+          <div>
+            <h5 class="font-bold text-[10px] text-white">{item.title}</h5>
+            <p class="font-normal text-[10px] text-white">{item.subtitle}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}

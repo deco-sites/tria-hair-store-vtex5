@@ -13,14 +13,14 @@ import { useId } from "../../sdk/useId.ts";
  * @titleBy alt
  */
 export interface Banner {
-  /** @description Imagem para descktop */
+  /** @description Imagem para descktop (largura: 1300px altura: 360px)*/
   desktop: ImageWidget;
-  /** @description mobile otimized image */
+  /** @description Imagem para descktop (largura: ? altura: ?)*/
   mobile: ImageWidget;
-  /** @description Image's alt text */
+  /** @description Descrição da imagem */
   alt: string;
   action?: {
-    /** @description when user clicks on the image, go to this link */
+    /** @description ao clicar link para a pagina */
     href: string;
     // /** @description Image text title */
     // title: string;
@@ -34,22 +34,22 @@ export interface Banner {
 export interface Props {
   images?: Banner[];
   /**
-   * @description Check this option when this banner is the biggest image on the screen for image optimizations
+   * @description marque esta opção quando este banner for a maior imagem na tela para otimizações de imagem.
    */
   preload?: boolean;
   /**
-   * @title Show arrows
-   * @description show arrows to navigate through the images
+   * @title Mostrar setas
+   * @description mostre as setas para navegar entre as imagens
    */
   arrows?: boolean;
   /**
-   * @title Show dots
-   * @description show dots to navigate through the images
+   * @title mostrar barras de navegação
+   * @description mostre as barras de navegação para navegar entre as imagens
    */
   dots?: boolean;
   /**
-   * @title Autoplay interval
-   * @description time (in seconds) to start the carousel autoplay
+   * @title intervalo automático
+   * @description tempo (em segundos) para o intervalo entre as imagens
    */
   interval?: number;
 }
