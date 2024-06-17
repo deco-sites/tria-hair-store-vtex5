@@ -153,7 +153,10 @@
     {
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
       "layout": {
-        "showArrows": true
+        "showArrows": true,
+        "numberOfSliders": {
+          "desktop": 3
+        }
       },
       "products": {
         "props": {
@@ -190,7 +193,9 @@
           }
         },
         "__resolveType": "site/loaders/Layouts/ProductCard.tsx"
-      }
+      },
+      "title": "BESTSELLERS DO BRASIL!",
+      "description": "Os mais procurados pelos nossos clientes"
     },
     {
       "__resolveType": "site/sections/Category/CategoryBanner.tsx",
