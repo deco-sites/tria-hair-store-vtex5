@@ -324,5 +324,9 @@
   "/.deco/blocks/Troia%20hair.json": {
     "blockType": "sections",
     "__resolveType": "site/sections/Theme/Theme.tsx"
+  },
+  "/.deco/blocks/Preview%20site%2Fsections%2FCards%2FIconCardsCarousel.tsx.json": {
+    "blockType": "sections",
+    "__resolveType": "site/sections/Cards/IconCardsCarousel.tsx"
   }
 }
