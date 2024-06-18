@@ -17,7 +17,7 @@ export default function Section({ bannerList }: Props) {
         <div>
           <a href={item.href}>
             <Image
-              class="rounded-lg"
+              class="rounded-lg object-cover"
               src={item.banner || ""}
               width={300}
               height={320}

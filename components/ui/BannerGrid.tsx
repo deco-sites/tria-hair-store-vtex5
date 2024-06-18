@@ -107,8 +107,8 @@ const DEFAULT_PROPS: Props = {
     },
   ],
   borderRadius: {
-    mobile: "3xl",
-    desktop: "3xl",
+    mobile: "none",
+    desktop: "none",
   },
   itemsPerLine: {
     mobile: 2,
@@ -125,26 +125,25 @@ export default function BannnerGrid(props: Props) {
   } = { ...DEFAULT_PROPS, ...props };
 
   return (
-    <section class="container w-full px-4 md:px-0 mx-auto">
-      {title &&
-        (
-          <div class="py-6 md:py-0 md:pb-[40px] flex items-center mt-6">
-            <h2 class="text-lg leading-5 font-semibold uppercase">
-              {title}
-            </h2>
+    <section class=" w-[1300px] px-4 md:px-0 mx-auto pb-10">
+      {title && (
+        <div class="py-6 md:py-0 md:pb-[40px] flex items-center mt-6">
+          <h2 class="text-lg leading-5 font-semibold uppercase text-primary">
+            {title}
+          </h2>
 
-            <div class="bg-[#e5e5ea] h-[1px] w-full ml-4"></div>
-          </div>
-        )}
+          <div class="bg-primary h-[1px] w-full ml-4"></div>
+        </div>
+      )}
       <div
-        class={`grid gap-4 md:gap-6 ${
+        class={`grid gap-4 md:gap-6 max-w-[1193px] mx-auto ${
           MOBILE_COLUMNS[itemsPerLine?.mobile ?? 2]
         } ${DESKTOP_COLUMNS[itemsPerLine?.desktop ?? 4]}`}
       >
         {banners.map(({ href, srcMobile, srcDesktop, alt }) => (
           <a
             href={href}
-            class={`overflow-hidden ${
+            class={`overflow-hidden  ${
               RADIUS_MOBILE[borderRadius.mobile ?? "none"]
             } ${RADIUS_DESKTOP[borderRadius.desktop ?? "none"]} `}
           >
@@ -158,11 +157,11 @@ export default function BannnerGrid(props: Props) {
               <Source
                 media="(min-width: 768px)"
                 src={srcDesktop ? srcDesktop : srcMobile}
-                width={250}
-                height={250}
+                width={563}
+                height={398}
               />
               <img
-                class="w-full"
+                class=" object-cover max-w-[563px] max-h-[398px]"
                 sizes="(max-width: 640px) 100vw, 30vw"
                 src={srcMobile}
                 alt={alt}
