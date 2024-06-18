@@ -15,7 +15,7 @@
   ],
   "borderRadius": {
     "mobile": "3xl",
-    "desktop": "3xl"
+    "desktop": "none"
   },
   "itemsPerLine": {
     "mobile": 2,
