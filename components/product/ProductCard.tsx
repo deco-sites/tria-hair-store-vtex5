@@ -74,7 +74,7 @@ function ProductCard({
 
         <div class="flex flex-col  lg:group-hover:-translate-y-2 h-[266px] w-[167px] border-[0.18px] border-primary rounded-[7px] px-2 pt-[5px]">
           {/* Wishlist button */}
-          <div class="flex justify-between w-full pb-3">
+          <div class="flex justify-between items-center w-full pb-3">
             <div class="lg:group-hover:block w-[18px] h-[16px]">
               {platform === "vtex" && (
                 <WishlistButtonVtex
@@ -91,8 +91,8 @@ function ProductCard({
             </div>
 
             {/* Discount % */}
-            <div class="text-[9px]  w-[44px] h-[13px]">
-              <span class="font-bold">
+            <div class="w-[44px] h-[13px] bg-red-600 rounded flex flex-col items-center ">
+              <span class="font-bold text-[9px] text-white">
                 {listPrice && price
                   ? `${Math.round(((listPrice - price) / listPrice) * 100)}% `
                   : ""}
@@ -115,7 +115,7 @@ function ProductCard({
             class={clx(
               " w-[143px] h-[143px] pb-[17px]",
               "grid grid-cols-1 grid-rows-1",
-              "w-full",
+              "w-full"
             )}
           >
             <Image
@@ -127,9 +127,9 @@ function ProductCard({
               class={clx(
                 "object-cover",
                 "rounded w-full",
-                "col-span-full row-span-full",
+                "col-span-full row-span-full"
               )}
-              sizes="(max-width: 640px) 50vw, 20vw"
+              // sizes="(max-width: 640px) 50vw, 20vw"
               preload={preload}
               loading={preload ? "eager" : "lazy"}
               decoding="async"
@@ -144,17 +144,16 @@ function ProductCard({
                 "object-cover",
                 "rounded w-full",
                 "col-span-full row-span-full",
-                "transition-opacity opacity-0 lg:group-hover:opacity-100",
+                "transition-opacity opacity-0 lg:group-hover:opacity-100"
               )}
-              sizes="(max-width: 640px) 50vw, 20vw"
+              // sizes="(max-width: 640px) 50vw, 20vw"
               loading="lazy"
               decoding="async"
             />
           </a>
 
           {/* SKU Selector */}
-          {
-            /* <ul class="flex items-center justify-center gap-2">
+          {/* <ul class="flex items-center justify-center gap-2">
           {variants
             .map(([value, link]) => [value, relative(link)] as const)
             .map(([value, link]) => (
@@ -173,36 +172,31 @@ function ProductCard({
                 </a>
               </li>
             ))}
-        </ul> */
-          }
+        </ul> */}
 
           {/* Name/Description */}
           <div class="flex flex-col">
             <h2
-              class="font-bold text-[7px] text-primary text-center pb-[6px]"
+              class="font-bold text-[7px] text-primary text-center h-7 pb-[6px]"
               dangerouslySetInnerHTML={{ __html: name ?? "" }}
             />
 
-            {
-              /* <div
+            {/* <div
             class="truncate text-xs"
             dangerouslySetInnerHTML={{ __html: description ?? "" }}
-          /> */
-            }
+          /> */}
           </div>
 
           {/* Price from/to */}
-          <div class="flex gap-2 items-center justify-center  pb-[13px] ">
-            {
-              /* <span class="line-through text-sm text-primary">
+          <div class="flex gap-2 items-center justify-center  pb-[10px] ">
+            {/* <span class="line-through text-sm text-primary">
             {formatPrice(listPrice, offers?.priceCurrency)}
-          </span> */
-            }
+          </span> */}
             <span class="font-bold  text-primary text-center text-[17px]">
               {formatPrice(price, offers?.priceCurrency)}
             </span>
           </div>
-          <div class="flex gap-2">
+          <div class="flex gap-1 justify-betweem">
             <a
               href={relativeUrl}
               aria-label="view product"

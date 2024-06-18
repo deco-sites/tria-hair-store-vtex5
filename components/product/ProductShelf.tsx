@@ -3,7 +3,6 @@ import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalytic
 import { SendEventOnView } from "../../components/Analytics.tsx";
 import ProductCard from "../../components/product/ProductCard.tsx";
 import Icon from "../../components/ui/Icon.tsx";
-import Header from "../../components/ui/SectionHeader.tsx";
 import Slider from "../../components/ui/Slider.tsx";
 import { clx } from "../../sdk/clx.ts";
 import { useId } from "../../sdk/useId.ts";
@@ -51,25 +50,29 @@ function ProductShelf({
     5: "w-1/5",
   };
   return (
-    <div class="w-full container py-8 flex flex-col gap-6 lg:py-10">
-      <Header title={title || ""} description={description || ""} />
+    <div class="w-[1136px] py-16 flex flex-col gap-6 lg:py-10 mx-auto">
+      <div class="flex flex-col items-center pb-20">
+        <h2 class="text-2xl text-primary font-bold pb-2">{title}</h2>
+        <p class="text-base text-primary">{description}</p>
+      </div>
 
       <div
         id={id}
         class={clx(
           "grid",
           layout?.showArrows && "grid-cols-[48px_1fr_48px]",
-          "px-0 md:px-5 container",
+          "px-0 md:px-5 container"
         )}
       >
-        <Slider class="carousel carousel-center sm:carousel-end sm:gap-1 row-start-2 row-end-5 gap-[52px]">
+        <Slider class="w-[1040px] carousel carousel-center sm:carousel-end row-start-2 row-end-5 ">
           {products?.map((product, index) => (
             <Slider.Item
               index={index}
               class={clx(
                 "carousel-item",
+                "first:pl-5",
                 slideDesktop[layout?.numberOfSliders?.desktop ?? 5],
-                slideMobile[layout?.numberOfSliders?.mobile ?? 1],
+                slideMobile[layout?.numberOfSliders?.mobile ?? 1]
               )}
             >
               <ProductCard

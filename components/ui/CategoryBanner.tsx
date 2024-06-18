@@ -47,27 +47,29 @@ function Banner(props: SectionProps<ReturnType<typeof loader>>) {
     return null;
   }
 
-  const { title, subtitle, image } = banner;
+  const { title, image } = banner;
 
   return (
-    <div class="grid grid-cols-1 grid-rows-1">
-      <Picture preload class="col-start-1 col-span-1 row-start-1 row-span-1">
+    <div class="mx-auto w-[1140px] h-[195px]">
+      <Picture preload>
         <Source
+          class=" object-cover object-top"
           src={image.mobile}
           width={360}
           height={120}
           media="(max-width: 767px)"
         />
         <Source
+          class=" object-cover object-top"
           src={image.desktop}
-          width={1440}
-          height={200}
+          width={1140}
+          height={195}
           media="(min-width: 767px)"
         />
         <img class="w-full" src={image.desktop} alt={image.alt ?? title} />
       </Picture>
 
-      <div class="container flex flex-col items-center justify-center sm:items-start col-start-1 col-span-1 row-start-1 row-span-1 w-full">
+      {/* <div class="container flex flex-col items-center justify-center sm:items-start col-start-1 col-span-1 row-start-1 row-span-1 w-full">
         <h1>
           <span class="text-5xl font-medium text-base-100">
             {title}
@@ -78,7 +80,7 @@ function Banner(props: SectionProps<ReturnType<typeof loader>>) {
             {subtitle}
           </span>
         </h2>
-      </div>
+      </div> */}
     </div>
   );
 }
