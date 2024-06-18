@@ -115,7 +115,7 @@ function ProductCard({
             class={clx(
               " w-[143px] h-[143px] pb-[17px]",
               "grid grid-cols-1 grid-rows-1",
-              "w-full"
+              "w-full",
             )}
           >
             <Image
@@ -127,7 +127,7 @@ function ProductCard({
               class={clx(
                 "object-cover",
                 "rounded w-full",
-                "col-span-full row-span-full"
+                "col-span-full row-span-full",
               )}
               // sizes="(max-width: 640px) 50vw, 20vw"
               preload={preload}
@@ -144,7 +144,7 @@ function ProductCard({
                 "object-cover",
                 "rounded w-full",
                 "col-span-full row-span-full",
-                "transition-opacity opacity-0 lg:group-hover:opacity-100"
+                "transition-opacity opacity-0 lg:group-hover:opacity-100",
               )}
               // sizes="(max-width: 640px) 50vw, 20vw"
               loading="lazy"
@@ -153,7 +153,8 @@ function ProductCard({
           </a>
 
           {/* SKU Selector */}
-          {/* <ul class="flex items-center justify-center gap-2">
+          {
+            /* <ul class="flex items-center justify-center gap-2">
           {variants
             .map(([value, link]) => [value, relative(link)] as const)
             .map(([value, link]) => (
@@ -172,7 +173,8 @@ function ProductCard({
                 </a>
               </li>
             ))}
-        </ul> */}
+        </ul> */
+          }
 
           {/* Name/Description */}
           <div class="flex flex-col">
@@ -181,17 +183,21 @@ function ProductCard({
               dangerouslySetInnerHTML={{ __html: name ?? "" }}
             />
 
-            {/* <div
+            {
+              /* <div
             class="truncate text-xs"
             dangerouslySetInnerHTML={{ __html: description ?? "" }}
-          /> */}
+          /> */
+            }
           </div>
 
           {/* Price from/to */}
           <div class="flex gap-2 items-center justify-center  pb-[10px] ">
-            {/* <span class="line-through text-sm text-primary">
+            {
+              /* <span class="line-through text-sm text-primary">
             {formatPrice(listPrice, offers?.priceCurrency)}
-          </span> */}
+          </span> */
+            }
             <span class="font-bold  text-primary text-center text-[17px]">
               {formatPrice(price, offers?.priceCurrency)}
             </span>

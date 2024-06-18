@@ -61,7 +61,7 @@ function ProductShelf({
         class={clx(
           "grid",
           layout?.showArrows && "grid-cols-[48px_1fr_48px]",
-          "px-0 md:px-5 container"
+          "px-0 md:px-5 container",
         )}
       >
         <Slider class="w-[1040px] carousel carousel-center sm:carousel-end row-start-2 row-end-5 ">
@@ -72,7 +72,7 @@ function ProductShelf({
                 "carousel-item",
                 "first:pl-5",
                 slideDesktop[layout?.numberOfSliders?.desktop ?? 5],
-                slideMobile[layout?.numberOfSliders?.mobile ?? 1]
+                slideMobile[layout?.numberOfSliders?.mobile ?? 1],
               )}
             >
               <ProductCard
