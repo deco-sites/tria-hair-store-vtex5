@@ -19,8 +19,6 @@ export interface Props {
       mobile?: 1 | 2 | 3 | 4 | 5;
       desktop?: 1 | 2 | 3 | 4 | 5;
     };
-    headerAlignment?: "center" | "left";
-    headerfontSize?: "Normal" | "Large" | "Small";
     showArrows?: boolean;
   };
 }
@@ -54,12 +52,7 @@ function ProductShelf({
   };
   return (
     <div class="w-full container py-8 flex flex-col gap-6 lg:py-10">
-      <Header
-        title={title || ""}
-        description={description || ""}
-        fontSize={layout?.headerfontSize || "Large"}
-        alignment={layout?.headerAlignment || "center"}
-      />
+      <Header title={title || ""} description={description || ""} />
 
       <div
         id={id}
@@ -69,13 +62,13 @@ function ProductShelf({
           "px-0 md:px-5 container",
         )}
       >
-        <Slider class="carousel carousel-center sm:carousel-end sm:gap-1 row-start-2 row-end-5">
+        <Slider class="carousel carousel-center sm:carousel-end sm:gap-1 row-start-2 row-end-5 gap-[52px]">
           {products?.map((product, index) => (
             <Slider.Item
               index={index}
               class={clx(
                 "carousel-item",
-                slideDesktop[layout?.numberOfSliders?.desktop ?? 3],
+                slideDesktop[layout?.numberOfSliders?.desktop ?? 5],
                 slideMobile[layout?.numberOfSliders?.mobile ?? 1],
               )}
             >
@@ -114,7 +107,7 @@ function ProductShelf({
                 mapProductToAnalyticsItem({
                   index,
                   product,
-                  ...(useOffer(product.offers)),
+                  ...useOffer(product.offers),
                 })
               ),
             },

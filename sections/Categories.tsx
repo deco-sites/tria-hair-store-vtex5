@@ -156,9 +156,9 @@ function Categories({
   }
 
   return (
-    <div class="w-screen flex flex-col items-center ">
+    <div class="w-screen flex flex-col items-center pb-[56px] ">
       <div class="w-[1300px]">
-        <h2 class="text-2xl text-primary text-center font-bold uppercase py-20">
+        <h2 class="text-2xl text-primary text-center font-bold uppercase pt-[58px] pb-[51px]">
           {title}
         </h2>
 
