@@ -27,7 +27,7 @@ export interface Props {
   /**
    * @title Placeholder
    * @description Search bar default placeholder message
-   * @default What are you looking for?
+  //  * @default What are you looking for?
    */
   placeholder?: string;
   /**
@@ -75,25 +75,18 @@ function Searchbar({
 
   return (
     <div
-      class="w-full grid gap-8 px-4 py-6 overflow-y-hidden"
+      class="w-[434px] h-[18px] grid gap-8 px-4 py-6 "
       style={{ gridTemplateRows: "min-content auto" }}
     >
-      <form id={id} action={action} class="join">
-        <Button
-          type="submit"
-          class="join-item btn-square"
-          aria-label="Search"
-          for={id}
-          tabIndex={-1}
-        >
-          {loading.value
-            ? <span class="loading loading-spinner loading-xs" />
-            : <Icon id="MagnifyingGlass" size={24} strokeWidth={0.01} />}
-        </Button>
+      <form
+        id={id}
+        action={action}
+        class="join  h-[18px] border-[0.5px] border-primary"
+      >
         <input
           ref={searchInputRef}
           id="search-input"
-          class="input input-bordered join-item flex-grow"
+          class="input  join-item flex-grow text-[10px] placeholder-primary text-primary   h-[16px] min-h-0"
           name={name}
           onInput={(e) => {
             const value = e.currentTarget.value;
@@ -114,14 +107,29 @@ function Searchbar({
           aria-expanded={displaySearchPopup.value}
           autocomplete="off"
         />
+
         <Button
+          type="submit"
+          class="join-item h-4 min-h-0 bg-base-100 border-none"
+          aria-label="Search"
+          for={id}
+          tabIndex={-1}
+        >
+          {loading.value
+            ? <span class="loading loading-spinner loading-xs" />
+            : <Icon id="MagnifyingGlass" size={24} strokeWidth={0.01} />}
+        </Button>
+
+        {
+          /* <Button
           type="button"
           class="join-item btn-ghost btn-square hidden sm:inline-flex"
           onClick={() => displaySearchPopup.value = false}
           ariaLabel={displaySearchPopup.value ? "open search" : "search closed"}
         >
           <Icon id="XMark" size={24} strokeWidth={2} />
-        </Button>
+        </Button> */
+        }
       </form>
 
       <div
@@ -129,11 +137,7 @@ function Searchbar({
       >
         <div class="gap-4 grid grid-cols-1 sm:grid-rows-1 sm:grid-cols-[150px_1fr]">
           <div class="flex flex-col gap-6">
-            <span
-              class="font-medium text-xl"
-              role="heading"
-              aria-level={3}
-            >
+            <span class="font-medium text-xl" role="heading" aria-level={3}>
               Sugestões
             </span>
             <ul id="search-suggestion" class="flex flex-col gap-6">
@@ -141,11 +145,7 @@ function Searchbar({
                 <li>
                   <a href={`/s?q=${term}`} class="flex gap-4 items-center">
                     <span>
-                      <Icon
-                        id="MagnifyingGlass"
-                        size={24}
-                        strokeWidth={0.01}
-                      />
+                      <Icon id="MagnifyingGlass" size={24} strokeWidth={0.01} />
                     </span>
                     <span dangerouslySetInnerHTML={{ __html: term }} />
                   </a>
@@ -154,11 +154,7 @@ function Searchbar({
             </ul>
           </div>
           <div class="flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden">
-            <span
-              class="font-medium text-xl"
-              role="heading"
-              aria-level={3}
-            >
+            <span class="font-medium text-xl" role="heading" aria-level={3}>
               Produtos sugeridos
             </span>
             <Slider class="carousel">

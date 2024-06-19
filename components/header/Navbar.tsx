@@ -1,4 +1,6 @@
-import type { Props as SearchbarProps } from "../../components/search/Searchbar.tsx";
+// import Searchbar, {
+//   Props as SearchbarProps,
+// } from "../search/Searchbar.tsx";
 import Icon from "../../components/ui/Icon.tsx";
 import { MenuButton, SearchButton } from "../../islands/Header/Buttons.tsx";
 import CartButtonLinx from "../../islands/Header/Cart/linx.tsx";
@@ -7,7 +9,7 @@ import CartButtonVDNA from "../../islands/Header/Cart/vnda.tsx";
 import CartButtonVTEX from "../../islands/Header/Cart/vtex.tsx";
 import CartButtonWake from "../../islands/Header/Cart/wake.tsx";
 import CartButtonNuvemshop from "../../islands/Header/Cart/nuvemshop.tsx";
-import Searchbar from "../../islands/Header/Searchbar.tsx";
+// import Searchbar from "../../islands/Header/Searchbar.tsx";
 import { usePlatform } from "../../sdk/usePlatform.tsx";
 import type { SiteNavigationElement } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
@@ -16,16 +18,21 @@ import { navbarHeight } from "./constants.ts";
 import { Buttons, Logo } from "../../components/header/Header.tsx";
 
 // Make it sure to render it on the server only. DO NOT render it on an island
-function Navbar(
-  { items, searchbar, logo, buttons, logoPosition = "left", device }: {
-    items: SiteNavigationElement[];
-    searchbar?: SearchbarProps;
-    logo?: Logo;
-    buttons?: Buttons;
-    logoPosition?: "left" | "center";
-    device: "mobile" | "desktop" | "tablet";
-  },
-) {
+function Navbar({
+  items,
+  //searchbar,
+  logo,
+  buttons,
+  logoPosition = "left",
+  device,
+}: {
+  items: SiteNavigationElement[];
+  //searchbar?: SearchbarProps;
+  logo?: Logo;
+  buttons?: Buttons;
+  logoPosition?: "left" | "center";
+  device: "mobile" | "desktop" | "tablet";
+}) {
   const platform = usePlatform();
 
   // Mobile header
@@ -67,25 +74,14 @@ function Navbar(
 
   // Desktop header
   return (
-    <div class="hidden sm:grid sm:grid-cols-3 items-center border-b border-base-200 w-full px-6">
-      <ul
-        class={`flex gap-6 col-span-1 ${
-          logoPosition === "left" ? "justify-center" : "justify-start"
-        }`}
-      >
-        {items.map((item) => <NavItem item={item} />)}
-      </ul>
+    <div class="hidden sm:grid sm:grid-cols-3 items-center w-full h-[95px] px-6">
       <div
         class={`flex ${
           logoPosition === "left" ? "justify-start -order-1" : "justify-center"
         }`}
       >
         {logo && (
-          <a
-            href="/"
-            aria-label="Store logo"
-            class="block"
-          >
+          <a href="/" aria-label="Store logo" class="block">
             <Image
               src={logo.src}
               alt={logo.alt}
@@ -95,51 +91,72 @@ function Navbar(
           </a>
         )}
       </div>
-      <div class="flex-none flex items-center justify-end gap-6 col-span-1">
+
+      <div>
         {!buttons?.hideSearchButton && (
           <div class="flex items-center text-xs font-thin gap-1">
-            <SearchButton />SEARCH
+            {/* <SearchButton /> */}
+            {/* <Searchbar {...searchbar} /> */}
           </div>
         )}
 
-        <Searchbar searchbar={searchbar} />
-        {!buttons?.hideAccountButton && (
-          <a
-            class="flex items-center text-xs font-thin"
-            href="/account"
-            aria-label="Account"
-          >
-            <div class="flex btn btn-circle btn-sm btn-ghost gap-1">
-              <Icon id="User" size={20} strokeWidth={0.4} />
+        <ul
+          class={`flex gap-6 col-span-1 ${
+            logoPosition === "left" ? "justify-center" : "justify-start"
+          }`}
+        >
+          {items.map((item) => <NavItem item={item} />)}
+        </ul>
+      </div>
+
+      <div class="flex-none flex items-center justify-end gap-6 col-span-1">
+        {/* <Searchbar searchbar={searchbar} /> */}
+
+        <div class="flex gap-5">
+          {!buttons?.hideCartButton && (
+            <div class="flex items-center justify-center font-normal btn btn-primary btn-outline border rounded-full p-0 m-0 w-[43px] h-[43px] min-h-0 ">
+              {platform === "vtex" && <CartButtonVTEX />}
+              {platform === "vnda" && <CartButtonVDNA />}
+              {platform === "wake" && <CartButtonWake />}
+              {platform === "linx" && <CartButtonLinx />}
+              {platform === "shopify" && <CartButtonShopify />}
+              {platform === "nuvemshop" && <CartButtonNuvemshop />}
             </div>
-            ACCOUNT
-          </a>
-        )}
-        {!buttons?.hideWishlistButton && (
-          <a
-            class="flex items-center text-xs font-thin"
-            href="/wishlist"
-            aria-label="Wishlist"
-          >
-            <button
-              class="flex btn btn-circle btn-sm btn-ghost gap-1"
+          )}
+
+          {!buttons?.hideWishlistButton && (
+            <a
+              class="flex items-center text-xs font-thin"
+              href="/wishlist"
               aria-label="Wishlist"
             >
-              <Icon id="Heart" size={24} strokeWidth={0.4} />
-            </button>
-            WISHLIST
-          </a>
-        )}
-        {!buttons?.hideCartButton && (
-          <div class="flex items-center text-xs font-thin">
-            {platform === "vtex" && <CartButtonVTEX />}
-            {platform === "vnda" && <CartButtonVDNA />}
-            {platform === "wake" && <CartButtonWake />}
-            {platform === "linx" && <CartButtonLinx />}
-            {platform === "shopify" && <CartButtonShopify />}
-            {platform === "nuvemshop" && <CartButtonNuvemshop />}
-          </div>
-        )}
+              <button
+                class=" font-normal btn btn-primary btn-outline border rounded-full p-0 m-0 w-[43px] h-[43px] min-h-0"
+                aria-label="Wishlist"
+              >
+                <Icon id="Heart" size={27} strokeWidth={0.4} />
+              </button>
+            </a>
+          )}
+
+          {!buttons?.hideAccountButton && (
+            <a
+              class="flex items-center text-xs font-thin"
+              href="/account"
+              aria-label="Account"
+            >
+              <div class="font-normal btn btn-primary btn-outline border rounded-full p-0 m-0 w-[43px] h-[43px] min-h-0">
+                <Image
+                  class="rounded-lg"
+                  src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/fb00010a-a586-4ede-ba77-653171becd82"
+                  width={28}
+                  height={38}
+                  alt={""}
+                />
+              </div>
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );

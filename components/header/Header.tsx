@@ -7,7 +7,7 @@ import type { SiteNavigationElement } from "apps/commerce/types.ts";
 import type { SectionProps } from "deco/types.ts";
 import Alert from "./Alert.tsx";
 import Navbar from "./Navbar.tsx";
-import { headerHeight } from "./constants.ts";
+// import { headerHeight } from "./constants.ts";
 
 export interface Logo {
   src: ImageWidget;
@@ -74,7 +74,7 @@ function Header({
     height: 16,
     alt: "Logo",
   },
-  logoPosition = "center",
+  logoPosition = "left",
   buttons,
   device,
 }: SectionProps<typeof loader>) {
@@ -83,18 +83,14 @@ function Header({
 
   return (
     <>
-      <header style={{ height: headerHeight }}>
-        <Drawers
-          menu={{ items }}
-          searchbar={searchbar}
-          platform={platform}
-        >
-          <div class="bg-base-100 fixed w-full z-50">
+      <header class="h-[95px] w-[1300px] p-0 mx-auto">
+        <Drawers menu={{ items }} searchbar={searchbar} platform={platform}>
+          <div class="bg-base-100 fixed h-[95px] w-[1300px] z-50 mx-auto">
             {alerts && alerts.length > 0 && <Alert alerts={alerts} />}
             <Navbar
               device={device}
               items={items}
-              searchbar={searchbar && { ...searchbar, platform }}
+              //searchbar={searchbar && { ...searchbar, platform }}
               logo={logo}
               logoPosition={logoPosition}
               buttons={buttons}
