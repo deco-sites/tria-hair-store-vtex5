@@ -29,7 +29,6 @@ export type BorderRadius =
   | "full";
 
 export interface Props {
-  title?: string;
   /**
    * @description Default is 2 for mobile and all for desktop
    */
@@ -87,7 +86,6 @@ const RADIUS_DESKTOP = {
 };
 
 const DEFAULT_PROPS: Props = {
-  title: "Summer bags",
   banners: [
     {
       alt: "a",
@@ -118,7 +116,7 @@ const DEFAULT_PROPS: Props = {
 
 export default function BannnerGrid(props: Props) {
   const {
-    title,
+   
     itemsPerLine,
     borderRadius,
     banners = [],
@@ -126,15 +124,6 @@ export default function BannnerGrid(props: Props) {
 
   return (
     <section class=" w-[1300px] px-4 md:px-0 mx-auto pb-10">
-      {title && (
-        <div class="py-6 md:py-0 md:pb-[40px] flex items-center mt-6">
-          <h2 class="text-lg leading-5 font-semibold uppercase text-primary">
-            {title}
-          </h2>
-
-          <div class="bg-primary h-[1px] w-full ml-4"></div>
-        </div>
-      )}
       <div
         class={`grid gap-4 md:gap-6 max-w-[1193px] mx-auto ${
           MOBILE_COLUMNS[itemsPerLine?.mobile ?? 2]
