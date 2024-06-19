@@ -116,14 +116,13 @@ const DEFAULT_PROPS: Props = {
 
 export default function BannnerGrid(props: Props) {
   const {
-   
     itemsPerLine,
     borderRadius,
     banners = [],
   } = { ...DEFAULT_PROPS, ...props };
 
   return (
-    <section class=" w-[1300px] px-4 md:px-0 mx-auto pb-10">
+    <section class=" w-[1300px] px-4 md:px-0 mx-auto py-10">
       <div
         class={`grid gap-4 md:gap-6 max-w-[1193px] mx-auto ${
           MOBILE_COLUMNS[itemsPerLine?.mobile ?? 2]
