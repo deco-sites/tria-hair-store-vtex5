@@ -16,14 +16,14 @@ function VariantSelector({ product }: Props) {
     <ul class="flex flex-col gap-4">
       {Object.keys(possibilities).map((name) => (
         <li class="flex flex-col gap-2">
-          <span class="text-sm">{name}</span>
+          <span class="text-base text-primary font-semibold">{name}</span>
           <ul class="flex flex-row gap-3">
             {Object.entries(possibilities[name]).map(([value, link]) => {
               const relativeUrl = relative(url);
               const relativeLink = relative(link);
               return (
                 <li>
-                  <button f-partial={relativeLink} f-client-nav>
+                  <button f-partial={relativeLink} f-client-nav class="text-[9px] btn btn-accent w-9 h-8 min-h-0 border border-primary p-0">
                     <Avatar
                       content={value}
                       variant={relativeLink === relativeUrl
