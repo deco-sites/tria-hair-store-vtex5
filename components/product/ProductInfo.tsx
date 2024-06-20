@@ -136,66 +136,66 @@ function ProductInfo({ page, layout }: Props) {
 
           {/* Add to Cart and Favorites button */}
           <div class="mt-4 sm:mt-10 flex flex-col gap-2 w-full h-[34px]">
-            {availability === "https://schema.org/InStock" ? (
-              <>
-                {platform === "vtex" && (
-                  <>
-                    <AddToCartButtonVTEX
+            {availability === "https://schema.org/InStock"
+              ? (
+                <>
+                  {platform === "vtex" && (
+                    <>
+                      <AddToCartButtonVTEX
+                        eventParams={{ items: [eventItem] }}
+                        productID={productID}
+                        seller={seller}
+                      />
+                      {/* <WishlistButtonVtex
+                        variant="full"
+                        productID={productID}
+                        productGroupID={productGroupID}
+                      /> */}
+                    </>
+                  )}
+                  {platform === "wake" && (
+                    <>
+                      <AddToCartButtonWake
+                        eventParams={{ items: [eventItem] }}
+                        productID={productID}
+                      />
+                      {/* <WishlistButtonWake
+                        variant="full"
+                        productID={productID}
+                        productGroupID={productGroupID}
+                      /> */}
+                    </>
+                  )}
+                  {platform === "linx" && (
+                    <AddToCartButtonLinx
                       eventParams={{ items: [eventItem] }}
-                      productID={productID}
-                      seller={seller}
-                    />
-                    <WishlistButtonVtex
-                      variant="full"
                       productID={productID}
                       productGroupID={productGroupID}
                     />
-                  </>
-                )}
-                {platform === "wake" && (
-                  <>
-                    <AddToCartButtonWake
+                  )}
+                  {platform === "vnda" && (
+                    <AddToCartButtonVNDA
+                      eventParams={{ items: [eventItem] }}
+                      productID={productID}
+                      additionalProperty={additionalProperty}
+                    />
+                  )}
+                  {platform === "shopify" && (
+                    <AddToCartButtonShopify
                       eventParams={{ items: [eventItem] }}
                       productID={productID}
                     />
-                    <WishlistButtonWake
-                      variant="full"
-                      productID={productID}
+                  )}
+                  {platform === "nuvemshop" && (
+                    <AddToCartButtonNuvemshop
                       productGroupID={productGroupID}
+                      eventParams={{ items: [eventItem] }}
+                      additionalProperty={additionalProperty}
                     />
-                  </>
-                )}
-                {platform === "linx" && (
-                  <AddToCartButtonLinx
-                    eventParams={{ items: [eventItem] }}
-                    productID={productID}
-                    productGroupID={productGroupID}
-                  />
-                )}
-                {platform === "vnda" && (
-                  <AddToCartButtonVNDA
-                    eventParams={{ items: [eventItem] }}
-                    productID={productID}
-                    additionalProperty={additionalProperty}
-                  />
-                )}
-                {platform === "shopify" && (
-                  <AddToCartButtonShopify
-                    eventParams={{ items: [eventItem] }}
-                    productID={productID}
-                  />
-                )}
-                {platform === "nuvemshop" && (
-                  <AddToCartButtonNuvemshop
-                    productGroupID={productGroupID}
-                    eventParams={{ items: [eventItem] }}
-                    additionalProperty={additionalProperty}
-                  />
-                )}
-              </>
-            ) : (
-              <OutOfStock productID={productID} />
-            )}
+                  )}
+                </>
+              )
+              : <OutOfStock productID={productID} />}
           </div>
           {/* Shipping Simulation */}
           <div class="mt-8">
@@ -215,13 +215,17 @@ function ProductInfo({ page, layout }: Props) {
           <div class="mt-4 sm:mt-6">
             <span class="text-sm">
               {description && (
-                <details>
-                  <summary class="cursor-pointer">Descrição</summary>
-                  <div
-                    class="ml-2 mt-2"
+                // <details>
+                //   <summary class="cursor-pointer">Descrição</summary>
+                //   <div
+                //     class="ml-2 mt-2"
+                //     dangerouslySetInnerHTML={{ __html: description }}
+                //   />
+                // </details>
+                <div
+                    class="ml-2 mt-2 text-sm text-primary"
                     dangerouslySetInnerHTML={{ __html: description }}
                   />
-                </details>
               )}
             </span>
           </div>

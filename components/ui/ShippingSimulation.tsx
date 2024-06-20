@@ -92,10 +92,12 @@ function ShippingSimulation({ items }: Props) {
   }, [items, postalCode.value]);
 
   return (
-    <div class="flex flex-col gap-2">
+    <div class="flex  gap-2">
       <div class="flex flex-col">
-        <span>Calcular frete</span>
-        <span>
+        <span class="text-base text-primary font-semibold ">
+          Calcule o Frete
+        </span>
+        <span class="text-[6px] text-primary  ">
           Informe seu CEP para consultar os prazos de entrega
         </span>
       </div>

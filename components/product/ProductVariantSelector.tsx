@@ -23,7 +23,11 @@ function VariantSelector({ product }: Props) {
               const relativeLink = relative(link);
               return (
                 <li>
-                  <button f-partial={relativeLink} f-client-nav class="text-[9px] btn btn-accent w-9 h-8 min-h-0 border border-primary p-0">
+                  <button
+                    f-partial={relativeLink}
+                    f-client-nav
+                    class="text-[9px] btn btn-accent w-9 h-8 min-h-0 border border-primary p-0"
+                  >
                     <Avatar
                       content={value}
                       variant={relativeLink === relativeUrl
