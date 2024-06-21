@@ -93,9 +93,9 @@ function ShippingSimulation({ items }: Props) {
   }, [items, postalCode.value]);
 
   return (
-    <div class="flex  gap-2">
+    <div class="flex  p-1">
       <div class="flex flex-col">
-        <div class="flex gap-2 items-center">
+        <div class="flex gap-2 items-center w-[200px]">
           <Image
             alt="icone de um carro de entrega"
             src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/94e4ca94-224f-4f7e-962f-a97d6ef16c00"
@@ -106,12 +106,13 @@ function ShippingSimulation({ items }: Props) {
             Calcule o Frete
           </span>
         </div>
-        <span class="text-[8px] text-primary  ">
+        <span class="text-[8px] text-primary  w-[220px]">
           Informe seu CEP para consultar os prazos de entrega
         </span>
       </div>
 
       <form
+        class="w-full flex justify-between h-[19px] mt-2"
         onSubmit={(e) => {
           e.preventDefault();
           handleSimulation();
@@ -120,7 +121,7 @@ function ShippingSimulation({ items }: Props) {
         <input
           as="input"
           type="text"
-          class="input input-bordered join-item w-[250px] h-[19px] placeholder:text-primary text-[9px] bg-accent"
+          class="input input-bordered join-item w-[253px] h-[19px] placeholder:text-primary text-[9px] bg-accent"
           placeholder="Seu cep aqui"
           value={postalCode.value}
           maxLength={8}
@@ -129,7 +130,11 @@ function ShippingSimulation({ items }: Props) {
             postalCode.value = e.currentTarget.value;
           }}
         />
-        <Button type="submit" loading={loading.value} class="join-item w-[94px] h-[19px] btn btn-primary min-h-0 placeholder:text-accent text-[9px] text-normal">
+        <Button
+          type="submit"
+          loading={loading.value}
+          class="join-item w-[94px] h-[19px] btn btn-primary min-h-0 placeholder:text-accent text-[9px] text-normal"
+        >
           Calcular
         </Button>
       </form>

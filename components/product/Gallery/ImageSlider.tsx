@@ -29,7 +29,9 @@ export default function GallerySlider(props: Props) {
   }
 
   const {
-    page: { product: { image: images = [] } },
+    page: {
+      product: { image: images = [] },
+    },
     layout,
   } = props;
 
@@ -38,17 +40,14 @@ export default function GallerySlider(props: Props) {
   const aspectRatio = `${width} / ${height}`;
 
   return (
-    <div id={id} class="grid grid-flow-row sm:grid-flow-col ">
+    <div id={id} class="grid grid-flow-row sm:grid-flow-col">
       {/* Image Slider */}
-      <div class="relative order-1 sm:order-2">
-        <Slider class="carousel carousel-center gap-6 w-screen sm:w-[40vw]">
+      <div class="relative order-1 sm:order-2  w-[482px] h-[462px]">
+        <Slider class="carousel carousel-center gap-6  max-w-[482px]   w-[482px] h-[462px] border border-primary rounded-xl">
           {images.map((img, index) => (
-            <Slider.Item
-              index={index}
-              class="carousel-item w-full"
-            >
+            <Slider.Item index={index} class="carousel-item mx-auto">
               <Image
-                class="w-full"
+                class="object-cover "
                 sizes="(max-width: 640px) 100vw, 40vw"
                 style={{ aspectRatio }}
                 src={img.url!}
@@ -77,25 +76,25 @@ export default function GallerySlider(props: Props) {
           <Icon size={24} id="ChevronRight" strokeWidth={3} />
         </Slider.NextButton>
 
-        <div class="absolute top-2 right-2 bg-base-100 rounded-full">
+        <div class="absolute top-2 right-2 bg-base-100 rounded-full ">
           <ProductImageZoom
             images={images}
             width={700}
-            height={Math.trunc(700 * height / width)}
+            height={Math.trunc((700 * height) / width)}
           />
         </div>
       </div>
 
       {/* Dots */}
-      <ul class="carousel carousel-center gap-1 px-4 sm:px-0 sm:flex-col order-2 sm:order-1">
+      <ul class="carousel carousel-center gap-1 px-4 sm:px-0 sm:flex-col order-2 sm:order-1  mr-[21px]">
         {images.map((img, index) => (
-          <li class="carousel-item min-w-[63px] sm:min-w-[100px]">
+          <li class="carousel-item min-w-[63px] max-w-[113px] w-[113px] h-[102px] ">
             <Slider.Dot index={index}>
               <Image
                 style={{ aspectRatio }}
-                class="group-disabled:border-base-300 border rounded "
-                width={100}
-                height={123}
+                class="  object-cover w-[113px] h-[102px] border border-primary rounded-xl"
+                width={99}
+                height={89}
                 src={img.url!}
                 alt={img.alternateName}
               />

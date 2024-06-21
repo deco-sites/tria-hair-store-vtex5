@@ -216,7 +216,7 @@ function ProductInfo({ page, layout }: Props) {
             )}
           </div>
           {/* Description card */}
-          <div class="mt-4 sm:mt-6">
+          <div class="mt-[14px] sm:mt-6">
             <span class="text-sm">
               {description && (
                 // <details>
@@ -227,7 +227,7 @@ function ProductInfo({ page, layout }: Props) {
                 //   />
                 // </details>
                 <div
-                  class="ml-2 mt-2 text-sm text-primary"
+                  class="ml-2 text-sm text-primary h-[91px]"
                   dangerouslySetInnerHTML={{ __html: description }}
                 />
               )}
