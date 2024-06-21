@@ -1,0 +1,22 @@
+{
+  "name": "Quem somos",
+  "path": "/quem-somos",
+  "sections": [
+    {
+      "__resolveType": "Header - 01"
+    },
+    {
+      "__resolveType": "Preview /sections/News.tsx"
+    },
+    {
+      "__resolveType": "site/sections/Marcas.tsx"
+    },
+    {
+      "__resolveType": "Footer - 05"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}
