@@ -146,11 +146,13 @@ function ProductInfo({ page, layout }: Props) {
                         productID={productID}
                         seller={seller}
                       />
-                      {/* <WishlistButtonVtex
+                      {
+                        /* <WishlistButtonVtex
                         variant="full"
                         productID={productID}
                         productGroupID={productGroupID}
-                      /> */}
+                      /> */
+                      }
                     </>
                   )}
                   {platform === "wake" && (
@@ -159,11 +161,13 @@ function ProductInfo({ page, layout }: Props) {
                         eventParams={{ items: [eventItem] }}
                         productID={productID}
                       />
-                      {/* <WishlistButtonWake
+                      {
+                        /* <WishlistButtonWake
                         variant="full"
                         productID={productID}
                         productGroupID={productGroupID}
-                      /> */}
+                      /> */
+                      }
                     </>
                   )}
                   {platform === "linx" && (
@@ -223,9 +227,9 @@ function ProductInfo({ page, layout }: Props) {
                 //   />
                 // </details>
                 <div
-                    class="ml-2 mt-2 text-sm text-primary"
-                    dangerouslySetInnerHTML={{ __html: description }}
-                  />
+                  class="ml-2 mt-2 text-sm text-primary"
+                  dangerouslySetInnerHTML={{ __html: description }}
+                />
               )}
             </span>
           </div>

@@ -4,6 +4,7 @@ import Button from "../../components/ui/Button.tsx";
 import { formatPrice } from "../../sdk/format.ts";
 import { useCart } from "apps/vtex/hooks/useCart.ts";
 import type { SimulationOrderForm, SKU, Sla } from "apps/vtex/utils/types.ts";
+import Image from "apps/website/components/Image.tsx";
 
 export interface Props {
   items: Array<SKU>;
@@ -94,10 +95,18 @@ function ShippingSimulation({ items }: Props) {
   return (
     <div class="flex  gap-2">
       <div class="flex flex-col">
-        <span class="text-base text-primary font-semibold ">
-          Calcule o Frete
-        </span>
-        <span class="text-[6px] text-primary  ">
+        <div class="flex gap-2 items-center">
+          <Image
+            alt="icone de um carro de entrega"
+            src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/94e4ca94-224f-4f7e-962f-a97d6ef16c00"
+            width={34}
+            height={34}
+          />
+          <span class="text-base text-primary font-semibold ">
+            Calcule o Frete
+          </span>
+        </div>
+        <span class="text-[8px] text-primary  ">
           Informe seu CEP para consultar os prazos de entrega
         </span>
       </div>
@@ -111,7 +120,7 @@ function ShippingSimulation({ items }: Props) {
         <input
           as="input"
           type="text"
-          class="input input-bordered join-item w-48"
+          class="input input-bordered join-item w-[250px] h-[19px] placeholder:text-primary text-[9px] bg-accent"
           placeholder="Seu cep aqui"
           value={postalCode.value}
           maxLength={8}
@@ -120,7 +129,7 @@ function ShippingSimulation({ items }: Props) {
             postalCode.value = e.currentTarget.value;
           }}
         />
-        <Button type="submit" loading={loading.value} class="join-item">
+        <Button type="submit" loading={loading.value} class="join-item w-[94px] h-[19px] btn btn-primary min-h-0 placeholder:text-accent text-[9px] text-normal">
           Calcular
         </Button>
       </form>
