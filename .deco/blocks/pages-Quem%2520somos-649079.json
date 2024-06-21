@@ -6,10 +6,14 @@
       "__resolveType": "Header - 01"
     },
     {
-      "__resolveType": "Preview /sections/News.tsx"
+      "__resolveType": "site/sections/Content/TextWithImage.tsx",
+      "services": []
     },
     {
-      "__resolveType": "site/sections/Marcas.tsx"
+      "__resolveType": "site/sections/Brands.tsx"
+    },
+    {
+      "__resolveType": "Preview /sections/News.tsx"
     },
     {
       "__resolveType": "Footer - 05"
