@@ -32,32 +32,40 @@ export default function Services({
   ],
 }: Props) {
   return (
-    <div class="bg-base-100 flex flex-col py-28">
+    <div class="flex flex-col w-screen items-center">
       {services?.map((service, index) => (
-        <div
-          key={index}
-          class={`flex xl:container xl:mx-auto first:pt-0 py-12 lg:py-28 mx-5 md:mx-10 ${
-            PLACEMENT[service.placement]
-          } gap-12 md:gap-20 text-left items-center justify-evenly`}
-        >
-          <img
-            class="w-full lg:w-1/2 flex-1 object-cover rounded-xl aspect-[31/21]"
-            sizes="(max-width: 640px) 100vw, 30vw"
-            src={service.image}
-            alt={service.label}
-            decoding="async"
-            loading="lazy"
-          />
-          <div class="w-full lg:w-1/2 flex-1 space-y-2 lg:space-y-4 lg:max-w-xl gap-4">
-            {service.type && <p>{service.type}</p>}
-            <p class="text-base-content text-[36px] md:text-[48px] leading-[120%] font-bold">
-              {service.label}
-            </p>
-            <p
-              class="text-base-content text-[16px] md:text-[18px]"
-              dangerouslySetInnerHTML={{ __html: service.description || "" }}
-            >
-            </p>
+        <div class="lg:w-[1300px] ">
+          <div class="flex flex-col justify-center items-center sm-gap-6 sm:w-screen lg:w-[1300px] mx-auto gap-[21px] bg-primary  h-[163px] ">
+            <p class="text-accent text-2xl  font-bold">{service.label}</p>
+            {service.type && (
+              <p class="text-accent text-sm  font-[500]">{service.type}</p>
+            )}
+          </div>
+
+          <div
+            key={index}
+            class={`flex first:pt-0 py-[33px]  ${
+              PLACEMENT[service.placement]
+            } text-left items-center justify-center`}
+          >
+            <div class="bg-base-200 lg:w-[483px] lg:h-[383px] lg:mr-[20px] rounded-[50px] sm:w-[324px] sm:h-[295px] ">
+              <img
+                class="w-full h-full object-cover p-2"
+                sizes="(max-width: 640px) 100vw, 30vw"
+                src={service.image}
+                alt={service.label}
+                decoding="async"
+                loading="lazy"
+                width={483}
+                height={383}
+              />
+            </div>
+            <div class="lg:w-[661px] text-primary text-xs ">
+              <p
+                class="text-primary text-xs"
+                dangerouslySetInnerHTML={{ __html: service.description || "" }}
+              ></p>
+            </div>
           </div>
         </div>
       ))}
