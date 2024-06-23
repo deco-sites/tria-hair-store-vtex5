@@ -25,7 +25,7 @@ export interface Props {
 const Aside = (
   { title, onClose, children }: {
     title: string;
-    onClose?: () => void;
+    onClose?: () => void;git pull
     children: ComponentChildren;
   },
 ) => (
