@@ -1,5 +1,6 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import type { HTMLWidget } from "apps/admin/widgets.ts";
+import Image from "apps/website/components/Image.tsx";
 
 export interface ServiceProps {
   type?: string;
@@ -48,10 +49,9 @@ export default function Services({
               PLACEMENT[service.placement]
             } text-left items-center justify-center`}
           >
-            <div class="bg-base-200 lg:w-[483px] lg:h-[383px] lg:mr-[20px] rounded-[50px] sm:w-[324px] sm:h-[295px] ">
-              <img
+            <div class="bg-base-200 lg:w-[483px] lg:h-[383px] lg:mr-[20px] rounded-[50px] w-[324px] h-[295px] ">
+              <Image
                 class="w-full h-full object-cover p-2"
-                sizes="(max-width: 640px) 100vw, 30vw"
                 src={service.image}
                 alt={service.label}
                 decoding="async"
@@ -60,7 +60,7 @@ export default function Services({
                 height={383}
               />
             </div>
-            <div class="lg:w-[661px] text-primary text-xs ">
+            <div class="lg:w-[661px] text-primary text-xs">
               <p
                 class="text-primary text-xs"
                 dangerouslySetInnerHTML={{ __html: service.description || "" }}
