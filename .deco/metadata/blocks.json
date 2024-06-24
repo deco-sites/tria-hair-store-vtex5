@@ -341,12 +341,6 @@
     "blockType": "apps",
     "__resolveType": "site/apps/deco/vnda.ts"
   },
-  "/.deco/blocks/pages-Quem%2520somos-649079.json": {
-    "name": "Quem somos",
-    "path": "/quem-somos",
-    "blockType": "pages",
-    "__resolveType": "website/pages/Page.tsx"
-  },
   "/.deco/blocks/Preview%20%2Fsections%2FMarcas.tsx.json": {
     "blockType": "sections",
     "__resolveType": "site/sections/Marcas.tsx"
@@ -359,8 +353,10 @@
     "blockType": "sections",
     "__resolveType": "site/sections/News.tsx"
   },
-  "/.deco/blocks/Troia%20hair%20Copy.json": {
-    "blockType": "sections",
-    "__resolveType": "site/sections/Theme/Theme.tsx"
+  "/.deco/blocks/pages-Quem%2520somos-649079.json": {
+    "name": "Quem somos",
+    "path": "/quem-somos",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
   }
 }

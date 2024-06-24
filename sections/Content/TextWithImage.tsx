@@ -60,7 +60,7 @@ export default function Services({
                 height={383}
               />
             </div>
-            <div class="lg:w-[661px] text-primary text-xs">
+            <div class="lg:w-[661px] text-primary text-xs  m-7 lg:mx-0">
               <p
                 class="text-primary text-xs"
                 dangerouslySetInnerHTML={{ __html: service.description || "" }}
