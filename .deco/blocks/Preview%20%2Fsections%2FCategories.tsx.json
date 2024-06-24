@@ -1,3 +1,12 @@
 {
-  "__resolveType": "site/sections/Categories.tsx"
+  "__resolveType": "site/sections/Categories.tsx",
+  "categories": [
+    {}
+  ],
+  "layout": {
+    "numberOfCategories": {
+      "mobile": 1,
+      "desktop": 1
+    }
+  }
 }
