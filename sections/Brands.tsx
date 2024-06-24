@@ -7,8 +7,8 @@ export interface ImagesList {
 
 interface Props {
   /**
-  * @description The description of name.
-  */
+   * @description The description of name.
+   */
   title?: string;
   brandImages?: ImagesList[];
 }

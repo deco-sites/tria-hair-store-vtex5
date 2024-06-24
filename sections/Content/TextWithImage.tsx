@@ -64,7 +64,8 @@ export default function Services({
               <p
                 class="text-primary text-xs"
                 dangerouslySetInnerHTML={{ __html: service.description || "" }}
-              ></p>
+              >
+              </p>
             </div>
           </div>
         </div>
