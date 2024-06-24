@@ -61,12 +61,7 @@ function Navbar({
 
         <div class="flex justify-end gap-1">
           <SearchButton />
-          {platform === "vtex" && <CartButtonVTEX />}
           {platform === "vnda" && <CartButtonVDNA />}
-          {platform === "wake" && <CartButtonWake />}
-          {platform === "linx" && <CartButtonLinx />}
-          {platform === "shopify" && <CartButtonShopify />}
-          {platform === "nuvemshop" && <CartButtonNuvemshop />}
         </div>
       </div>
     );
