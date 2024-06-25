@@ -18,6 +18,10 @@
       ]
     },
     {
+      "__resolveType": "site/sections/VideoPost.tsx",
+      "video": "https://www.youtube.com/watch?v=utuMXtdq9oA"
+    },
+    {
       "__resolveType": "site/sections/Brands.tsx",
       "title": "Nossas Marcas",
       "brandImages": [
@@ -76,19 +80,30 @@
       "title": "NOTÍCIAS DO GRUPO",
       "news": [
         {
-          "titleNews": "teste",
-          "subtitleNews": "teste",
-          "video": "https://www.youtube.com/watch?v=yKwjzranD3k",
-          "post": "rrrrrrr"
+          "titleNews": "TÍTULO: XXXXXXXX",
+          "subtitleNews": "XXXXXXXXXXXXXXX",
+          "video": "https://www.youtube.com/watch?v=mi-4LRHh8rQ",
+          "post": "Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus."
+        },
+        {
+          "titleNews": "TÍTULO: XXXXXXXX",
+          "subtitleNews": "XXXXXXXXXXXXXXX",
+          "video": "https://www.youtube.com/watch?v=mi-4LRHh8rQ",
+          "post": "Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus."
+        },
+        {
+          "titleNews": "TÍTULO: XXXXXXXX",
+          "subtitleNews": "XXXXXXXXXXXXXXX",
+          "video": "https://www.youtube.com/watch?v=mi-4LRHh8rQ",
+          "post": "Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus.",
+          "image": {
+            "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/a4d77706-742d-4976-904b-80c94312d7e0"
+          }
         }
       ]
     },
     {
       "__resolveType": "Footer - 05"
-    },
-    {
-      "__resolveType": "site/sections/News.tsx",
-      "title": "Decorações"
     }
   ],
   "seo": {

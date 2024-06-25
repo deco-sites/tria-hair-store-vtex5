@@ -1,4 +1,4 @@
-import type { ImageWidget, VideoWidget } from "apps/admin/widgets.ts";
+import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import Icon from "../components/ui/Icon.tsx";
 import Slider from "../components/ui/Slider.tsx";
@@ -12,7 +12,7 @@ export interface GroupNews {
     src: ImageWidget;
     alt?: string;
   };
-  video?: string | "";
+  video?: string ;
   post?: string;
 }
 
@@ -34,7 +34,7 @@ const DEFAULT_PROPS: Props = {
         src: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/63ac083e-899f-4874-bd10-5eee034dd255",
         alt: "",
       },
-      video: "https://www.youtube.com/watch?v=yKwjzranD3k",
+      video: "https://www.youtube.com/watch?v=mi-4LRHh8rQ",
       post: "Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus.",
     },
     {
@@ -44,6 +44,7 @@ const DEFAULT_PROPS: Props = {
         src: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/63ac083e-899f-4874-bd10-5eee034dd255",
         alt: "",
       },
+      video: "https://www.youtube.com/watch?v=mi-4LRHh8rQ",
       post: "Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus.",
     },
     {
@@ -53,6 +54,7 @@ const DEFAULT_PROPS: Props = {
         src: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/63ac083e-899f-4874-bd10-5eee034dd255",
         alt: "",
       },
+      video: "https://www.youtube.com/watch?v=mi-4LRHh8rQ",
       post: "Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus.",
     },
   ],
@@ -70,8 +72,8 @@ const NewsPost = ({
 }: GroupNews) => (
   <div class="flex flex-col items-center gap-9 text-center">
     <div class="flex flex-col items-center">
-      <div class="w-[351px] h-[218px] sm:w-[316px] sm:h-[217px] bg-base-200 rounded-3xl">
-        {/* {image && (
+      <div class="w-[351px] h-[218px] sm:w-[316px] sm:h-[217px] bg-base-200 rounded-3xl flex items-center justify-center ">
+        {image ? (
           <Image
             src={image.src}
             alt={image?.alt || titleNews}
@@ -79,17 +81,16 @@ const NewsPost = ({
             height={217}
             class="rounded-xl object-cover"
           />
-        )} */}
-
-        <div>
-          <p>{video}</p>
-          {/* <IframeLoader
-            videoLink={video}
-            preload={false}
-            width={477}
-            height={311}
-          /> */}
-        </div>
+        ) : (
+          <div class="">
+            <IframeLoader
+              videoLink={video || ""}
+              preload={false}
+              width={316}
+              height={178}
+            />
+          </div>
+        )}
       </div>
       <div class="flex flex-col text-primary w-[316px]">
         <h3 class="text-2xl font-semibold text-center py-[28px]">
@@ -114,12 +115,13 @@ export default function NewsPosts(props: Props) {
       <h2 class="font-bold text-2xl text-center text-primary">{title}</h2>
       {layout?.variation === "Grid" && (
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
-          {news?.map(({ image, titleNews, post, subtitleNews }) => (
+          {news?.map(({ video, image, titleNews, post, subtitleNews }) => (
             <NewsPost
               image={image}
               titleNews={titleNews}
               post={post}
               subtitleNews={subtitleNews}
+              video={video}
             />
           ))}
         </div>
@@ -127,7 +129,7 @@ export default function NewsPosts(props: Props) {
       {layout?.variation !== "Grid" && (
         <div class="relative w-full px-8" id={id}>
           <Slider class="carousel carousel-start gap-4 lg:gap-8 row-start-2 row-end-5 w-full">
-            {news?.map(({ image, titleNews, post, subtitleNews }, index) => (
+            {news?.map(({ video,image, titleNews, post, subtitleNews }, index) => (
               <Slider.Item
                 index={index}
                 class="flex flex-col gap-4 carousel-item w-full"
@@ -137,6 +139,7 @@ export default function NewsPosts(props: Props) {
                   titleNews={titleNews}
                   post={post}
                   subtitleNews={subtitleNews}
+                  video={video}
                 />
               </Slider.Item>
             ))}
