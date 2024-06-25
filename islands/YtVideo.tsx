@@ -4,7 +4,7 @@ interface Props {
   /**
    * @title Link do vídeo
    */
-  videoLink: string;
+  videoLink: string | "";
   /**
    * @description A largura padrão é 477
    * @title Largura do Iframe
@@ -20,56 +20,51 @@ interface Props {
 
 const IframeLoader = ({
   videoLink,
-  preload,
   width = 477,
   height = 311,
 }: Props) => {
   const targetElement = useRef<HTMLIFrameElement | null>(null);
+  const embedLink = getEmbedLink(videoLink);
 
-  useEffect(() => {
-    const currentElement = targetElement.current;
-
-    if (!currentElement) {
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            currentElement.src = videoLink;
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.5 },
-    );
-
-    observer.observe(currentElement);
-
-    return () => observer.disconnect();
-  }, []);
-
-  function getEmbedLink(props: Props) {
+  // Função para extrair o ID do vídeo e gerar o embedLink
+  function getEmbedLink(videoLink: string) {
     // Extrair o ID do vídeo:
-    const url = new URL(props.videoLink);
-    const searchParams = new URLSearchParams(url.search);
-    const videoId = searchParams.get("v"); // Extrai o ID do parâmetro 'v'
-    console.log("2, videoid");
-    
+    const videoId = videoLink.split("v=")[1].split("&")[0];
+    console.log(videoId);
 
     // Criar o link embeddable:
     if (videoId) {
       const embedLink = `https://www.youtube.com/embed/${videoId}`;
       console.log(embedLink);
-      
       return embedLink;
     } else {
       return "Video não encontrado"; // Ou retorne um erro se o ID não for encontrado
     }
   }
 
-  const embedLink = getEmbedLink({videoLink});
+  // Usa o IntersectionObserver para carregar o iframe quando estiver na tela
+  // useEffect(() => {
+  //   const currentElement = targetElement.current;
+
+  //   if (!currentElement) {
+  //     return;
+  //   }
+
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach((entry) => {
+  //         if (entry.isIntersecting) {
+  //           observer.unobserve(entry.target);
+  //         }
+  //       });
+  //     },
+  //     { threshold: 0.5 } // Define o limiar de visibilidade para o carregamento
+  //   );
+
+  //   observer.observe(currentElement);
+
+  //   return () => observer.disconnect();
+  // }, []); // Dependência vazia, pois só queremos observar uma vez
 
   return (
     <div class="h-full w-full">
@@ -77,14 +72,14 @@ const IframeLoader = ({
         style={{ maxWidth: width, height, borderRadius: 8 }}
         width={width}
         height={height}
-        src={embedLink}
+        src={embedLink} // Defina o src aqui!
         title="YouTube video player"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         class="w-full h-full"
         allowFullScreen
         ref={targetElement}
-        loading={preload ? "eager" : "lazy"}
+        loading="lazy" // Carrega o iframe quando estiver visível
       ></iframe>
     </div>
   );

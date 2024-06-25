@@ -1,6 +1,5 @@
 import type { ImageWidget, VideoWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
-import Video from "apps/website/components/Video.tsx";
 import Icon from "../components/ui/Icon.tsx";
 import Slider from "../components/ui/Slider.tsx";
 import { useId } from "../sdk/useId.ts";
@@ -13,7 +12,7 @@ export interface GroupNews {
     src: ImageWidget;
     alt?: string;
   };
-  video?: string;
+  video?: string | "";
   post?: string;
 }
 
@@ -32,34 +31,29 @@ const DEFAULT_PROPS: Props = {
       titleNews: "TÍTULO: XXXXXXXX",
       subtitleNews: "XXXXXXXXXXXXXXX",
       image: {
-        src:
-          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/63ac083e-899f-4874-bd10-5eee034dd255",
+        src: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/63ac083e-899f-4874-bd10-5eee034dd255",
         alt: "",
       },
-      post:
-        "Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus.",
+      video: "https://www.youtube.com/watch?v=yKwjzranD3k",
+      post: "Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus.",
     },
     {
       titleNews: "TÍTULO: XXXXXXXX",
       subtitleNews: "XXXXXXXXXXXXXXX",
       image: {
-        src:
-          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/63ac083e-899f-4874-bd10-5eee034dd255",
+        src: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/63ac083e-899f-4874-bd10-5eee034dd255",
         alt: "",
       },
-      post:
-        "Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus.",
+      post: "Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus.",
     },
     {
       titleNews: "TÍTULO: XXXXXXXX",
       subtitleNews: "XXXXXXXXXXXXXXX",
       image: {
-        src:
-          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/63ac083e-899f-4874-bd10-5eee034dd255",
+        src: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/63ac083e-899f-4874-bd10-5eee034dd255",
         alt: "",
       },
-      post:
-        "Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus.",
+      post: "Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus.",
     },
   ],
   layout: {
@@ -77,7 +71,7 @@ const NewsPost = ({
   <div class="flex flex-col items-center gap-9 text-center">
     <div class="flex flex-col items-center">
       <div class="w-[351px] h-[218px] sm:w-[316px] sm:h-[217px] bg-base-200 rounded-3xl">
-        {image ? (
+        {/* {image && (
           <Image
             src={image.src}
             alt={image?.alt || titleNews}
@@ -85,18 +79,17 @@ const NewsPost = ({
             height={217}
             class="rounded-xl object-cover"
           />
-        ) : (
-          video && (
-            <div>
-              <IframeLoader
-                videoLink={video}
-                preload={false}
-                width={477}
-                height={311}
-              />
-            </div>
-          )
-        )}
+        )} */}
+
+        <div>
+          <p>{video}</p>
+          {/* <IframeLoader
+            videoLink={video}
+            preload={false}
+            width={477}
+            height={311}
+          /> */}
+        </div>
       </div>
       <div class="flex flex-col text-primary w-[316px]">
         <h3 class="text-2xl font-semibold text-center py-[28px]">

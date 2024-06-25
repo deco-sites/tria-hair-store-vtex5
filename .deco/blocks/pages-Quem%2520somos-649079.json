@@ -79,18 +79,16 @@
           "titleNews": "teste",
           "subtitleNews": "teste",
           "video": "https://www.youtube.com/watch?v=yKwjzranD3k",
-          "post": "erfgthyuiojyhtgf"
-        },
-        {
-          "titleNews": "ertyu",
-          "subtitleNews": "ryeytytre",
-          "video": "https://www.youtube.com/watch?v=yKwjzranD3k",
-          "post": "rrrrrrrrr"
+          "post": "rrrrrrr"
         }
       ]
     },
     {
       "__resolveType": "Footer - 05"
+    },
+    {
+      "__resolveType": "site/sections/News.tsx",
+      "title": "Decorações"
     }
   ],
   "seo": {
