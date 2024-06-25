@@ -1,5 +1,3 @@
-
-
 interface Props {
   /**
    * @description The description of name.
