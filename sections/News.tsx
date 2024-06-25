@@ -13,7 +13,7 @@ export interface GroupNews {
     alt?: string;
   };
   video?: VideoWidget;
-  post?:string;
+  post?: string;
 }
 
 export interface Props {
@@ -31,28 +31,34 @@ const DEFAULT_PROPS: Props = {
       titleNews: "TÍTULO: XXXXXXXX",
       subtitleNews: "XXXXXXXXXXXXXXX",
       image: {
-        src: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/63ac083e-899f-4874-bd10-5eee034dd255",
+        src:
+          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/63ac083e-899f-4874-bd10-5eee034dd255",
         alt: "",
       },
-      post: "Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus.",
+      post:
+        "Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus.",
     },
     {
       titleNews: "TÍTULO: XXXXXXXX",
       subtitleNews: "XXXXXXXXXXXXXXX",
       image: {
-        src: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/63ac083e-899f-4874-bd10-5eee034dd255",
+        src:
+          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/63ac083e-899f-4874-bd10-5eee034dd255",
         alt: "",
       },
-      post: "Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus.",
+      post:
+        "Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus.",
     },
     {
       titleNews: "TÍTULO: XXXXXXXX",
       subtitleNews: "XXXXXXXXXXXXXXX",
       image: {
-        src: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/63ac083e-899f-4874-bd10-5eee034dd255",
+        src:
+          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/63ac083e-899f-4874-bd10-5eee034dd255",
         alt: "",
       },
-      post: "Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus.",
+      post:
+        "Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus.",
     },
   ],
   layout: {
@@ -70,30 +76,32 @@ const NewsPost = ({
   <div class="flex flex-col items-center gap-9 text-center">
     <div class="flex flex-col items-center">
       <div class="w-[351px] h-[218px] sm:w-[316px] sm:h-[217px] bg-base-200 rounded-3xl">
-        {image ? (
-          <Image
-            src={image.src}
-            alt={image?.alt || titleNews}
-            width={316}
-            height={217}
-            class="rounded-xl object-cover"
-          />
-        ) : (
-          video && (
-            <Video
-              loading="lazy"
-              autoPlay
-              loop
-              controls={false}
-              muted
+        {image
+          ? (
+            <Image
+              src={image.src}
+              alt={image?.alt || titleNews}
               width={316}
               height={217}
-              media="(max-width: 767px)"
-              class="object-cover rounded-sm "
-              src={video}
+              class="rounded-xl object-cover"
             />
           )
-        )}
+          : (
+            video && (
+              <Video
+                loading="lazy"
+                autoPlay
+                loop
+                controls={false}
+                muted
+                width={316}
+                height={217}
+                media="(max-width: 767px)"
+                class="object-cover rounded-sm "
+                src={video}
+              />
+            )
+          )}
       </div>
       <div class="flex flex-col text-primary w-[316px]">
         <h3 class="text-2xl font-semibold text-center py-[28px]">

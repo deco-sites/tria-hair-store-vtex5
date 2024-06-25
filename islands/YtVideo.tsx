@@ -42,7 +42,7 @@ const IframeLoader = ({
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
 
     observer.observe(currentElement);
@@ -64,7 +64,8 @@ const IframeLoader = ({
         allowFullScreen
         ref={targetElement}
         loading={preload ? "eager" : "lazy"}
-      ></iframe>
+      >
+      </iframe>
     </div>
   );
 };
