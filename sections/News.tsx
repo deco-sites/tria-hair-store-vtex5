@@ -4,6 +4,7 @@ import Video from "apps/website/components/Video.tsx";
 import Icon from "../components/ui/Icon.tsx";
 import Slider from "../components/ui/Slider.tsx";
 import { useId } from "../sdk/useId.ts";
+import IframeLoader from "../islands/YtVideo.tsx";
 
 export interface GroupNews {
   titleNews?: string;
@@ -12,7 +13,7 @@ export interface GroupNews {
     src: ImageWidget;
     alt?: string;
   };
-  video?: VideoWidget;
+  video?: string;
   post?: string;
 }
 
@@ -76,32 +77,26 @@ const NewsPost = ({
   <div class="flex flex-col items-center gap-9 text-center">
     <div class="flex flex-col items-center">
       <div class="w-[351px] h-[218px] sm:w-[316px] sm:h-[217px] bg-base-200 rounded-3xl">
-        {image
-          ? (
-            <Image
-              src={image.src}
-              alt={image?.alt || titleNews}
-              width={316}
-              height={217}
-              class="rounded-xl object-cover"
-            />
-          )
-          : (
-            video && (
-              <Video
-                loading="lazy"
-                autoPlay
-                loop
-                controls={false}
-                muted
-                width={316}
-                height={217}
-                media="(max-width: 767px)"
-                class="object-cover rounded-sm "
-                src={video}
+        {image ? (
+          <Image
+            src={image.src}
+            alt={image?.alt || titleNews}
+            width={316}
+            height={217}
+            class="rounded-xl object-cover"
+          />
+        ) : (
+          video && (
+            <div>
+              <IframeLoader
+                videoLink={video}
+                preload={false}
+                width={477}
+                height={311}
               />
-            )
-          )}
+            </div>
+          )
+        )}
       </div>
       <div class="flex flex-col text-primary w-[316px]">
         <h3 class="text-2xl font-semibold text-center py-[28px]">

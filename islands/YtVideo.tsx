@@ -50,13 +50,34 @@ const IframeLoader = ({
     return () => observer.disconnect();
   }, []);
 
+  function getEmbedLink(props: Props) {
+    // Extrair o ID do vídeo:
+    const url = new URL(props.videoLink);
+    const searchParams = new URLSearchParams(url.search);
+    const videoId = searchParams.get("v"); // Extrai o ID do parâmetro 'v'
+    console.log("2, videoid");
+    
+
+    // Criar o link embeddable:
+    if (videoId) {
+      const embedLink = `https://www.youtube.com/embed/${videoId}`;
+      console.log(embedLink);
+      
+      return embedLink;
+    } else {
+      return "Video não encontrado"; // Ou retorne um erro se o ID não for encontrado
+    }
+  }
+
+  const embedLink = getEmbedLink({videoLink});
+
   return (
     <div class="h-full w-full">
       <iframe
         style={{ maxWidth: width, height, borderRadius: 8 }}
         width={width}
         height={height}
-        src={videoLink}
+        src={embedLink}
         title="YouTube video player"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -64,8 +85,7 @@ const IframeLoader = ({
         allowFullScreen
         ref={targetElement}
         loading={preload ? "eager" : "lazy"}
-      >
-      </iframe>
+      ></iframe>
     </div>
   );
 };

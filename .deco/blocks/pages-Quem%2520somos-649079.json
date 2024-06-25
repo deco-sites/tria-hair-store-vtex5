@@ -72,19 +72,25 @@
       ]
     },
     {
+      "__resolveType": "Footer - 05"
+    },
+    {
       "__resolveType": "site/sections/News.tsx",
       "title": "NOTÍCIAS DO GRUPO",
       "news": [
         {
-          "video": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/9b1deef4-b763-436d-9cc5-d1480b812316",
-          "post": "sdfgh",
-          "subtitleNews": "fdgdsagga",
-          "titleNews": "sddd"
+          "titleNews": "teste",
+          "subtitleNews": "teste",
+          "video": "https://www.youtube.com/watch?v=yKwjzranD3k",
+          "post": "erfgthyuiojyhtgf"
+        },
+        {
+          "titleNews": "ertyu",
+          "subtitleNews": "ryeytytre",
+          "video": "https://www.youtube.com/watch?v=yKwjzranD3k",
+          "post": "rrrrrrrrr"
         }
       ]
-    },
-    {
-      "__resolveType": "Footer - 05"
     }
   ],
   "seo": {
