@@ -72,9 +72,6 @@
       ]
     },
     {
-      "__resolveType": "Footer - 05"
-    },
-    {
       "__resolveType": "site/sections/News.tsx",
       "title": "NOTÍCIAS DO GRUPO",
       "news": [
@@ -91,6 +88,9 @@
           "post": "rrrrrrrrr"
         }
       ]
+    },
+    {
+      "__resolveType": "Footer - 05"
     }
   ],
   "seo": {
