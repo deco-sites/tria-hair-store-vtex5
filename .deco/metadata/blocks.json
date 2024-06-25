@@ -352,11 +352,5 @@
   "/.deco/blocks/Preview%20%2Fsections%2FNews.tsx.json": {
     "blockType": "sections",
     "__resolveType": "site/sections/News.tsx"
-  },
-  "/.deco/blocks/pages-Quem%2520somos-649079.json": {
-    "name": "Quem somos",
-    "path": "/quem-somos",
-    "blockType": "pages",
-    "__resolveType": "website/pages/Page.tsx"
   }
 }

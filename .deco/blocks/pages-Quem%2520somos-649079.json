@@ -72,7 +72,16 @@
       ]
     },
     {
-      "__resolveType": "Preview /sections/News.tsx"
+      "__resolveType": "site/sections/News.tsx",
+      "title": "NOTÍCIAS DO GRUPO",
+      "news": [
+        {
+          "video": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/9b1deef4-b763-436d-9cc5-d1480b812316",
+          "post": "sdfgh",
+          "subtitleNews": "fdgdsagga",
+          "titleNews": "sddd"
+        }
+      ]
     },
     {
       "__resolveType": "Footer - 05"
