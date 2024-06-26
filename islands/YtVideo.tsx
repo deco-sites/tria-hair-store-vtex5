@@ -58,7 +58,7 @@ const IframeLoader = ({
           }
         });
       },
-      { threshold: 0.5 } // Define o limiar de visibilidade para o carregamento
+      { threshold: 0.5 }, // Define o limiar de visibilidade para o carregamento
     );
 
     observer.observe(currentElement);
@@ -69,7 +69,7 @@ const IframeLoader = ({
   return (
     <div class="h-full w-full">
       <iframe
-        style={{ maxWidth: width, height, borderRadius: 8 }}
+        style={{ maxWidth: width, maxHeight: height, borderRadius: 12 }}
         width={width}
         height={height}
         src={embedLink} // Defina o src aqui!
@@ -80,7 +80,8 @@ const IframeLoader = ({
         allowFullScreen
         ref={targetElement}
         loading="lazy" // Carrega o iframe quando estiver visível
-      ></iframe>
+      >
+      </iframe>
     </div>
   );
 };

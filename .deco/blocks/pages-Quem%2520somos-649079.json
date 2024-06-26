@@ -19,7 +19,10 @@
     },
     {
       "__resolveType": "site/sections/VideoPost.tsx",
-      "video": "https://www.youtube.com/watch?v=utuMXtdq9oA"
+      "video": "https://www.youtube.com/watch?v=qYl64LcxlGo",
+      "title": "TÍTULO: XXXXXXXXXXXXXXXXXX",
+      "subtile": "SUBTÍTULO: XXXXXXXXXXXXXXXXXX",
+      "text": "Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus. Consectetur vivamus sed mi proin. Suspendisse enim mauris at semper. Eros mauris adipiscing facilisis nulla. Elit vulputate pellentesque non ac donec pulvinar feugiat feugiat. Feugiat congue erat sodales at egestas aliquam imperdiet. Tellus nulla elementum purus lacus velit in ac ut ultrices. Maecenas sit nec eleifend elementum. Enim viverra vulputate sed luctus platea quam vitae. Sagittis nisl sociis enim mauris amet leo vitae enim eget. Sed laoreet elementum ultricies proin aliquet euismod porttitor volutpat at. Enim in id molestie sollicitudin. Nunc pharetra nunc mi libero in bibendum id urna. Quis bibendum id mauris faucibus nunc. Vehicula tellus purus mollis risus in libero vitae. Felis pharetra faucibus consectetur tellus faucibus euismod tempor varius. Et tincidunt vestibulum duis sit."
     },
     {
       "__resolveType": "site/sections/Brands.tsx",
@@ -89,6 +92,33 @@
           "titleNews": "TÍTULO: XXXXXXXX",
           "subtitleNews": "XXXXXXXXXXXXXXX",
           "video": "https://www.youtube.com/watch?v=mi-4LRHh8rQ",
+          "post": "Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus.",
+          "image": {
+            "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/a4d77706-742d-4976-904b-80c94312d7e0"
+          }
+        },
+        {
+          "titleNews": "TÍTULO: XXXXXXXX",
+          "subtitleNews": "XXXXXXXXXXXXXXX",
+          "video": "https://www.youtube.com/watch?v=mi-4LRHh8rQ",
+          "post": "Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus.",
+          "image": {
+            "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/a4d77706-742d-4976-904b-80c94312d7e0"
+          }
+        },
+        {
+          "titleNews": "TÍTULO: XXXXXXXX",
+          "subtitleNews": "XXXXXXXXXXXXXXX",
+          "video": "https://www.youtube.com/watch?v=mi-4LRHh8rQ",
+          "post": "Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus.",
+          "image": {
+            "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/a4d77706-742d-4976-904b-80c94312d7e0"
+          }
+        },
+        {
+          "titleNews": "TÍTULO: XXXXXXXX",
+          "subtitleNews": "XXXXXXXXXXXXXXX",
+          "video": "https://www.youtube.com/watch?v=mi-4LRHh8rQ",
           "post": "Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus."
         },
         {
@@ -99,8 +129,16 @@
           "image": {
             "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/a4d77706-742d-4976-904b-80c94312d7e0"
           }
+        },
+        {
+          "titleNews": "TÍTULO: XXXXXXXX",
+          "subtitleNews": "XXXXXXXXXXXXXXX",
+          "video": "https://www.youtube.com/watch?v=mi-4LRHh8rQ",
+          "post": "Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus."
         }
-      ]
+      ],
+      "dots": true,
+      "interval": 2
     },
     {
       "__resolveType": "Footer - 05"
