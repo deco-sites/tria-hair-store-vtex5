@@ -1,0 +1,46 @@
+{
+  "name": "Marcas",
+  "path": "/marcas",
+  "sections": [
+    {
+      "__resolveType": "Header - 01"
+    },
+    {
+      "__resolveType": "site/sections/TopBar.tsx",
+      "imageFormat": "Circulo",
+      "content": [
+        {
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/83e70d67-5beb-43fd-b41e-79d55c24efc7",
+          "href": "/",
+          "title": "Lorem ipsum dolor ",
+          "subtitle": "sit amet consectetur"
+        },
+        {
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/83e70d67-5beb-43fd-b41e-79d55c24efc7",
+          "href": "/",
+          "title": "Lorem ipsum dolor ",
+          "subtitle": "sit amet consectetur"
+        },
+        {
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/83e70d67-5beb-43fd-b41e-79d55c24efc7",
+          "href": "/",
+          "title": "Lorem ipsum dolor ",
+          "subtitle": "sit amet consectetur"
+        },
+        {
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/83e70d67-5beb-43fd-b41e-79d55c24efc7",
+          "href": "/",
+          "title": "Lorem ipsum dolor ",
+          "subtitle": "sit amet consectetur"
+        }
+      ]
+    },
+    {
+      "__resolveType": "Footer - 05"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}

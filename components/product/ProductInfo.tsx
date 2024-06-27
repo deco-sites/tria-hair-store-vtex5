@@ -8,8 +8,6 @@ import AddToCartButtonWake from "../../islands/AddToCartButton/wake.tsx";
 import AddToCartButtonNuvemshop from "../../islands/AddToCartButton/nuvemshop.tsx";
 import OutOfStock from "../../islands/OutOfStock.tsx";
 import ShippingSimulation from "../../islands/ShippingSimulation.tsx";
-import WishlistButtonVtex from "../../islands/WishlistButton/vtex.tsx";
-import WishlistButtonWake from "../../islands/WishlistButton/wake.tsx";
 import { formatPrice } from "../../sdk/format.ts";
 import { useId } from "../../sdk/useId.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
