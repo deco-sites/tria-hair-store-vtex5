@@ -3,12 +3,7 @@
 // } from "../search/Searchbar.tsx";
 import Icon from "../../components/ui/Icon.tsx";
 import { MenuButton, SearchButton } from "../../islands/Header/Buttons.tsx";
-import CartButtonLinx from "../../islands/Header/Cart/linx.tsx";
-import CartButtonShopify from "../../islands/Header/Cart/shopify.tsx";
 import CartButtonVDNA from "../../islands/Header/Cart/vnda.tsx";
-import CartButtonVTEX from "../../islands/Header/Cart/vtex.tsx";
-import CartButtonWake from "../../islands/Header/Cart/wake.tsx";
-import CartButtonNuvemshop from "../../islands/Header/Cart/nuvemshop.tsx";
 // import Searchbar from "../../islands/Header/Searchbar.tsx";
 import { usePlatform } from "../../sdk/usePlatform.tsx";
 import type { SiteNavigationElement } from "apps/commerce/types.ts";
@@ -40,7 +35,7 @@ function Navbar({
     return (
       <div
         style={{ height: navbarHeight }}
-        class="lg:hidden grid grid-cols-3 justify-between items-center border-b border-base-200 w-full px-6 pb-6 gap-2"
+        class="lg:hidden grid grid-cols-3 justify-between items-center  w-full px-6 pb-6 gap-2"
       >
         <MenuButton />
         {logo && (
@@ -110,12 +105,7 @@ function Navbar({
         <div class="flex gap-5">
           {!buttons?.hideCartButton && (
             <div class="flex items-center justify-center font-normal btn btn-primary btn-outline border rounded-full p-0 m-0 w-[43px] h-[43px] min-h-0 ">
-              {platform === "vtex" && <CartButtonVTEX />}
               {platform === "vnda" && <CartButtonVDNA />}
-              {platform === "wake" && <CartButtonWake />}
-              {platform === "linx" && <CartButtonLinx />}
-              {platform === "shopify" && <CartButtonShopify />}
-              {platform === "nuvemshop" && <CartButtonNuvemshop />}
             </div>
           )}
 

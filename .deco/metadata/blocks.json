@@ -366,5 +366,13 @@
   "/.deco/blocks/Preview%20site%2Fsections%2FAnimation%2FAnimation.tsx.json": {
     "blockType": "sections",
     "__resolveType": "site/sections/Animation/Animation.tsx"
+  },
+  "/.deco/blocks/InformationBarMobile.json": {
+    "blockType": "sections",
+    "__resolveType": "site/sections/Miscellaneous/Slide.tsx"
+  },
+  "/.deco/blocks/Preview%20%2Fsections%2FInformarionBarMobile.tsx.json": {
+    "blockType": "sections",
+    "__resolveType": "site/sections/InformarionBarMobile.tsx"
   }
 }

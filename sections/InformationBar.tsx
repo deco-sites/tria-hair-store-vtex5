@@ -20,7 +20,7 @@ export interface Props {
   informationBar: Item[];
 }
 
-export default function HeroFlats({ informationBar }: Props) {
+export default function InformationBar({ informationBar }: Props) {
   return (
     <div class="flex flex-col items-center">
       <div class="flex justify-between items-center bg-primary lg:w-[1300px] w-full h-14 px-10">

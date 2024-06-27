@@ -16,7 +16,7 @@ export interface LongBanner {
 interface Props {
   bannerList?: BannerItem[];
   wideBanner?: LongBanner;
-  bannerType: "Banner comprido" | "Lista de banners"
+  bannerType: "Banner comprido" | "Lista de banners";
 }
 
 export default function Section({ bannerList, wideBanner, bannerType }: Props) {
