@@ -384,5 +384,13 @@
   "/.deco/blocks/Preview%20%2Fsections%2FTopBar.tsx.json": {
     "blockType": "sections",
     "__resolveType": "site/sections/TopBar.tsx"
+  },
+  "/.deco/blocks/Preview%20%2Fsections%2FBrandTopImage.tsx.json": {
+    "blockType": "sections",
+    "__resolveType": "site/sections/BrandTopImage.tsx"
+  },
+  "/.deco/blocks/Preview%20%2Fsections%2FBrandText.tsx.json": {
+    "blockType": "sections",
+    "__resolveType": "site/sections/BrandText.tsx"
   }
 }
