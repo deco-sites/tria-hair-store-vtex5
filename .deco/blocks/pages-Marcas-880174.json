@@ -12,7 +12,7 @@
     },
     {
       "__resolveType": "site/sections/TopBar.tsx",
-      "imageFormat": "Circulo",
+      "imageFormat": "Quadrado",
       "content": [
         {
           "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/83e70d67-5beb-43fd-b41e-79d55c24efc7",
@@ -45,14 +45,32 @@
     {
       "__resolveType": "site/sections/BrandText.tsx",
       "text": "<p>Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus. Consectetur vivamus sed mi proin. Suspendisse enim mauris at semper. Eros mauris adipiscing facilisis nulla. Elit vulputate pellentesque non ac donec pulvinar feugiat feugiat. Feugiat congue erat sodales at egestas aliquam imperdiet. Tellus nulla elementum purus lacus velit in ac ut ultrices. Maecenas sit nec eleifend elementum. Enim viverra vulputate sed luctus platea quam vitae. Sagittis nisl sociis enim mauris amet leo vitae enim eget. Sed laoreet elementum ultricies proin aliquet euismod porttitor volutpat at. Enim in id molestie sollicitudin. Nunc pharetra nunc mi libero in bibendum id urna. Quis bibendum id mauris faucibus nunc. Vehicula tellus purus mollis risus in libero vitae. Felis pharetra faucibus consectetur tellus faucibus euismod tempor varius. Et tincidunt vestibulum duis sit.</p>",
-      "title": "BELEZA É VIDA, É SER FELiz",
-      "backgroundColor": false
+      "title": "BELEZA É VIDA, É SER FELIZ",
+      "backgroundColor": false,
+      "mobile": true
+    },
+    {
+      "__resolveType": "site/sections/BrandBanners.tsx",
+      "bannersType": "Medio",
+      "banners": [
+        {
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/41cc28bf-70a4-4557-a883-cdb4949b1d35",
+          "alt": "teste"
+        },
+        {
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/41cc28bf-70a4-4557-a883-cdb4949b1d35",
+          "alt": "teste",
+          "href": "/"
+        }
+      ],
+      "mobile": true
     },
     {
       "__resolveType": "site/sections/BrandText.tsx",
       "text": "<p>Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus. Consectetur vivamus sed mi proin. Suspendisse enim mauris at semper. Eros mauris adipiscing facilisis nulla. Elit vulputate pellentesque non ac donec pulvinar feugiat feugiat. Feugiat congue erat sodales at egestas aliquam imperdiet. Tellus nulla elementum purus lacus velit in ac ut ultrices. Maecenas sit nec eleifend elementum. Enim viverra vulputate sed luctus platea quam vitae. Sagittis nisl sociis enim mauris amet leo vitae enim eget. Sed laoreet elementum ultricies proin aliquet euismod porttitor volutpat at. Enim in id molestie sollicitudin. Nunc pharetra nunc mi libero in bibendum id urna. Quis bibendum id mauris faucibus nunc. Vehicula tellus purus mollis risus in libero vitae. Felis pharetra faucibus consectetur tellus faucibus euismod tempor varius. Et tincidunt vestibulum duis sit.</p>",
       "title": "BELEZA É VIDA, É SER FELiz 2",
-      "backgroundColor": true
+      "backgroundColor": true,
+      "mobile": true
     },
     {
       "__resolveType": "Footer - 05"

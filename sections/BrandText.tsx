@@ -7,23 +7,27 @@ interface Props {
   title: string;
   text: HTMLWidget;
   backgroundColor: boolean;
+  mobile: boolean;
 }
 
-export default function BrandText({ title, text, backgroundColor= true }: Props) {
+export default function BrandText({ title, text, backgroundColor= true, mobile= true}: Props) {
   return (
     <div
-      class={`text-primary md:max-w-[1114px] h-auto mx-auto mb-[58px] ${
-        backgroundColor ? "bg-accent rounded-xl md:pt-[56px] md:pb-[79px]" : "mt-[97px]"
-      }`}
+      class={`text-primary md:max-w-[1114px] h-auto md:mx-auto mb-[58px]  ${
+        backgroundColor
+          ? "bg-accent rounded-xl md:pt-[56px] md:pb-[79px] w-screen mx-6 py-10"
+          : "mt-[97px]"
+      } ${mobile || "hidden"}`}
     >
-      <p class="text-2xl text-center font-bold uppercase  mb-[56px]">{title}</p>
+      <p class="text-2xl text-center font-bold uppercase  mb-[56px] w-[220px] md:w-[360px] mx-auto">
+        {title}
+      </p>
       <div
-        class={`w-full text-[12px]  ${
-          backgroundColor ? "md:px-[42px]" : ""
-        }`}
+        class={`text-[12px] ${
+          backgroundColor ? "md:px-[42px] px-7 " : "px-6"
+        } w-screen md:w-full`}
         dangerouslySetInnerHTML={{ __html: text }}
-      >
-      </div>
+      ></div>
     </div>
   );
 }
