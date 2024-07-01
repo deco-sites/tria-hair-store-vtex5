@@ -3492,7 +3492,7 @@
             "content": [
               {
                 "type": "stack",
-                "width": 41.66666666666667,
+                "width": 29.058534114141466,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
@@ -3514,7 +3514,7 @@
               },
               {
                 "type": "stack",
-                "width": 58.333333333333336,
+                "width": 70.94146588585853,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
@@ -4931,7 +4931,8 @@
           "width": 30,
           "id": "%2F.deco%2Fblocks%2Fpages-Marcas-880174.json::Properties::list::Properties::%7B%7D",
           "state": {
-            "__signal": null
+            "__signal": null,
+            "value": null
           }
         },
         "%2F.deco%2Fblocks%2Fpages-Marcas-880174.json::Preview::world::Preview::%7B%7D": {
