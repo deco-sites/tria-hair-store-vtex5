@@ -396,5 +396,15 @@
   "/.deco/blocks/Preview%20%2Fsections%2FBrandBanners.tsx.json": {
     "blockType": "sections",
     "__resolveType": "site/sections/BrandBanners.tsx"
+  },
+  "/.deco/blocks/pages-Contato-524025.json": {
+    "name": "Contato",
+    "path": "/contato",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
+  },
+  "/.deco/blocks/Preview%20%2Fsections%2FContactForm.tsx.json": {
+    "blockType": "sections",
+    "__resolveType": "site/sections/ContactForm.tsx"
   }
 }
