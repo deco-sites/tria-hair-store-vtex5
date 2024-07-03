@@ -1,6 +1,7 @@
 {
   "logo": {
-    "description": "Loren Ipsum"
+    "description": "Loren Ipsum",
+    "textLogo": "Tróia Hair"
   },
   "layout": {
     "hide": {
@@ -175,7 +176,9 @@
       "helpText": "<p>Ao se inscrever, você está aceitando nossa <a href=\"/\" class=\"link\">Política de Privacidade</a>.</p>",
       "placeholder": "Digite seu email",
       "buttonText": "Inscrever"
-    }
+    },
+    "title": "Assine nossa newsletter",
+    "description": "Fique por dentro de nossas novidades e descontos"
   },
   "backToTheTop": {
     "text": "Voltar ao topo"

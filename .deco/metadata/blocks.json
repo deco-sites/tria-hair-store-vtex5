@@ -406,5 +406,17 @@
   "/.deco/blocks/Preview%20%2Fsections%2FContactForm.tsx.json": {
     "blockType": "sections",
     "__resolveType": "site/sections/ContactForm.tsx"
+  },
+  "/.deco/blocks/pages-Politica%2520de%2520Privacidade-272084.json": {
+    "name": "Politica de Privacidade",
+    "path": "/politica-de-privacidade",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
+  },
+  "/.deco/blocks/pages-Troca%2520e%2520devolu%25C3%25A7%25C3%25A3o-762783.json": {
+    "name": "Troca e devolução",
+    "path": "/troca-e-devolucao",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
   }
 }
