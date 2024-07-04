@@ -32,7 +32,8 @@ export default function BrandText({
           backgroundColor ? "md:px-[42px] px-7" : "px-6"
         } w-screen md:w-full`}
         dangerouslySetInnerHTML={{ __html: text }}
-      ></div>
+      >
+      </div>
     </div>
   );
 }

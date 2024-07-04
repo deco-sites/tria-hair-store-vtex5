@@ -2,8 +2,8 @@ import { HTMLWidget } from "apps/admin/widgets.ts";
 
 interface Props {
   /**
-  * @description The description of name.
-  */
+   * @description The description of name.
+   */
   title?: string;
   text: HTMLWidget;
 }
@@ -15,7 +15,8 @@ export default function LongTextContent({ title, text }: Props) {
       <div
         dangerouslySetInnerHTML={{ __html: text }}
         class="leading-loose mb-10 px-10"
-      ></div>
+      >
+      </div>
     </div>
   );
 }

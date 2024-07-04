@@ -29,11 +29,11 @@ export default function TopBar({ imageFormat = "Quadrado", content }: Props) {
           >
             {item.image && (
               <Image
-              class="object-cover"
-              src={item.image}
-              alt={item.title}
-              width={60}
-              height={42}
+                class="object-cover"
+                src={item.image}
+                alt={item.title}
+                width={60}
+                height={42}
               />
             )}
           </div>

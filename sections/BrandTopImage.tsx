@@ -12,15 +12,13 @@ interface Props {
 export default function BrandTopImage({ image, alt }: Props) {
   return (
     <div class="hidden md:flex md:max-w-[1300px] md:mx-auto">
-     
-        <Image
-          class="object-cover"
-          src={image}
-          alt={alt}
-          width={1300}
-          height={300}
-        />
-      
+      <Image
+        class="object-cover"
+        src={image}
+        alt={alt}
+        width={1300}
+        height={300}
+      />
     </div>
   );
 }
