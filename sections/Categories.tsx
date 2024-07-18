@@ -133,11 +133,11 @@ function Categories({
         <div class="flex flex-col items-center">
           <a
             href={content?.href}
-            class="flex items-center justify-center w-[115px] h-[115px] rounded-full border border-primary"
+            class="flex items-center justify-center w-[115px] h-[115px] rounded-full border border-primary hover:bg-accent"
           >
             <div>
               <Image
-                class="object-cover"
+                class="object-cover hover:w-[135px] hover:h-[135px]"
                 alt={content?.alt}
                 src={content?.image || ""}
                 width={83}
