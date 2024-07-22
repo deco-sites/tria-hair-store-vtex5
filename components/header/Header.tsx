@@ -85,12 +85,13 @@ function Header({
     <>
       <header class="h-[95px] w-[1300px] p-0 mx-auto">
         <Drawers menu={{ items }} searchbar={searchbar} platform={platform}>
+        
           <div class=" fixed h-[95px] w-[1300px] z-50 mx-auto">
             {alerts && alerts.length > 0 && <Alert alerts={alerts} />}
             <Navbar
               device={device}
               items={items}
-              //searchbar={searchbar && { ...searchbar, platform }}
+              searchbar={searchbar && { ...searchbar, platform }}
               logo={logo}
               logoPosition={logoPosition}
               buttons={buttons}

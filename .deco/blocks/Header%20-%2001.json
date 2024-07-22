@@ -19,16 +19,21 @@
     "loader": {
       "data": {
         "count": 4,
-        "__resolveType": "vtex/loaders/intelligentSearch/suggestions.ts"
+        "__resolveType": "vtex/loaders/intelligentSearch/suggestions.ts",
+        "searches": [],
+        "products": []
       },
       "__resolveType": "resolved"
     },
-    "placeholder": "O que está buscando?What are you looking for?"
+    "placeholder": "O que está buscando?"
   },
   "suggestions": {
     "products": [],
     "searches": []
   },
   "logoPosition": "left",
-  "__resolveType": "site/sections/Header/Header.tsx"
+  "__resolveType": "site/sections/Header/Header.tsx",
+  "buttons": {
+    "hideSearchButton": false
+  }
 }

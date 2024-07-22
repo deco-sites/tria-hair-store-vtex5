@@ -1,10 +1,10 @@
-// import Searchbar, {
-//   Props as SearchbarProps,
-// } from "../search/Searchbar.tsx";
+import {
+  Props as SearchbarProps,
+} from "../search/Searchbar.tsx";
 import Icon from "../../components/ui/Icon.tsx";
 import { MenuButton, SearchButton } from "../../islands/Header/Buttons.tsx";
 import CartButtonVDNA from "../../islands/Header/Cart/vnda.tsx";
-// import Searchbar from "../../islands/Header/Searchbar.tsx";
+import Searchbar from "../../islands/Header/Searchbar.tsx";
 import { usePlatform } from "../../sdk/usePlatform.tsx";
 import type { SiteNavigationElement } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
@@ -15,14 +15,14 @@ import { Buttons, Logo } from "../../components/header/Header.tsx";
 // Make it sure to render it on the server only. DO NOT render it on an island
 function Navbar({
   items,
-  //searchbar,
+  searchbar,
   logo,
   buttons,
   logoPosition = "left",
   device,
 }: {
   items: SiteNavigationElement[];
-  //searchbar?: SearchbarProps;
+  searchbar?: SearchbarProps;
   logo?: Logo;
   buttons?: Buttons;
   logoPosition?: "left" | "center";
@@ -85,8 +85,7 @@ function Navbar({
       <div>
         {!buttons?.hideSearchButton && (
           <div class="flex items-center text-xs font-thin gap-1">
-            {/* <SearchButton /> */}
-            {/* <Searchbar {...searchbar} /> */}
+            <Searchbar searchbar={searchbar}/>
           </div>
         )}
 

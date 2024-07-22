@@ -273,7 +273,7 @@
   },
   "/.deco/blocks/pages-productpage-ce4850591828.json": {
     "name": "Product Page",
-    "path": "/:slug/p",
+    "path": "/produto/:slug",
     "blockType": "pages",
     "__resolveType": "website/pages/Page.tsx"
   },
@@ -300,10 +300,6 @@
   "/.deco/blocks/vtex-trigger.json": {
     "blockType": "workflows",
     "__resolveType": "vtex/workflows/events.ts"
-  },
-  "/.deco/blocks/vtex.json": {
-    "blockType": "apps",
-    "__resolveType": "decohub/apps/vtex.ts"
   },
   "/.deco/blocks/weather.json": {
     "blockType": "apps",
@@ -418,5 +414,9 @@
     "path": "/troca-e-devolucao",
     "blockType": "pages",
     "__resolveType": "website/pages/Page.tsx"
+  },
+  "/.deco/blocks/deco-vtex.json": {
+    "blockType": "apps",
+    "__resolveType": "site/apps/deco/vtex.ts"
   }
 }
