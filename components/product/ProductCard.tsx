@@ -72,7 +72,7 @@ function ProductCard({
           }}
         />
 
-        <div class="flex flex-col  lg:group-hover:-translate-y-2 h-[266px] w-[167px] border-[0.18px] border-primary rounded-[7px] px-2 pt-[5px]">
+        <div class="flex flex-col  lg:group-hover:-translate-y-2 h-[374px] w-[185px] border border-primary rounded-lg px-2 pt-[5px]">
           {/* Wishlist button */}
           <div class="flex justify-between items-center w-full pb-3">
             <div class="lg:group-hover:block w-[18px] h-[16px]">
@@ -179,7 +179,7 @@ function ProductCard({
           {/* Name/Description */}
           <div class="flex flex-col">
             <h2
-              class="font-bold text-[7px] text-primary text-center h-7 pb-[6px]"
+              class="font-bold text-[10px] text-primary text-center h-7 pb-[6px]"
               dangerouslySetInnerHTML={{ __html: name ?? "" }}
             />
 
@@ -198,22 +198,22 @@ function ProductCard({
             {formatPrice(listPrice, offers?.priceCurrency)}
           </span> */
             }
-            <span class="font-bold  text-primary text-center text-[17px]">
+            <span class="font-bold  text-primary text-center text-[20px]">
               {formatPrice(price, offers?.priceCurrency)}
             </span>
           </div>
-          <div class="flex gap-1 justify-betweem">
+          <div class="flex flex-col gap-1 justify-betweem">
             <a
               href={relativeUrl}
               aria-label="view product"
-              class="font-normal uppercase btn btn-accent p-0 w-[75px] h-[18px] text-[8.5px] text-primary rounded-md min-h-0"
+              class="font-semibold uppercase btn btn-primary p-0 w-[153px] h-[18px] text-[10px] text-base-100 rounded-md min-h-0"
             >
-              Ver produto
+              comprar
             </a>
             <a
               href={relativeUrl}
               aria-label="view product"
-              class="font-normal uppercase btn btn-accent p-0 w-[75px] h-[18px] text-[8.5px] text-primary rounded-md min-h-0"
+              class="font-semibold uppercase btn btn-accent p-0 w-[153px] h-[18px] text-[8.5px] text-primary rounded-md min-h-0"
             >
               Ver produto
             </a>

@@ -15,6 +15,7 @@ export interface Logo {
   width?: number;
   height?: number;
 }
+
 export interface Buttons {
   hideSearchButton?: boolean;
   hideAccountButton?: boolean;
@@ -22,11 +23,24 @@ export interface Buttons {
   hideCartButton?: boolean;
 }
 
+export interface LinkTop {
+  label: string;
+  href: string;
+}
+
+export interface Discount{
+  image: ImageWidget,
+  text: string,
+  href: string,
+}
+
 export interface Props {
   alerts?: string[];
 
   /** @title Search Bar */
   searchbar?: Omit<SearchbarProps, "platform">;
+  linksTopBar?: LinkTop[];
+  discountButton?: Discount ;
 
   /**
    * @title Navigation items
@@ -36,15 +50,29 @@ export interface Props {
 
   /** @title Logo */
   logo?: Logo;
-
-  logoPosition?: "left" | "center";
-
+  logoPosition?: "left" | "center" ;
   buttons?: Buttons;
 }
 
 function Header({
   alerts,
   searchbar,
+  linksTopBar = [
+    {
+      label: "atacado",
+      href: "/",
+    },
+    {
+      label: "varejo",
+      href: "/",
+    },
+  ],
+  discountButton = {
+    image:
+      "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/737c6d84-d81f-4d10-8d4a-ac4dde84e2b0",
+    text: "Promoções Imperdíveis",
+    href: "/",
+  },
   navItems = [
     {
       "@type": "SiteNavigationElement",
@@ -68,8 +96,7 @@ function Header({
     },
   ],
   logo = {
-    src:
-      "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/986b61d4-3847-4867-93c8-b550cb459cc7",
+    src: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/986b61d4-3847-4867-93c8-b550cb459cc7",
     width: 100,
     height: 16,
     alt: "Logo",
@@ -83,19 +110,22 @@ function Header({
 
   return (
     <>
-      <header class="h-[95px] w-[1300px] p-0 mx-auto">
+      <header class="min-h-[95px] max-w-[1300px] p-0 mx-auto">
         <Drawers menu={{ items }} searchbar={searchbar} platform={platform}>
-        
-          <div class=" fixed h-[95px] w-[1300px] z-50 mx-auto">
-            {alerts && alerts.length > 0 && <Alert alerts={alerts} />}
-            <Navbar
-              device={device}
-              items={items}
-              searchbar={searchbar && { ...searchbar, platform }}
-              logo={logo}
-              logoPosition={logoPosition}
-              buttons={buttons}
-            />
+          <div class="fixed left-0 w-full z-50">
+            <div class="min-h-[95px] max-w-[1300px]   mx-auto ">
+              {alerts && alerts.length > 0 && <Alert alerts={alerts} />}
+              <Navbar
+                device={device}
+                items={items}
+                searchbar={searchbar && { ...searchbar, platform }}
+                logo={logo}
+                logoPosition={logoPosition}
+                buttons={buttons}
+                linksTopBar={linksTopBar}
+                discountButton={discountButton}
+              />
+            </div>
           </div>
         </Drawers>
       </header>

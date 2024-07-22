@@ -157,8 +157,8 @@ function Categories({
 
   return (
     <div class="w-screen flex flex-col items-center pb-[56px] ">
-      <div class="w-[1300px]">
-        <h2 class="text-2xl text-primary text-center font-bold uppercase pt-[58px] pb-[51px]">
+      <div class="max-w-[1300px]">
+        <h2 class="text-2xl text-primary text-center font-bold uppercase pt-[37px] pb-[25px]">
           {title}
         </h2>
 

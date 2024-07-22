@@ -23,7 +23,7 @@ export default function Section({ bannerList, wideBanner, bannerType }: Props) {
   return (
     <>
       {bannerType === "Lista de banners" && (
-        <div class="flex gap-6 w-[1300px] mx-auto p-8 overflow-x-auto ">
+        <div class="flex gap-6 max-w-[1300px] mx-auto p-4 overflow-x-auto ">
           {bannerList?.map((item) => (
             <div class="w-[300px] h-[320px] ">
               <a href={item.href}>
@@ -40,7 +40,7 @@ export default function Section({ bannerList, wideBanner, bannerType }: Props) {
         </div>
       )}
       {bannerType === "Banner comprido" && (
-        <div class="md:w-[1300px]  md:mx-auto w-screen pt-8 pb-8 md:px-auto ">
+        <div class="md:w-[1300px]  md:mx-auto w-screen pt-4 pb-4 md:px-auto ">
           <a href={wideBanner?.href}>
             <Image
               class="md:rounded-lg object-cover"

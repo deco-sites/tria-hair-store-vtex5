@@ -1,6 +1,4 @@
-import {
-  Props as SearchbarProps,
-} from "../search/Searchbar.tsx";
+import { Props as SearchbarProps } from "../search/Searchbar.tsx";
 import Icon from "../../components/ui/Icon.tsx";
 import { MenuButton, SearchButton } from "../../islands/Header/Buttons.tsx";
 import CartButtonVDNA from "../../islands/Header/Cart/vnda.tsx";
@@ -10,7 +8,12 @@ import type { SiteNavigationElement } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
 import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
-import { Buttons, Logo } from "../../components/header/Header.tsx";
+import {
+  Buttons,
+  Logo,
+  LinkTop,
+  Discount,
+} from "../../components/header/Header.tsx";
 
 // Make it sure to render it on the server only. DO NOT render it on an island
 function Navbar({
@@ -20,6 +23,8 @@ function Navbar({
   buttons,
   logoPosition = "left",
   device,
+  linksTopBar,
+  discountButton,
 }: {
   items: SiteNavigationElement[];
   searchbar?: SearchbarProps;
@@ -27,6 +32,8 @@ function Navbar({
   buttons?: Buttons;
   logoPosition?: "left" | "center";
   device: "mobile" | "desktop" | "tablet";
+  linksTopBar: LinkTop[];
+  discountButton: Discount;
 }) {
   const platform = usePlatform();
 
@@ -64,7 +71,7 @@ function Navbar({
 
   // Desktop header
   return (
-    <div class="hidden sm:grid sm:grid-cols-3 items-center w-full h-[95px] px-6">
+    <div class="hidden md:flex md:flex-wrap items-center w-full min-h-[77px] px-6 bg-base-100 justify-between">
       <div
         class={`flex ${
           logoPosition === "left" ? "justify-start -order-1" : "justify-center"
@@ -82,19 +89,52 @@ function Navbar({
         )}
       </div>
 
-      <div>
-        {!buttons?.hideSearchButton && (
-          <div class="flex items-center text-xs font-thin gap-1">
-            <Searchbar searchbar={searchbar}/>
+      <div >
+        <div class="flex items-center gap-6">
+          {!buttons?.hideSearchButton && (
+            <div class=" text-xs font-thin">
+              <Searchbar searchbar={searchbar} />
+            </div>
+          )}
+
+          <div class="flex gap-3">
+            {linksTopBar &&
+              linksTopBar.map((item) => (
+                <a href={item.href} class="text-[10px] text-primary">
+                  {item.label}
+                </a>
+              ))}
           </div>
-        )}
+
+          {discountButton && (
+            <a
+              href={discountButton.href}
+              class="bg-primary w-[226px] h-[22px] rounded-md flex items-center justify-center "
+            >
+              <div class="flex">
+                <Image
+                  class="object-contain pr-1"
+                  src={discountButton.image}
+                  width={15}
+                  height={15}
+                  alt={""}
+                />
+                <span class="text-[10px] text-base-100 font-semibold">
+                  {discountButton.text}
+                </span>
+              </div>
+            </a>
+          )}
+        </div>
 
         <ul
-          class={`flex gap-6 col-span-1 ${
+          class={`flex gap-6 mt-1 ${
             logoPosition === "left" ? "justify-center" : "justify-start"
           }`}
         >
-          {items.map((item) => <NavItem item={item} />)}
+          {items.map((item) => (
+            <NavItem item={item} />
+          ))}
         </ul>
       </div>
 
@@ -105,6 +145,13 @@ function Navbar({
           {!buttons?.hideCartButton && (
             <div class="flex items-center justify-center font-normal btn btn-primary btn-outline border rounded-full p-0 m-0 w-[43px] h-[43px] min-h-0 ">
               {platform === "vnda" && <CartButtonVDNA />}
+              <Image
+                class="rounded-lg"
+                src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/bc12db11-daca-47eb-b9ce-7bee347798b6"
+                width={28}
+                height={38}
+                alt={""}
+              />
             </div>
           )}
 

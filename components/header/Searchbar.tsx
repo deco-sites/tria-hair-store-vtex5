@@ -1,8 +1,7 @@
-import { headerHeight } from "../../components/header/constants.ts";
+// import { headerHeight } from "../../components/header/constants.ts";
 import Searchbar, {
   Props as SearchbarProps,
 } from "../../components/search/Searchbar.tsx";
-import Modal from "../../components/ui/Modal.tsx";
 import { useUI } from "../../sdk/useUI.ts";
 
 export interface Props {
@@ -16,11 +15,7 @@ function SearchbarModal({ searchbar }: Props) {
     return null;
   }
 
-  return (
-
-        <Searchbar {...searchbar} />
-  
-  );
+  return <Searchbar {...searchbar} />;
 }
 
 export default SearchbarModal;

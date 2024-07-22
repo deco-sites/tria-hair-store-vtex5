@@ -21,6 +21,7 @@ import { Suggestion } from "apps/commerce/types.ts";
 import { Resolved } from "deco/engine/core/resolver.ts";
 import { useEffect, useRef } from "preact/compat";
 import type { Platform } from "../../apps/site.ts";
+import Image from "apps/website/components/Image.tsx";
 
 // Editable props
 export interface Props {
@@ -75,18 +76,19 @@ function Searchbar({
 
   return (
     <div
-      class="w-[434px] h-[18px] grid gap-8 px-4 py-6 "
+      class=" h-[18px] gap-8 px-4 "
       style={{ gridTemplateRows: "min-content auto" }}
     >
       <form
         id={id}
         action={action}
-        class="join  h-[18px] border-[0.5px] border-primary"
+        class="join max-w-[434px] h-[18px] border-[0.5px] border-primary"
       >
         <input
           ref={searchInputRef}
           id="search-input"
-          class="input  join-item flex-grow text-[10px] placeholder-primary text-primary   h-[16px] min-h-0"
+          class="input  join-item flex-grow text-[10px] placeholder-primary text-primary  
+          w-[434px] h-[16px] min-h-0"
           name={name}
           onInput={(e) => {
             const value = e.currentTarget.value;
@@ -115,21 +117,27 @@ function Searchbar({
           for={id}
           tabIndex={-1}
         >
-          {loading.value
-            ? <span class="loading loading-spinner loading-xs" />
-            : <Icon id="MagnifyingGlass" size={24} strokeWidth={0.01} />}
+          {loading.value ? (
+            <span class="loading loading-spinner loading-xs" />
+          ) : (
+            <Image
+              class="rounded-lg"
+              src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/12fe600b-0a00-46e4-baeb-a9e57f72180c"
+              width={13}
+              height={13}
+              alt={""}
+            />
+          )}
         </Button>
 
-        {
-          /* <Button
+        {/* <Button
           type="button"
           class="join-item btn-ghost btn-square hidden sm:inline-flex"
           onClick={() => displaySearchPopup.value = false}
           ariaLabel={displaySearchPopup.value ? "open search" : "search closed"}
         >
           <Icon id="XMark" size={24} strokeWidth={2} />
-        </Button> */
-        }
+        </Button> */}
       </form>
 
       <div

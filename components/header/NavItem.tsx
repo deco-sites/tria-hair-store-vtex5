@@ -7,9 +7,9 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
   const image = item?.image?.[0];
 
   return (
-    <li class="group flex items-center">
-      <a href={url} class="py-6">
-        <span class="group-hover:underline text-xs font-thin">
+    <li class="group flex items-center gap-9">
+      <a href={url} class="">
+        <span class="group-hover:underline text-xs font-thin text-primary">
           {name}
         </span>
       </a>
@@ -17,7 +17,7 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
       {children && children.length > 0 &&
         (
           <div
-            class="fixed hidden hover:flex group-hover:flex bg-base-100 z-50 items-start justify-center gap-6 border-t border-b-2 border-base-200 w-screen"
+            class="fixed hidden hover:flex group-hover:flex bg-base-100 z-50 items-start justify-center gap-6 border-t border-b-2 border-base-200 max-w-screen text-primary"
             style={{ top: "0px", left: "0px", marginTop: headerHeight }}
           >
             {image?.url && (
