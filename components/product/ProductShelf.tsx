@@ -8,6 +8,8 @@ import { clx } from "../../sdk/clx.ts";
 import { useId } from "../../sdk/useId.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
 import { usePlatform } from "../../sdk/usePlatform.tsx";
+import Rating from "../daisy/Rating.tsx";
+import type {Props as ratingProps} from "../daisy/Rating.tsx";
 
 export interface Props {
   products: Product[] | null;
@@ -20,6 +22,7 @@ export interface Props {
     };
     showArrows?: boolean;
   };
+  rating?: ratingProps;
 }
 
 function ProductShelf({
@@ -27,6 +30,7 @@ function ProductShelf({
   title,
   description,
   layout,
+  rating={maxRating:5},
 }: Props) {
   const id = useId();
   const platform = usePlatform();
@@ -50,8 +54,8 @@ function ProductShelf({
     5: "w-1/5",
   };
   return (
-    <div class="w-[1136px] py-16 flex flex-col gap-6 lg:py-10 mx-auto">
-      <div class="flex flex-col items-center pb-20">
+    <div class="max-w-[1300px]  py-16 flex flex-col gap-6 lg:py-10 mx-auto">
+      <div class="flex flex-col items-center pb-8">
         <h2 class="text-2xl text-primary font-bold pb-2">{title}</h2>
         <p class="text-base text-primary">{description}</p>
       </div>
@@ -59,28 +63,31 @@ function ProductShelf({
       <div
         id={id}
         class={clx(
-          "grid",
-          layout?.showArrows && "grid-cols-[48px_1fr_48px]",
-          "px-0 md:px-5 container",
+          "grid h-auto pt-2",
+          layout?.showArrows && "grid-cols-[48px_1fr_48px] ",
+          "px-0 md:px-5 container"
         )}
       >
-        <Slider class="w-[1040px] carousel carousel-center sm:carousel-end row-start-2 row-end-5 ">
+        <Slider class=" overflow-x-auto carousel   carousel-center sm:carousel-end mx-auto">
           {products?.map((product, index) => (
             <Slider.Item
               index={index}
               class={clx(
                 "carousel-item",
-                "first:pl-5",
+                "justify-center ml-4 first:ml-0",
                 slideDesktop[layout?.numberOfSliders?.desktop ?? 5],
-                slideMobile[layout?.numberOfSliders?.mobile ?? 1],
+                slideMobile[layout?.numberOfSliders?.mobile ?? 2]
               )}
             >
-              <ProductCard
-                product={product}
-                itemListName={title}
-                platform={platform}
-                index={index}
-              />
+              <div>
+                <ProductCard
+                  product={product}
+                  itemListName={title}
+                  platform={platform}
+                  index={index}
+                />
+                <Rating maxRating={rating.maxRating} rating={rating.rating} />
+              </div>
             </Slider.Item>
           ))}
         </Slider>

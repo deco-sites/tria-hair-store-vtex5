@@ -12,6 +12,7 @@ import { clx } from "../../sdk/clx.ts";
 import { formatPrice } from "../../sdk/format.ts";
 import { relative } from "../../sdk/url.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
+
 //import { useVariantPossibilities } from "../../sdk/useVariantPossiblities.ts";
 
 interface Props {
@@ -24,8 +25,9 @@ interface Props {
 
   /** @description index of the product card in the list */
   index?: number;
-
+ 
   platform?: Platform;
+  
 }
 
 const WIDTH = 143;
@@ -72,10 +74,10 @@ function ProductCard({
           }}
         />
 
-        <div class="flex flex-col  lg:group-hover:-translate-y-2 h-[374px] w-[185px] border border-primary rounded-lg px-2 pt-[5px]">
+        <div class="flex flex-col hover:transform hover:-translate-y-2 mt-2 h-[374px] w-[185px] border border-primary rounded-lg px-2 pt-[5px]">
           {/* Wishlist button */}
           <div class="flex justify-between items-center w-full pb-3">
-            <div class="lg:group-hover:block w-[18px] h-[16px]">
+            <div class="lg:group-hover:block w-[20px] h-[23px]">
               {platform === "vtex" && (
                 <WishlistButtonVtex
                   productGroupID={productGroupID}
@@ -91,19 +93,24 @@ function ProductCard({
             </div>
 
             {/* Discount % */}
-            <div class="w-[44px] h-[13px] bg-red-600 rounded flex flex-col items-center ">
-              <span class="font-bold text-[9px] text-white">
-                {listPrice && price
-                  ? `${Math.round(((listPrice - price) / listPrice) * 100)}% `
-                  : ""}
-              </span>
-            </div>
-            <a href="/">
+            {listPrice && price ? (
+              <div class="w-[44px] h-[13px] bg-red-600 rounded flex flex-col items-center ">
+                <span class="font-bold text-[9px] text-white">
+                  {listPrice && price
+                    ? `${Math.round(((listPrice - price) / listPrice) * 100)}% `
+                    : ""}
+                </span>
+              </div>
+            ) : (
+              ""
+            )}
+
+            <a href="/" target="blank">
               <Image
                 alt="icone de whatsapp"
                 src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/588fa64d-c23a-43a5-a77e-c4be6d748e74"
-                width={14}
-                height={13}
+                width={18}
+                height={18}
               />
             </a>
           </div>
@@ -113,9 +120,9 @@ function ProductCard({
             href={relativeUrl}
             aria-label="view product"
             class={clx(
-              " w-[143px] h-[143px] pb-[17px]",
+              " w-[182px] h-[182px] pb-3 pt-6",
               "grid grid-cols-1 grid-rows-1",
-              "w-full",
+              "w-full"
             )}
           >
             <Image
@@ -127,7 +134,7 @@ function ProductCard({
               class={clx(
                 "object-cover",
                 "rounded w-full",
-                "col-span-full row-span-full",
+                "col-span-full row-span-full"
               )}
               // sizes="(max-width: 640px) 50vw, 20vw"
               preload={preload}
@@ -144,7 +151,7 @@ function ProductCard({
                 "object-cover",
                 "rounded w-full",
                 "col-span-full row-span-full",
-                "transition-opacity opacity-0 lg:group-hover:opacity-100",
+                "transition-opacity opacity-0 lg:group-hover:opacity-100"
               )}
               // sizes="(max-width: 640px) 50vw, 20vw"
               loading="lazy"
@@ -153,8 +160,7 @@ function ProductCard({
           </a>
 
           {/* SKU Selector */}
-          {
-            /* <ul class="flex items-center justify-center gap-2">
+          {/* <ul class="flex items-center justify-center gap-2">
           {variants
             .map(([value, link]) => [value, relative(link)] as const)
             .map(([value, link]) => (
@@ -173,36 +179,31 @@ function ProductCard({
                 </a>
               </li>
             ))}
-        </ul> */
-          }
+        </ul> */}
 
           {/* Name/Description */}
-          <div class="flex flex-col">
+          <div class="flex flex-col pt-3">
             <h2
-              class="font-bold text-[10px] text-primary text-center h-7 pb-[6px]"
+              class="font-bold text-[10px] text-primary text-center h-7 pb-4"
               dangerouslySetInnerHTML={{ __html: name ?? "" }}
             />
 
-            {
-              /* <div
+            {/* <div
             class="truncate text-xs"
             dangerouslySetInnerHTML={{ __html: description ?? "" }}
-          /> */
-            }
+          /> */}
           </div>
 
           {/* Price from/to */}
-          <div class="flex gap-2 items-center justify-center  pb-[10px] ">
-            {
-              /* <span class="line-through text-sm text-primary">
+          <div class="flex gap-2 items-center justify-center  pb-5 ">
+            {/* <span class="line-through text-sm text-primary">
             {formatPrice(listPrice, offers?.priceCurrency)}
-          </span> */
-            }
+          </span> */}
             <span class="font-bold  text-primary text-center text-[20px]">
               {formatPrice(price, offers?.priceCurrency)}
             </span>
           </div>
-          <div class="flex flex-col gap-1 justify-betweem">
+          <div class="flex flex-col gap-2 justify-betweem">
             <a
               href={relativeUrl}
               aria-label="view product"
@@ -221,9 +222,10 @@ function ProductCard({
         </div>
       </div>
       {/* Installments */}
-      <span class="text-[7px] text-primary  text-center pt-[9px]">
+      {/* <span class="text-[7px] text-primary  text-center pt-[9px]">
         ou {installments}
-      </span>
+      </span> */}
+     
     </div>
   );
 }

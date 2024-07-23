@@ -156,7 +156,7 @@
     {
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
       "layout": {
-        "showArrows": true,
+        "showArrows": false,
         "numberOfSliders": {
           "desktop": 5
         }
@@ -167,7 +167,7 @@
         "tags": [],
         "typeTags": [],
         "ids": [],
-        "count": 5
+        "count": 10
       },
       "cardLayout": {
         "layout": {
@@ -197,7 +197,10 @@
         "__resolveType": "site/loaders/Layouts/ProductCard.tsx"
       },
       "title": "BESTSELLERS DO BRASIL!",
-      "description": "Os mais procurados pelos nossos clientes"
+      "description": "Os mais procurados pelos nossos clientes",
+      "rating": {
+        "maxRating": 5
+      }
     },
     {
       "__resolveType": "Preview /sections/Categories.tsx"
@@ -229,7 +232,7 @@
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
       "title": "BESTSELLERS DO BRASIL!",
       "layout": {
-        "showArrows": true,
+        "showArrows": false,
         "numberOfSliders": {
           "desktop": 5
         }
@@ -270,7 +273,10 @@
         },
         "__resolveType": "site/loaders/Layouts/ProductCard.tsx"
       },
-      "description": "Os mais procurados pelos nossos clientes"
+      "description": "Os mais procurados pelos nossos clientes",
+      "rating": {
+        "maxRating": 5
+      }
     },
     {
       "__resolveType": "site/sections/Images/BannerGrid.tsx",
@@ -301,9 +307,9 @@
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
       "title": "BESTSELLERS DO BRASIL!",
       "layout": {
-        "showArrows": true,
+        "showArrows": false,
         "numberOfSliders": {
-          "desktop": 5
+          "mobile": 2
         }
       },
       "products": {
@@ -342,13 +348,19 @@
         },
         "__resolveType": "site/loaders/Layouts/ProductCard.tsx"
       },
-      "description": "Os mais procurados pelos nossos clientes"
+      "description": "Os mais procurados pelos nossos clientes",
+      "rating": {
+        "maxRating": 5
+      }
     },
     {
       "__resolveType": "site/sections/Content/BlogPosts.tsx",
       "title": "NOSSOS CLIENTES RECOMENDAM A TRÓIA HAIR",
       "layout": {
-        "showArrows": true
+        "showArrows": false,
+        "numberOfSliders": {
+          "desktop": 3
+        }
       },
       "posts": [
         {

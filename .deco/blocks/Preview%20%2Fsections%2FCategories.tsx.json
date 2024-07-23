@@ -79,6 +79,6 @@
       "mobile": 3,
       "desktop": 7
     },
-    "showArrows": true
+    "showArrows": false
   }
 }

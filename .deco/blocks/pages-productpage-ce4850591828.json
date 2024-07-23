@@ -27,7 +27,8 @@
         "slug": {
           "__resolveType": "website/functions/requestToParam.ts",
           "param": "slug"
-        }
+        },
+        "priceIntl": false
       },
       "__resolveType": "site/sections/Product/ProductDetails.tsx"
     },
@@ -41,7 +42,12 @@
         "ids": [],
         "count": 5
       },
-      "__resolveType": "site/sections/Product/ProductShelf.tsx"
+      "__resolveType": "site/sections/Product/ProductShelf.tsx",
+      "layout": {
+        "numberOfSliders": {
+          "desktop": 5
+        }
+      }
     },
     {
       "__resolveType": "Footer - 01"
