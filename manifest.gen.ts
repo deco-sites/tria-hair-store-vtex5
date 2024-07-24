@@ -75,6 +75,7 @@ import * as $$$$$$60 from "./sections/SquareBanners.tsx";
 import * as $$$$$$61 from "./sections/Theme/Theme.tsx";
 import * as $$$$$$62 from "./sections/TopBar.tsx";
 import * as $$$$$$63 from "./sections/VideoPost.tsx";
+import * as $$$$$$64 from "./sections/whatsapp.tsx";
 
 const manifest = {
   "loaders": {
@@ -148,6 +149,7 @@ const manifest = {
     "site/sections/Theme/Theme.tsx": $$$$$$61,
     "site/sections/TopBar.tsx": $$$$$$62,
     "site/sections/VideoPost.tsx": $$$$$$63,
+    "site/sections/whatsapp.tsx": $$$$$$64,
   },
   "apps": {
     "site/apps/deco/blog.ts": $$$$$$$$$$$0,

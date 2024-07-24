@@ -447,6 +447,9 @@
     },
     {
       "__resolveType": "Footer - 05"
+    },
+    {
+      "__resolveType": "site/sections/whatsapp.tsx"
     }
   ]
 }

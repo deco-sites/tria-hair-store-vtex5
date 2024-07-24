@@ -418,5 +418,9 @@
   "/.deco/blocks/deco-vtex.json": {
     "blockType": "apps",
     "__resolveType": "site/apps/deco/vtex.ts"
+  },
+  "/.deco/blocks/Preview%20%2Fsections%2Fwhatsapp.tsx.json": {
+    "blockType": "sections",
+    "__resolveType": "site/sections/whatsapp.tsx"
   }
 }
