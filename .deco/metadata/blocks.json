@@ -419,7 +419,11 @@
     "blockType": "apps",
     "__resolveType": "site/apps/deco/vtex.ts"
   },
-  "/.deco/blocks/Preview%20%2Fsections%2Fwhatsapp.tsx.json": {
+  "/.deco/blocks/Preview%20site%2Fsections%2Fwhatsapp.tsx.json": {
+    "blockType": "sections",
+    "__resolveType": "site/sections/Whatsapp.tsx"
+  },
+  "/.deco/blocks/whatsapp.json": {
     "blockType": "sections",
     "__resolveType": "site/sections/whatsapp.tsx"
   }
