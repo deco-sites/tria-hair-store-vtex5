@@ -9,7 +9,7 @@ import { useId } from "../../sdk/useId.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
 import { usePlatform } from "../../sdk/usePlatform.tsx";
 import Rating from "../daisy/Rating.tsx";
-import type {Props as ratingProps} from "../daisy/Rating.tsx";
+import type { Props as ratingProps } from "../daisy/Rating.tsx";
 
 export interface Props {
   products: Product[] | null;
@@ -30,7 +30,7 @@ function ProductShelf({
   title,
   description,
   layout,
-  rating={maxRating:5},
+  rating = { maxRating: 5 },
 }: Props) {
   const id = useId();
   const platform = usePlatform();
@@ -65,7 +65,7 @@ function ProductShelf({
         class={clx(
           "grid h-auto pt-2",
           layout?.showArrows && "grid-cols-[48px_1fr_48px] ",
-          "px-0 md:px-5 container"
+          "px-0 md:px-5 container",
         )}
       >
         <Slider class=" overflow-x-auto carousel   carousel-center sm:carousel-end mx-auto">
@@ -76,7 +76,7 @@ function ProductShelf({
                 "carousel-item",
                 "justify-center ml-4 first:ml-0",
                 slideDesktop[layout?.numberOfSliders?.desktop ?? 5],
-                slideMobile[layout?.numberOfSliders?.mobile ?? 2]
+                slideMobile[layout?.numberOfSliders?.mobile ?? 2],
               )}
             >
               <div>

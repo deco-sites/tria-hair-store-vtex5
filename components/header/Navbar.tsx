@@ -10,9 +10,9 @@ import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
 import {
   Buttons,
-  Logo,
-  LinkTop,
   Discount,
+  LinkTop,
+  Logo,
 } from "../../components/header/Header.tsx";
 
 // Make it sure to render it on the server only. DO NOT render it on an island
@@ -89,7 +89,7 @@ function Navbar({
         )}
       </div>
 
-      <div >
+      <div>
         <div class="flex items-center gap-6">
           {!buttons?.hideSearchButton && (
             <div class=" text-xs font-thin">
@@ -132,9 +132,7 @@ function Navbar({
             logoPosition === "left" ? "justify-center" : "justify-start"
           }`}
         >
-          {items.map((item) => (
-            <NavItem item={item} />
-          ))}
+          {items.map((item) => <NavItem item={item} />)}
         </ul>
       </div>
 

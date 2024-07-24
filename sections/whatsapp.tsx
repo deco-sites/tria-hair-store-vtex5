@@ -13,7 +13,9 @@ interface Props {
   message: string;
 }
 
-export default function Whatsapp({ whatsappNumber = 5522222222, message= "hello capy" }: Props) {
+export default function Whatsapp(
+  { whatsappNumber = 5522222222, message = "hello capy" }: Props,
+) {
   return (
     <div>
       <a

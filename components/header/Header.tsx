@@ -28,10 +28,10 @@ export interface LinkTop {
   href: string;
 }
 
-export interface Discount{
-  image: ImageWidget,
-  text: string,
-  href: string,
+export interface Discount {
+  image: ImageWidget;
+  text: string;
+  href: string;
 }
 
 export interface Props {
@@ -40,7 +40,7 @@ export interface Props {
   /** @title Search Bar */
   searchbar?: Omit<SearchbarProps, "platform">;
   linksTopBar?: LinkTop[];
-  discountButton?: Discount ;
+  discountButton?: Discount;
 
   /**
    * @title Navigation items
@@ -50,7 +50,7 @@ export interface Props {
 
   /** @title Logo */
   logo?: Logo;
-  logoPosition?: "left" | "center" ;
+  logoPosition?: "left" | "center";
   buttons?: Buttons;
 }
 
@@ -96,7 +96,8 @@ function Header({
     },
   ],
   logo = {
-    src: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/986b61d4-3847-4867-93c8-b550cb459cc7",
+    src:
+      "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/986b61d4-3847-4867-93c8-b550cb459cc7",
     width: 100,
     height: 16,
     alt: "Logo",
