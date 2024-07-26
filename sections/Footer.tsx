@@ -128,7 +128,8 @@ export default function Footer({
   },
   madeWith = {
     label: "Made with",
-    src: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1527/cc202be0-af57-4b32-b9c9-d1d7dc97bf85",
+    src:
+      "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1527/cc202be0-af57-4b32-b9c9-d1d7dc97bf85",
     href: "https://deco.cx",
   },
   copyright = "© 2024 deco.cx. All rights reserved.",
@@ -184,7 +185,8 @@ export default function Footer({
               <div
                 class="text-[8px]"
                 dangerouslySetInnerHTML={{ __html: subscribe.instructions }}
-              ></div>
+              >
+              </div>
             </form>
           </div>
         </div>

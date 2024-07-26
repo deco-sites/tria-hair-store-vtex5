@@ -8,7 +8,7 @@ export interface Props {
   /** @description: sku name */
   eventParams: AddToCartParams;
   onAddItem: () => Promise<void>;
-  variantStyle: "productCard" | "productPage"
+  variantStyle: "productCard" | "productPage";
 }
 
 const useAddToCart = ({ eventParams, onAddItem }: Props) => {
@@ -44,11 +44,9 @@ export default function AddToCartButton(props: Props) {
   return (
     <Button
       {...btnProps}
-      class={
-        props.variantStyle === "productPage"
-          ? "text-primary btn btn-accent "
-          : "font-semibold uppercase btn btn-primary p-0 w-[153px] h-[18px] text-[10px] text-base-100 rounded-md min-h-0"
-      }
+      class={props.variantStyle === "productPage"
+        ? "text-primary btn btn-accent "
+        : "font-semibold uppercase btn btn-primary p-0 w-[153px] h-[18px] text-[10px] text-base-100 rounded-md min-h-0"}
     >
       COMPRAR
     </Button>

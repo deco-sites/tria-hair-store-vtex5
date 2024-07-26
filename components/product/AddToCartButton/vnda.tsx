@@ -8,7 +8,7 @@ export interface Props extends Omit<BtnProps, "onAddItem"> {
 }
 
 function AddToCartButton(
-  { productID,  eventParams, variantStyle }: Props,
+  { productID, eventParams, variantStyle }: Props,
 ) {
   const { addItem } = useCart();
   const onAddItem = () =>
@@ -16,10 +16,15 @@ function AddToCartButton(
     addItem({
       quantity: 1,
       itemId: productID,
-      
     });
 
-  return <Button onAddItem={onAddItem} eventParams={eventParams} variantStyle={ variantStyle } />;
+  return (
+    <Button
+      onAddItem={onAddItem}
+      eventParams={eventParams}
+      variantStyle={variantStyle}
+    />
+  );
 }
 
 export default AddToCartButton;

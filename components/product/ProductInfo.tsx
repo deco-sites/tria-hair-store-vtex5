@@ -132,31 +132,28 @@ function ProductInfo({ page, layout }: Props) {
             {availability === "https://schema.org/InStock"
               ? (
                 <>
-                    <AddToCartButtonVNDA
-                      eventParams={{ items: [eventItem] }}
-                      productID={productID}
+                  <AddToCartButtonVNDA
+                    eventParams={{ items: [eventItem] }}
+                    productID={productID}
                     // additionalProperty={additionalProperty}
                     variantStyle="productPage"
-                    />
-    
+                  />
                 </>
               )
               : <OutOfStock productID={productID} />}
           </div>
           {/* Shipping Simulation */}
           <div class="mt-8">
-            
             <ShippingSimulation
               skuId={product.sku}
-                // items={[
-                //   {
-                //     id: Number(product.sku),
-                //     quantity: 1,
-                //     seller: seller,
-                //   },
-                // ]}
-              />
-            
+              // items={[
+              //   {
+              //     id: Number(product.sku),
+              //     quantity: 1,
+              //     seller: seller,
+              //   },
+              // ]}
+            />
           </div>
           {/* Description card */}
           <div class="mt-[14px] sm:mt-6">
