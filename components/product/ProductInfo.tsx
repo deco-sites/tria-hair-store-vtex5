@@ -1,11 +1,6 @@
 import { SendEventOnView } from "../../components/Analytics.tsx";
 //import Breadcrumb from "../../components/ui/Breadcrumb.tsx";
-import AddToCartButtonLinx from "../../islands/AddToCartButton/linx.tsx";
-import AddToCartButtonShopify from "../../islands/AddToCartButton/shopify.tsx";
 import AddToCartButtonVNDA from "../../islands/AddToCartButton/vnda.tsx";
-import AddToCartButtonVTEX from "../../islands/AddToCartButton/vtex.tsx";
-import AddToCartButtonWake from "../../islands/AddToCartButton/wake.tsx";
-import AddToCartButtonNuvemshop from "../../islands/AddToCartButton/nuvemshop.tsx";
 import OutOfStock from "../../islands/OutOfStock.tsx";
 import ShippingSimulation from "../../islands/ShippingSimulation.tsx";
 import { formatPrice } from "../../sdk/format.ts";
@@ -137,30 +132,31 @@ function ProductInfo({ page, layout }: Props) {
             {availability === "https://schema.org/InStock"
               ? (
                 <>
-                  {platform === "vnda" && (
                     <AddToCartButtonVNDA
                       eventParams={{ items: [eventItem] }}
                       productID={productID}
-                      additionalProperty={additionalProperty}
+                    // additionalProperty={additionalProperty}
+                    variantStyle="productPage"
                     />
-                  )}
+    
                 </>
               )
               : <OutOfStock productID={productID} />}
           </div>
           {/* Shipping Simulation */}
           <div class="mt-8">
-            {platform === "vtex" && (
-              <ShippingSimulation
-                items={[
-                  {
-                    id: Number(product.sku),
-                    quantity: 1,
-                    seller: seller,
-                  },
-                ]}
+            
+            <ShippingSimulation
+              skuId={product.sku}
+                // items={[
+                //   {
+                //     id: Number(product.sku),
+                //     quantity: 1,
+                //     seller: seller,
+                //   },
+                // ]}
               />
-            )}
+            
           </div>
           {/* Description card */}
           <div class="mt-[14px] sm:mt-6">

@@ -132,7 +132,9 @@ function Navbar({
             logoPosition === "left" ? "justify-center" : "justify-start"
           }`}
         >
-          {items.map((item) => <NavItem item={item} />)}
+          {items.map((item) => (
+            <NavItem item={item} />
+          ))}
         </ul>
       </div>
 
@@ -141,15 +143,15 @@ function Navbar({
 
         <div class="flex gap-5">
           {!buttons?.hideCartButton && (
-            <div class="flex items-center justify-center font-normal btn btn-primary btn-outline border rounded-full p-0 m-0 w-[43px] h-[43px] min-h-0 ">
-              {platform === "vnda" && <CartButtonVDNA />}
-              <Image
+            <div class="flex items-center justify-center font-normal btn btn-accent btn-outline border rounded-full p-0 m-0 w-[43px] h-[43px] min-h-0 ">
+              <CartButtonVDNA />
+              {/* <Image
                 class="rounded-lg"
                 src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/bc12db11-daca-47eb-b9ce-7bee347798b6"
                 width={28}
                 height={38}
                 alt={""}
-              />
+              /> */}
             </div>
           )}
 
@@ -160,7 +162,7 @@ function Navbar({
               aria-label="Wishlist"
             >
               <button
-                class=" font-normal btn btn-primary btn-outline border rounded-full p-0 m-0 w-[43px] h-[43px] min-h-0"
+                class=" font-normal btn btn-accent btn-outline border rounded-full p-0 m-0 w-[43px] h-[43px] min-h-0"
                 aria-label="Wishlist"
               >
                 <Icon id="Heart" size={27} strokeWidth={0.4} />
@@ -169,12 +171,13 @@ function Navbar({
           )}
 
           {!buttons?.hideAccountButton && (
+            
             <a
               class="flex items-center text-xs font-thin"
-              href="/account"
+              href="/entrar"
               aria-label="Account"
             >
-              <div class="font-normal btn btn-primary btn-outline border rounded-full p-0 m-0 w-[43px] h-[43px] min-h-0">
+              <div class="font-normal btn btn-accent btn-outline border rounded-full p-0 m-0 w-[43px] h-[43px] min-h-0">
                 <Image
                   class="rounded-lg"
                   src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/fb00010a-a586-4ede-ba77-653171becd82"

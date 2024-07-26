@@ -157,11 +157,11 @@ function Dots({ images, interval = 0 }: Props) {
           `,
         }}
       />
-      <ul class="carousel justify-center col-span-full gap-6 z-10 row-start-4">
+      <ul class="carousel justify-center col-span-full gap-6 z-10 row-start-3 pt-20">
         {images?.map((_, index) => (
-          <li class="carousel-item">
+          <li class="carousel-item ">
             <Slider.Dot index={index}>
-              <div class="py-5">
+              <div class="">
                 <div
                   class="w-16 sm:w-20 h-0.5 rounded group-disabled:animate-progress bg-gradient-to-r from-base-100 from-[length:var(--dot-progress)] to-[rgba(255,255,255,0.4)] to-[length:var(--dot-progress)]"
                   style={{ animationDuration: `${interval}s` }}
@@ -209,7 +209,7 @@ function BannerCarousel(props: Props) {
   return (
     <div
       id={id}
-      class="lg:w-[1300px] grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px] sm:min-h-min min-h-[360px] mx-auto"
+      class="lg:w-[1300px] grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_] sm:min-h-min min-h-[360px] mx-auto"
     >
       <Slider class="carousel carousel-center w-full col-span-full row-span-full gap-6">
         {images?.map((image, index) => {

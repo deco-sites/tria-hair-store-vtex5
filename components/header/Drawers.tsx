@@ -1,5 +1,5 @@
 import type { Props as MenuProps } from "../../components/header/Menu.tsx";
-import Cart from "../../components/minicart/Cart.tsx";
+import Cart from "../../components/minicart/vnda/Cart.tsx";
 import type { Props as SearchbarProps } from "../../components/search/Searchbar.tsx";
 import Button from "../../components/ui/Button.tsx";
 import Drawer from "../../components/ui/Drawer.tsx";
@@ -91,7 +91,7 @@ function Drawers({ menu, searchbar, children, platform }: Props) {
             title="Minha sacola"
             onClose={() => displayCart.value = false}
           >
-            <Cart platform={platform} />
+            <Cart />
           </Aside>
         }
       >

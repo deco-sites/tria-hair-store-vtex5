@@ -58,7 +58,7 @@
         {
           "value": {
             "__resolveType": "site/sections/Images/Carousel.tsx",
-            "dots": false,
+            "dots": true,
             "arrows": true,
             "images": [
               {
@@ -527,10 +527,10 @@
       ]
     },
     {
-      "__resolveType": "whatsapp"
+      "__resolveType": "Footer - 05"
     },
     {
-      "__resolveType": "Footer - 05"
+      "__resolveType": "whatsapp"
     }
   ]
 }

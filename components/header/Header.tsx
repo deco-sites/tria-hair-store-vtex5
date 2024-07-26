@@ -111,7 +111,7 @@ function Header({
 
   return (
     <>
-      <header class="min-h-[95px] max-w-[1300px] p-0 mx-auto">
+      <header class="min-h-[77px] max-w-[1300px] p-0 mx-auto ">
         <Drawers menu={{ items }} searchbar={searchbar} platform={platform}>
           <div class="fixed left-0 w-full z-50">
             <div class="min-h-[95px] max-w-[1300px]   mx-auto ">

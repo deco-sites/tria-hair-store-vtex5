@@ -29,17 +29,10 @@
   ],
   "routes": [
     {
-      "__resolveType": "vtex/loaders/proxy.ts",
+      "__resolveType": "vnda/loaders/proxy.ts",
       "includeSiteMap": [],
-      "extraPathsToProxy": [],
-      "includeScriptsToHead": {
-        "includes": [
-          {
-            "__resolveType": "analytics/loaders/DecoAnalyticsScript.ts"
-          }
-        ],
-        "includePlausible": true
-      }
+      "pagesToProxy": [],
+      "excludePathsFromDecoSiteMap": []
     },
     {
       "__resolveType": "website/loaders/pages.ts"
@@ -54,7 +47,7 @@
   "commerce": {
     "platform": "other"
   },
-  "platform": "vtex",
+  "platform": "vnda",
   "__resolveType": "site/apps/site.ts",
   "firstByteThresholdMS": true,
   "abTesting": {
