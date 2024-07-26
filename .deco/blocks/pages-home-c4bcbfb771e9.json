@@ -126,6 +126,38 @@
           "title": "Frete Grátis",
           "subtitle": "Em compras acima de R$200,00"
         }
+      ],
+      "content": [
+        {
+          "title": "Lorem ipsum dolor ",
+          "subtitle": "sit amet consectetur",
+          "label": "Lorem Ipsum 01",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/83e70d67-5beb-43fd-b41e-79d55c24efc7"
+        },
+        {
+          "title": "Lorem ipsum dolor ",
+          "subtitle": "sit amet consectetur",
+          "label": "Lorem Ipsum 02",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/83e70d67-5beb-43fd-b41e-79d55c24efc7"
+        },
+        {
+          "title": "Lorem ipsum dolor ",
+          "subtitle": "sit amet consectetur",
+          "label": "Lorem Ipsum 03",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/83e70d67-5beb-43fd-b41e-79d55c24efc7"
+        },
+        {
+          "title": "Lorem ipsum dolor ",
+          "subtitle": "sit amet consectetur",
+          "label": "Lorem Ipsum 04",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/83e70d67-5beb-43fd-b41e-79d55c24efc7"
+        },
+        {
+          "title": "Lorem ipsum dolor ",
+          "subtitle": "sit amet consectetur",
+          "label": "Lorem Ipsum 05",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/83e70d67-5beb-43fd-b41e-79d55c24efc7"
+        }
       ]
     },
     {
@@ -210,7 +242,8 @@
           "desktop": 7
         },
         "showArrows": false
-      }
+      },
+      "title": "Categories"
     },
     {
       "__resolveType": "site/sections/SquareBanners.tsx",
