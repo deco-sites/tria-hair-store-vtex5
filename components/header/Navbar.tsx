@@ -74,7 +74,7 @@ function Navbar({
     <>
       <div
         style={{ height: navbarHeight }}
-        class="lg:hidden grid grid-cols-3 justify-between items-center  w-screen px-6 pb-6 gap-2"
+        class="lg:hidden grid grid-cols-3 justify-between items-center bg-base-100  w-screen px-6 pb-6 gap-2"
       >
         <MenuButton />
         {logo && (
@@ -162,7 +162,9 @@ function Navbar({
               logoPosition === "left" ? "justify-center" : "justify-start"
             }`}
           >
-            {items.map((item) => <NavItem item={item} />)}
+            {items.map((item) => (
+              <NavItem item={item} />
+            ))}
           </ul>
         </div>
 
@@ -173,15 +175,13 @@ function Navbar({
             {!buttons?.hideCartButton && (
               <div class="flex items-center justify-center font-normal btn btn-accent btn-outline border rounded-full p-0 m-0 w-[43px] h-[43px] min-h-0 ">
                 <CartButtonVDNA />
-                {
-                  /* <Image
+                {/* <Image
                 class="rounded-lg"
                 src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/bc12db11-daca-47eb-b9ce-7bee347798b6"
                 width={28}
                 height={38}
                 alt={""}
-              /> */
-                }
+              /> */}
               </div>
             )}
 
