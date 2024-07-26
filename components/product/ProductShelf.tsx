@@ -54,7 +54,7 @@ function ProductShelf({
     5: "w-1/5",
   };
   return (
-    <div class="max-w-[1300px]  py-16 flex flex-col gap-6 lg:py-10 mx-auto">
+    <div class="max-w-[1400px]  py-16 flex flex-col gap-6 lg:py-10 mx-auto">
       <div class="flex flex-col items-center pb-8">
         <h2 class="text-2xl text-primary font-bold pb-2">{title}</h2>
         <p class="text-base text-primary">{description}</p>

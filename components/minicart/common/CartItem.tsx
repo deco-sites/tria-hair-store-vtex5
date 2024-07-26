@@ -64,43 +64,52 @@ function CartItem(
         gridTemplateColumns: "auto 1fr",
       }}
     >
-      <Image
-        {...image}
-        src={image.src.replace("55-55", "255-255")}
-        style={{ aspectRatio: "108 / 150" }}
-        width={108}
-        height={150}
-        class="h-full object-contain"
-      />
+      <div class="flex items-center justify-center border border-primary w-[166px] h-[150px] rounded-2xl">
+        <Image
+          {...image}
+          src={image.src.replace("55-55", "255-255")}
+          style={{ aspectRatio: "108 / 150" }}
+          width={133}
+          height={128}
+          class="h-full object-contain "
+        />
+      </div>
 
       <div class="flex flex-col gap-2">
-        <div class="flex justify-between items-center">
-          <span>{name}</span>
-          <Button
-            disabled={loading || isGift}
-            loading={loading}
-            class="btn-ghost btn-square"
-            onClick={withLoading(async () => {
-              const analyticsItem = itemToAnalyticsItem(index);
+        <Button
+          disabled={loading || isGift}
+          loading={loading}
+          class="btn-ghost btn-circle hover:btn-accent"
+          onClick={withLoading(async () => {
+            const analyticsItem = itemToAnalyticsItem(index);
 
-              await onUpdateQuantity(0, index);
+            await onUpdateQuantity(0, index);
 
-              analyticsItem && sendEvent({
+            analyticsItem &&
+              sendEvent({
                 name: "remove_from_cart",
                 params: { items: [analyticsItem] },
               });
-            })}
-          >
-            <Icon id="Trash" size={24} />
-          </Button>
-        </div>
-        <div class="flex items-center gap-2">
-          <span class="line-through text-sm">
-            {formatPrice(list, currency, locale)}
-          </span>
-          <span class="text-sm text-secondary">
-            {isGift ? "Grátis" : formatPrice(sale, currency, locale)}
-          </span>
+          })}
+        >
+          <Image
+            src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/de60b5ed-5e62-4ab6-bd44-369b483f382b"
+            width={16}
+            height={24}
+            class="h-full object-contain "
+          />
+        </Button>
+        <div class="flex justify-between items-center text-primary">
+          <span class="text-primary text-base font-bold">{name}</span>
+
+          <div class="flex items-center gap-2">
+            <span class="line-through text-sm text-primary">
+              {formatPrice(list, currency, locale)}
+            </span>
+            <span class="text-sm text-primary font-bold ">
+              {isGift ? "Grátis" : formatPrice(sale, currency, locale)}
+            </span>
+          </div>
         </div>
 
         <QuantitySelector

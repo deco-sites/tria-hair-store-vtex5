@@ -71,14 +71,19 @@ function Navbar({
 
   // Desktop header
   return (
-    <div class="hidden md:flex md:flex-wrap items-center w-full min-h-[77px] px-6 bg-base-100 justify-between">
+    <>
       <div
-        class={`flex ${
-          logoPosition === "left" ? "justify-start -order-1" : "justify-center"
-        }`}
+        style={{ height: navbarHeight }}
+        class="lg:hidden grid grid-cols-3 justify-between items-center  w-screen px-6 pb-6 gap-2"
       >
+        <MenuButton />
         {logo && (
-          <a href="/" aria-label="Store logo" class="block">
+          <a
+            href="/"
+            class="flex-grow inline-flex items-center justify-center"
+            style={{ minHeight: navbarHeight }}
+            aria-label="Store logo"
+          >
             <Image
               src={logo.src}
               alt={logo.alt}
@@ -87,110 +92,135 @@ function Navbar({
             />
           </a>
         )}
+
+        <div class="flex justify-end gap-1">
+          <SearchButton />
+          {platform === "vnda" && <CartButtonVDNA />}
+        </div>
       </div>
 
-      <div>
-        <div class="flex items-center gap-6">
-          {!buttons?.hideSearchButton && (
-            <div class=" text-xs font-thin">
-              <Searchbar searchbar={searchbar} />
-            </div>
-          )}
-
-          <div class="flex gap-3">
-            {linksTopBar &&
-              linksTopBar.map((item) => (
-                <a href={item.href} class="text-[10px] text-primary">
-                  {item.label}
-                </a>
-              ))}
-          </div>
-
-          {discountButton && (
-            <a
-              href={discountButton.href}
-              class="bg-primary w-[226px] h-[22px] rounded-md flex items-center justify-center "
-            >
-              <div class="flex">
-                <Image
-                  class="object-contain pr-1"
-                  src={discountButton.image}
-                  width={15}
-                  height={15}
-                  alt={""}
-                />
-                <span class="text-[10px] text-base-100 font-semibold">
-                  {discountButton.text}
-                </span>
-              </div>
+      <div class="hidden md:flex md:flex-wrap items-center w-full min-h-[77px] px-6 bg-base-100 justify-between">
+        <div
+          class={`flex ${
+            logoPosition === "left"
+              ? "justify-start -order-1"
+              : "justify-center"
+          }`}
+        >
+          {logo && (
+            <a href="/" aria-label="Store logo" class="block">
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                width={logo.width || 100}
+                height={logo.height || 13}
+              />
             </a>
           )}
         </div>
 
-        <ul
-          class={`flex gap-6 mt-1 ${
-            logoPosition === "left" ? "justify-center" : "justify-start"
-          }`}
-        >
-          {items.map((item) => (
-            <NavItem item={item} />
-          ))}
-        </ul>
-      </div>
+        <div>
+          <div class="flex items-center gap-6">
+            {!buttons?.hideSearchButton && (
+              <div class=" text-xs font-thin">
+                <Searchbar searchbar={searchbar} />
+              </div>
+            )}
 
-      <div class="flex-none flex items-center justify-end gap-6 col-span-1">
-        {/* <Searchbar searchbar={searchbar} /> */}
+            <div class="flex gap-3">
+              {linksTopBar &&
+                linksTopBar.map((item) => (
+                  <a href={item.href} class="text-[10px] text-primary">
+                    {item.label}
+                  </a>
+                ))}
+            </div>
 
-        <div class="flex gap-5">
-          {!buttons?.hideCartButton && (
-            <div class="flex items-center justify-center font-normal btn btn-accent btn-outline border rounded-full p-0 m-0 w-[43px] h-[43px] min-h-0 ">
-              <CartButtonVDNA />
-              {/* <Image
+            {discountButton && (
+              <a
+                href={discountButton.href}
+                class="bg-primary w-[226px] h-[22px] rounded-md flex items-center justify-center "
+              >
+                <div class="flex">
+                  <Image
+                    class="object-contain pr-1"
+                    src={discountButton.image}
+                    width={15}
+                    height={15}
+                    alt={""}
+                  />
+                  <span class="text-[10px] text-base-100 font-semibold">
+                    {discountButton.text}
+                  </span>
+                </div>
+              </a>
+            )}
+          </div>
+
+          <ul
+            class={`flex gap-6 mt-1 ${
+              logoPosition === "left" ? "justify-center" : "justify-start"
+            }`}
+          >
+            {items.map((item) => (
+              <NavItem item={item} />
+            ))}
+          </ul>
+        </div>
+
+        <div class="flex-none flex items-center justify-end gap-6 col-span-1">
+          {/* <Searchbar searchbar={searchbar} /> */}
+
+          <div class="flex gap-5">
+            {!buttons?.hideCartButton && (
+              <div class="flex items-center justify-center font-normal btn btn-accent btn-outline border rounded-full p-0 m-0 w-[43px] h-[43px] min-h-0 ">
+                <CartButtonVDNA />
+                {/* <Image
                 class="rounded-lg"
                 src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/bc12db11-daca-47eb-b9ce-7bee347798b6"
                 width={28}
                 height={38}
                 alt={""}
               /> */}
-            </div>
-          )}
+              </div>
+            )}
 
-          {!buttons?.hideWishlistButton && (
-            <a
-              class="flex items-center text-xs font-thin"
-              href="/wishlist"
-              aria-label="Wishlist"
-            >
-              <button
-                class=" font-normal btn btn-accent btn-outline border rounded-full p-0 m-0 w-[43px] h-[43px] min-h-0"
+            {!buttons?.hideWishlistButton && (
+              <a
+                class="flex items-center text-xs font-thin"
+                href="/wishlist"
                 aria-label="Wishlist"
               >
-                <Icon id="Heart" size={27} strokeWidth={0.4} />
-              </button>
-            </a>
-          )}
+                <button
+                  class=" font-normal btn btn-accent btn-outline border rounded-full p-0 m-0 w-[43px] h-[43px] min-h-0"
+                  aria-label="Wishlist"
+                >
+                  <Icon id="Heart" size={27} strokeWidth={0.4} />
+                </button>
+              </a>
+            )}
 
-          {!buttons?.hideAccountButton && (
-            
-            <a
-              class="flex items-center text-xs font-thin"
-              href="/entrar"
-              aria-label="Account"
-            >
-              <div class="font-normal btn btn-accent btn-outline border rounded-full p-0 m-0 w-[43px] h-[43px] min-h-0">
-                <Image
-                  class="rounded-lg"
-                  src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/fb00010a-a586-4ede-ba77-653171becd82"
-                  width={28}
-                  height={38}
-                  alt={""}
-                />
-              </div>
-            </a>
-          )}
+            {!buttons?.hideAccountButton && (
+              <a
+                class="flex items-center text-xs font-thin"
+                href="/entrar"
+                aria-label="Account"
+              >
+                <div class="font-normal btn btn-accent btn-outline border rounded-full p-0 m-0 w-[43px] h-[43px] min-h-0">
+                  <Image
+                    class="rounded-lg"
+                    src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/fb00010a-a586-4ede-ba77-653171becd82"
+                    width={28}
+                    height={38}
+                    alt={""}
+                  />
+                </div>
+              </a>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
