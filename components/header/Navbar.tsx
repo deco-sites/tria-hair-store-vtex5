@@ -38,68 +38,75 @@ function Navbar({
   const platform = usePlatform();
 
   // Mobile header
-  if (device === "mobile") {
-    return (
-      <div
-        style={{ height: navbarHeight }}
-        class="lg:hidden grid grid-cols-3 justify-between items-center  w-full px-6 pb-6 gap-2"
-      >
-        <MenuButton />
-        {logo && (
-          <a
-            href="/"
-            class="flex-grow inline-flex items-center justify-center"
-            style={{ minHeight: navbarHeight }}
-            aria-label="Store logo"
-          >
-            <Image
-              src={logo.src}
-              alt={logo.alt}
-              width={logo.width || 100}
-              height={logo.height || 13}
-            />
-          </a>
-        )}
+  // if (device === "mobile") {
+  //   return (
+  //     <div
+  //       style={{ height: navbarHeight }}
+  //       class="lg:hidden grid grid-cols-3 justify-between items-center  w-full px-6 pb-6 gap-2"
+  //     >
+  //       <MenuButton />
+  //       {logo && (
+  //         <a
+  //           href="/"
+  //           class="flex-grow inline-flex items-center justify-center"
+  //           style={{ minHeight: navbarHeight }}
+  //           aria-label="Store logo"
+  //         >
+  //           <Image
+  //             src={logo.src}
+  //             alt={logo.alt}
+  //             width={logo.width || 100}
+  //             height={logo.height || 13}
+  //           />
+  //         </a>
+  //       )}
 
-        <div class="flex justify-end gap-1">
-          <SearchButton />
-          {platform === "vnda" && <CartButtonVDNA />}
-        </div>
-      </div>
-    );
-  }
+  //       <div class="flex justify-end gap-1">
+  //         <SearchButton />
+  //         {platform === "vnda" && <CartButtonVDNA />}
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   // Desktop header
   return (
     <>
       <div
         style={{ height: navbarHeight }}
-        class="lg:hidden grid grid-cols-3 justify-between items-center bg-base-100  w-screen px-6 pb-6 gap-2"
+        class="lg:hidden flex flex-col bg-base-100  w-screen pb-6 "
       >
-        <MenuButton />
-        {logo && (
-          <a
-            href="/"
-            class="flex-grow inline-flex items-center justify-center"
-            style={{ minHeight: navbarHeight }}
-            aria-label="Store logo"
-          >
-            <Image
-              src={logo.src}
-              alt={logo.alt}
-              width={logo.width || 100}
-              height={logo.height || 13}
-            />
-          </a>
-        )}
+        <div class="flex justify-between items-center bg-base  px-6 ">
+          <MenuButton />
+          {logo && (
+            <a
+              href="/"
+              class="flex-grow inline-flex items-center justify-center"
+              style={{ minHeight: navbarHeight }}
+              aria-label="Troia Hair logo"
+            >
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                width={logo.width || 100}
+                height={logo.height || 13}
+              />
+            </a>
+          )}
 
-        <div class="flex justify-end gap-1">
-          <SearchButton />
-          {platform === "vnda" && <CartButtonVDNA />}
+          <div class="flex items-center justify-center font-normal btn btn-accent btn-outline border rounded-full border-primary p-0 m-0 w-[43px] h-[43px] min-h-0 ">
+            {platform === "vnda" && <CartButtonVDNA />}
+          </div>
+        </div>
+
+        <div class="w-screen bg-white mx-auto pb-4 flex items-center justify-center">
+          <div>
+            <Searchbar searchbar={searchbar} />
+          </div>
         </div>
       </div>
 
-      <div class="hidden md:flex md:flex-wrap items-center w-full min-h-[77px] px-6 bg-base-100 justify-between">
+      <div class="hidden lg:flex items-center w-full min-h-[77px] px-6 bg-base-100 justify-between">
         <div
           class={`flex ${
             logoPosition === "left"
@@ -139,9 +146,9 @@ function Navbar({
             {discountButton && (
               <a
                 href={discountButton.href}
-                class="bg-primary w-[226px] h-[22px] rounded-md flex items-center justify-center "
+                class="bg-primary  rounded-md flex items-center justify-center "
               >
-                <div class="flex">
+                <div class="flex p-1">
                   <Image
                     class="object-contain pr-1"
                     src={discountButton.image}
@@ -171,9 +178,9 @@ function Navbar({
         <div class="flex-none flex items-center justify-end gap-6 col-span-1">
           {/* <Searchbar searchbar={searchbar} /> */}
 
-          <div class="flex gap-5">
+          <div class="flex gap-5 border border-primary">
             {!buttons?.hideCartButton && (
-              <div class="flex items-center justify-center font-normal btn btn-accent btn-outline border rounded-full p-0 m-0 w-[43px] h-[43px] min-h-0 ">
+              <div class="flex items-center justify-center font-normal btn btn-accent btn-outline border rounded-full border-primary p-0 m-0 w-[43px] h-[43px] min-h-0 ">
                 <CartButtonVDNA />
                 {/* <Image
                 class="rounded-lg"
@@ -192,7 +199,7 @@ function Navbar({
                 aria-label="Wishlist"
               >
                 <button
-                  class=" font-normal btn btn-accent btn-outline border rounded-full p-0 m-0 w-[43px] h-[43px] min-h-0"
+                  class=" font-normal btn btn-accent btn-outline border border-primary rounded-full p-0 m-0 w-[43px] h-[43px] min-h-0"
                   aria-label="Wishlist"
                 >
                   <Icon id="Heart" size={27} strokeWidth={0.4} />
@@ -206,7 +213,7 @@ function Navbar({
                 href="/entrar"
                 aria-label="Account"
               >
-                <div class="font-normal btn btn-accent btn-outline border rounded-full p-0 m-0 w-[43px] h-[43px] min-h-0">
+                <div class="font-normal btn btn-accent btn-outline border border-primary rounded-full p-0 m-0 w-[43px] h-[43px] min-h-0">
                   <Image
                     class="rounded-lg"
                     src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/fb00010a-a586-4ede-ba77-653171becd82"

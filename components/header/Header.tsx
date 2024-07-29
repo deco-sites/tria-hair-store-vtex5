@@ -111,10 +111,10 @@ function Header({
 
   return (
     <>
-      <header class="min-h-[77px] max-w-[1300px] p-0 mx-auto bg-base-100">
+      <header class="min-h-[77px] max-w-[1300px] p-0 mx-auto bg-white">
         <Drawers menu={{ items }} searchbar={searchbar} platform={platform}>
-          <div class="fixed left-0 w-full z-50">
-            <div class="min-h-[95px] max-w-[1300px]   mx-auto ">
+          <div class="fixed left-0 w-full z-50 bg-base-100">
+            <div class=" max-w-[1300px]   mx-auto ">
               {alerts && alerts.length > 0 && <Alert alerts={alerts} />}
               <Navbar
                 device={device}

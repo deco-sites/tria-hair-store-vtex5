@@ -76,13 +76,13 @@ function Searchbar({
 
   return (
     <div
-      class=" h-[18px] gap-8 px-4 "
+      class=" h-[18px] gap-8 md:px-4 "
       style={{ gridTemplateRows: "min-content auto" }}
     >
       <form
         id={id}
         action={action}
-        class="join max-w-[434px] h-[18px] border-[0.5px] border-primary"
+        class="join lg:max-w-[434px] w-[350px] h-[18px] border-[0.5px] border-primary"
       >
         <input
           ref={searchInputRef}
