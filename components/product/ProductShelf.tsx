@@ -54,7 +54,7 @@ function ProductShelf({
     5: "w-1/5",
   };
   return (
-    <div class="max-w-[1400px]  py-16 flex flex-col gap-6 lg:py-10 mx-auto">
+    <div class="md:max-w-[1400px]  py-16 flex flex-col gap-6 lg:py-10 mx-auto">
       <div class="flex flex-col items-center pb-8">
         <h2 class="text-2xl text-primary font-bold pb-2">{title}</h2>
         <p class="text-base text-primary">{description}</p>
@@ -65,31 +65,33 @@ function ProductShelf({
         class={clx(
           "grid h-auto pt-2",
           layout?.showArrows && "grid-cols-[48px_1fr_48px] ",
-          "px-0 md:px-5 container",
+          "px-0 md:px-5 container"
         )}
       >
-        <Slider class=" overflow-x-auto carousel   carousel-center sm:carousel-end mx-auto">
-          {products?.map((product, index) => (
-            <Slider.Item
-              index={index}
-              class={clx(
-                "carousel-item",
-                "justify-center ml-4 first:ml-0",
-                slideDesktop[layout?.numberOfSliders?.desktop ?? 5],
-                slideMobile[layout?.numberOfSliders?.mobile ?? 2],
-              )}
-            >
-              <div>
-                <ProductCard
-                  product={product}
-                  itemListName={title}
-                  platform={platform}
-                  index={index}
-                />
-                <Rating maxRating={rating.maxRating} rating={rating.rating} />
-              </div>
-            </Slider.Item>
-          ))}
+        <Slider class=" overflow-x-auto carousel carousel-center sm:carousel-end mx-auto">
+          <div class="flex gap-3">
+            {products?.map((product, index) => (
+              <Slider.Item
+                index={index}
+                class={clx(
+                  "carousel-item",
+                  "justify-center ml-4 first:ml-0 ",
+                  slideDesktop[layout?.numberOfSliders?.desktop ?? 5],
+                  slideMobile[layout?.numberOfSliders?.mobile ?? 5]
+                )}
+              >
+                <div>
+                  <ProductCard
+                    product={product}
+                    itemListName={title}
+                    platform={platform}
+                    index={index}
+                  />
+                  <Rating maxRating={rating.maxRating} rating={rating.rating} />
+                </div>
+              </Slider.Item>
+            ))}
+          </div>
         </Slider>
 
         {layout?.showArrows && (

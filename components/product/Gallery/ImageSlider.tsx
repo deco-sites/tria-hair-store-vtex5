@@ -42,12 +42,12 @@ export default function GallerySlider(props: Props) {
   return (
     <div id={id} class="grid grid-flow-row sm:grid-flow-col">
       {/* Image Slider */}
-      <div class="relative order-1 sm:order-2  w-[482px] h-[462px]">
-        <Slider class="carousel carousel-center gap-6  max-w-[482px]   w-[482px] h-[462px] border border-primary rounded-xl">
+      <div class="relative order-1 sm:order-2  md:max-w-[482px] md:max-h-[462px] w-screen flex items-center justify-center">
+        <Slider class="carousel carousel-center gap-6  md:max-w-[482px]   md:w-[482px] md:h-[462px] w-[300px] h-[300px] border border-primary rounded-xl">
           {images.map((img, index) => (
             <Slider.Item index={index} class="carousel-item mx-auto">
               <Image
-                class="object-cover "
+                class="object-cover"
                 sizes="(max-width: 640px) 100vw, 40vw"
                 style={{ aspectRatio }}
                 src={img.url!}
@@ -63,17 +63,21 @@ export default function GallerySlider(props: Props) {
         </Slider>
 
         <Slider.PrevButton
-          class="no-animation absolute left-2 top-1/2 btn btn-circle btn-outline"
+          class="no-animation absolute left-2 "
           disabled
         >
-          <Icon size={24} id="ChevronLeft" strokeWidth={3} />
+          <div class="btn btn-circle btn-outline btn-primary border border-primary bg-base-100 text-primary">
+            <Icon size={24} id="ChevronLeft" strokeWidth={3} />
+          </div>
         </Slider.PrevButton>
 
         <Slider.NextButton
-          class="no-animation absolute right-2 top-1/2 btn btn-circle btn-outline"
+          class="no-animation absolute right-2"
           disabled={images.length < 2}
         >
-          <Icon size={24} id="ChevronRight" strokeWidth={3} />
+          <div class="btn btn-circle btn-outline btn-primary border border-primary bg-base-100 text-primary">
+            <Icon size={24} id="ChevronRight" strokeWidth={3} />
+          </div>
         </Slider.NextButton>
 
         <div class="absolute top-2 right-2 bg-base-100 rounded-full ">
@@ -86,7 +90,7 @@ export default function GallerySlider(props: Props) {
       </div>
 
       {/* Dots */}
-      <ul class="carousel carousel-center gap-1 px-4 sm:px-0 sm:flex-col order-2 sm:order-1  mr-[21px]">
+      <ul class="carousel carousel-center gap-1 px-4 sm:px-0 sm:flex-col order-2 sm:order-1  mr-[21px] hidden md:block">
         {images.map((img, index) => (
           <li class="carousel-item min-w-[63px] max-w-[113px] w-[113px] h-[102px] ">
             <Slider.Dot index={index}>

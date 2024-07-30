@@ -151,8 +151,8 @@ export default function Footer({
   },
 }: Props) {
   return (
-    <div class="font-poppins lg:max-w-none bg-neutral mx-auto md:max-w-6xl px-4 pt-16 text-sm flex justify-center">
-      <div class="w-[1153px] flex flex-col gap-10">
+    <div class="font-poppins lg:max-w-none bg-neutral mx-auto md:max-w-6xl px-4 pt-16 text-sm flex justify-center ">
+      <div class="max-w-[1153px] flex flex-col gap-10 md:mx-6">
         <div class="flex flex-col gap-6 justify-between lg:flex-row text-secondary-content border-b border-white-100 ">
           <div class="mb-6">
             <h3 class="font-poppins text-[22px] font-normal tracking-wide">
@@ -185,8 +185,7 @@ export default function Footer({
               <div
                 class="text-[8px]"
                 dangerouslySetInnerHTML={{ __html: subscribe.instructions }}
-              >
-              </div>
+              ></div>
             </form>
           </div>
         </div>

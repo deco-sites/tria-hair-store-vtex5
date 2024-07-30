@@ -163,7 +163,7 @@ function BlogPosts({
           </>
         )}
 
-        <div class="col-span-1 lg:w-[1141px]">
+        <div class="col-span-1 lg:w-[1141px] overflow-x-auto">
           <Slider class="lg:w-[1141px] carousel carousel-center  col-span-full row-span-full gap-20 pt-10">
             {testimonials?.map((slide, index) => (
               <Slider.Item index={index} class="carousel-item">

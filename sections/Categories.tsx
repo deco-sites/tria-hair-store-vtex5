@@ -186,7 +186,7 @@ function Categories({
           )}
 
           <div class="col-span-1">
-            <Slider class="lg:w-[1171px] carousel carousel-center  col-span-full row-span-full gap-[61px] overflow-x-hidden w-screen">
+            <Slider class="lg:w-[1171px] carousel carousel-center  col-span-full row-span-full gap-[61px] overflow-x-auto w-screen md:px-3 lg-px-0">
               {categories?.map((slide, index) => (
                 <Slider.Item index={index} class="carousel-item">
                   <SliderItem slide={slide} id={`${id}::${index}`} />

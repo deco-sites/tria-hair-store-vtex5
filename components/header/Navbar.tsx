@@ -22,7 +22,7 @@ function Navbar({
   logo,
   buttons,
   logoPosition = "left",
-  device,
+  //device,
   linksTopBar,
   discountButton,
 }: {
@@ -178,7 +178,7 @@ function Navbar({
         <div class="flex-none flex items-center justify-end gap-6 col-span-1">
           {/* <Searchbar searchbar={searchbar} /> */}
 
-          <div class="flex gap-5 border border-primary">
+          <div class="flex gap-5 ">
             {!buttons?.hideCartButton && (
               <div class="flex items-center justify-center font-normal btn btn-accent btn-outline border rounded-full border-primary p-0 m-0 w-[43px] h-[43px] min-h-0 ">
                 <CartButtonVDNA />

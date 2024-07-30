@@ -13,6 +13,7 @@ import ProductSelector from "./ProductVariantSelector.tsx";
 
 import ImageGallerySlider from "../../components/product/Gallery/ImageSlider.tsx";
 import Image from "apps/website/components/Image.tsx";
+import Breadcrumb from "../ui/Breadcrumb.tsx";
 
 interface Props {
   page: ProductDetailsPage | null;
@@ -33,7 +34,7 @@ function ProductInfo({ page, layout }: Props) {
   if (page === null) {
     throw new Error("Missing Product Details Page Info");
   }
-
+ 
   const { breadcrumbList, product } = page;
   const {
     productID,
@@ -65,32 +66,36 @@ function ProductInfo({ page, layout }: Props) {
     listPrice,
   });
 
+  
   return (
-    <div class="flex flex-col  w-[1300px]" id={id}>
-      {/* <Breadcrumb itemListElement={breadcrumb.itemListElement} /> */}
+    <div class="flex flex-col  max-w-[1300px]" id={id}>
       {/* Code and name */}
 
-      <h1 class=" bg-primary  ">
-        <span class="font-bold text-2xl uppercase text-accent text-center block py-8 mx-auto w-[1300px] ">
+      <div class=" bg-primary flex items-center justify-center">
+        <span class="font-bold text-2xl uppercase text-accent text-center block py-8 mx-auto my-auto md:w-[1300px] w-screen mt-8 lg:mt-0">
           {layout?.name === "concat"
             ? `${isVariantOf?.name} ${name}`
             : layout?.name === "productGroup"
             ? isVariantOf?.name
             : name}
         </span>
-      </h1>
+      </div>
 
-      <div class="flex mx-6 mt-8 sm:mt-8 ">
+      <div class="flex md:mx-6 mt-8 sm:mt-8 flex-col lg:flex-row ">
         <ImageGallerySlider page={page} />
-
-        <div class=" flex flex-col pl-10 w-1/2">
-          <div class="flex gap-3">
-            {gtin && (
-              <span class="text-[8px] font-bold text-primary">Cod. {gtin}</span>
-            )}
-            <span class="uppercase x-[66px] h-[10px] btn btn-primary min-h-0 text-[8px] text-white text-normal">
-              TAG
-            </span>
+        <div class=" flex flex-col lg:pl-10 md:w-1/2 mt-4 lg:mt-0 w-screen p-4 lg:p-0">
+          <Breadcrumb itemListElement={breadcrumb.itemListElement} />
+          <div class=" flex flex-col ">
+            <div class="flex gap-3">
+              {gtin && (
+                <span class="text-[9px] font-bold text-primary">
+                  Cod. {gtin}
+                </span>
+              )}
+              <span class="uppercase h-[12px] btn btn-primary min-h-0 text-[9px] text-white text-normal">
+                TAG
+              </span>
+            </div>
           </div>
 
           {/* Avaliador */}
@@ -115,7 +120,7 @@ function ProductInfo({ page, layout }: Props) {
                   {formatPrice(listPrice, offers?.priceCurrency)}
                 </span>
               )}
-              <span class="font-bold text-4xl text-primary">
+              <span class="font-bold text-3xl text-primary">
                 {formatPrice(price, offers?.priceCurrency)}
               </span>
             </div>
@@ -128,19 +133,20 @@ function ProductInfo({ page, layout }: Props) {
           </div>
 
           {/* Add to Cart and Favorites button */}
-          <div class="mt-4 sm:mt-10 flex flex-col gap-2 w-full h-[34px]">
-            {availability === "https://schema.org/InStock"
-              ? (
-                <>
-                  <AddToCartButtonVNDA
-                    eventParams={{ items: [eventItem] }}
-                    productID={productID}
-                    // additionalProperty={additionalProperty}
-                    variantStyle="productPage"
-                  />
-                </>
-              )
-              : <OutOfStock productID={productID} />}
+          <div class="mt-4 sm:mt-10 flex flex-col gap-2 w-full min-h-[34px]">
+            {availability === "https://schema.org/InStock" ? (
+              <>
+                <AddToCartButtonVNDA
+                  eventParams={{ items: [eventItem] }}
+                  productID={productID}
+                  // additionalProperty={additionalProperty}
+                  variantStyle="productPage"
+                />
+              </>
+            ) : (
+                // <OutOfStock productID={productID} />
+                <p class="text-primary text-semibold">Produto Indisponível.</p>
+            )}
           </div>
           {/* Shipping Simulation */}
           <div class="mt-8">

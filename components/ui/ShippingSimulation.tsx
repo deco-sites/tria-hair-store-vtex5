@@ -4,6 +4,7 @@ import Button from "../../components/ui/Button.tsx";
 import { formatPrice } from "../../sdk/format.ts";
 import { useCart } from "apps/vnda/hooks/useCart.ts";
 import type { ShippingMethod } from "apps/vnda/utils/client/types.ts";
+import Image from "apps/website/components/Image.tsx";
 
 export interface Props {
   skuId: string;
@@ -16,7 +17,7 @@ function ShippingContent({ simulation }: {
 }) {
   if (typeof simulation.value === "string") {
     return (
-      <div class="flex flex-col gap-4 p-4 bg-base-200 rounded-[4px] relative">
+      <div class="flex flex-col gap-4 p-4 bg-primary rounded-[4px] relative font-semibold text-base-200 text-center">
         <span>CEP inválido ou localidade não atendida</span>
       </div>
     );
@@ -97,39 +98,52 @@ function ShippingSimulation({ skuId }: Props) {
 
   return (
     <div class="flex flex-col gap-2">
-      <div class="flex flex-col">
-        <span class="font-semibold text-black/[.60] text-xs uppercase">
-          Calcular frete e prazo
-        </span>
-      </div>
-      <div class="flex flex-row">
-        <form
-          class="w-full flex gap-4"
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleSimulation();
-          }}
-        >
-          <input
-            as="input"
-            type="text"
-            class="flex-grow-[2] border-[2px] border-base-200 pl-6 py-[11.5px]"
-            placeholder="CEP"
-            value={postalCode.value}
-            maxLength={8}
-            onChange={(e: { currentTarget: { value: string } }) => {
-              postalCode.value = e.currentTarget.value;
-            }}
+      <div class="flex flex-col lg:flex-row w-full">
+        <div class="flex items-center gap-2 mr-3">
+          <Image
+            class="  object-cover w-[34px] h-[34px]"
+            width={34}
+            height={34}
+            src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/94e4ca94-224f-4f7e-962f-a97d6ef16c00"
+            alt="icone de um caminhão de entrega"
           />
-          <Button
-            loading={loading.value}
-            type="submit"
-            class="flex-grow md:flex-grow-0 md:px-6 py-[11.5px] border-[2px] border-black font-bold text-base uppercase rounded-lg"
+          <span class="font-semibold text-primary text-xs uppercase">
+            Calcule o frete
+          </span>
+        </div>
+
+        <div class="flex flex-row w-full">
+          <form
+            class="w-full flex gap-4"
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleSimulation();
+            }}
           >
-            Calcular
-          </Button>
-        </form>
+            <input
+              as="input"
+              type="text"
+              class="flex-grow-[2] border border-primary bg-accent w-[180px] h-[29px] pl-6 py-[11.5px] text-[14px] placeholder:text-[14px] text-primary placeholder:text-primary rounded-sm"
+              placeholder="Digite aqui o CEP"
+              value={postalCode.value}
+              maxLength={8}
+              onChange={(e: { currentTarget: { value: string } }) => {
+                postalCode.value = e.currentTarget.value;
+              }}
+            />
+            <Button
+              loading={loading.value}
+              type="submit"
+              class="flex-grow md:flex-grow-0 md:px-6 min-h-0 bg-accent font-semibold text-primary uppercase rounded-sm h-[29px] text-[14px]"
+            >
+              Calcular
+            </Button>
+          </form>
+        </div>
       </div>
+      <p class="text-primary text-[10px]">
+        Informe seu CEP para consultar os prazos de entrega
+      </p>
       <div>
         <ShippingContent simulation={simulateResult} />
       </div>

@@ -325,7 +325,7 @@ function Footer({
           </div>
         )}
         {layout?.variation == "Variation 5" && (
-          <div class="flex flex-col mb-3 ">
+          <div class="flex flex-col mb-3 mx-5">
             {_newsletter}
             {layout?.hide?.newsletter ? <></> : <Divider />}
 

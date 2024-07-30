@@ -272,7 +272,8 @@
       "layout": {
         "showArrows": false,
         "numberOfSliders": {
-          "desktop": 5
+          "desktop": 5,
+          "mobile": 4
         }
       },
       "products": {
@@ -423,7 +424,8 @@
       "layout": {
         "showArrows": false,
         "numberOfSliders": {
-          "mobile": 2
+          "mobile": 4,
+          "desktop": 5
         }
       },
       "products": {
@@ -473,7 +475,8 @@
       "layout": {
         "showArrows": false,
         "numberOfSliders": {
-          "desktop": 3
+          "desktop": 3,
+          "mobile": 5
         }
       },
       "posts": [
