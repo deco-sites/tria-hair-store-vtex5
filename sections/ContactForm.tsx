@@ -1,4 +1,6 @@
 import { HTMLWidget } from "apps/admin/widgets.ts";
+import ContactUs from "../islands/ContactUs.tsx";
+//import {Secret} from "apps/website/loaders/secret.ts"
 
 interface Props {
   title: string;
@@ -16,6 +18,7 @@ interface Props {
   titleGoogleMaps: string;
   /** @description mudar o width para 567 e o height para 166 */
   maps: HTMLWidget;
+  //key: Secret;
 }
 
 export default function ContactForm({
@@ -39,10 +42,8 @@ export default function ContactForm({
       <div class=" bg-accent md:h-[186px] h-[157px] w-full flex flex-col items-center justify-center">
         <h3 class="uppercase font-bold md:text-2xl text-base">{title}</h3>
         <div className="relative h-[1px] bg-primary rounded-full  md:w-[538px] mt-[29px] w-[342px]">
-          <div className="absolute top-0 -translate-y-1/2  left-0 w-2 h-2 rounded-full bg-primary">
-          </div>
-          <div className="absolute top-0 -translate-y-1/2  right-0 w-2 h-2 rounded-full bg-primary">
-          </div>
+          <div className="absolute top-0 -translate-y-1/2  left-0 w-2 h-2 rounded-full bg-primary"></div>
+          <div className="absolute top-0 -translate-y-1/2  right-0 w-2 h-2 rounded-full bg-primary"></div>
         </div>
         <p class="md:text-[12px] text-[8px] pt-4">{subtitle}</p>
       </div>
@@ -56,63 +57,7 @@ export default function ContactForm({
           <p class="md:text-[12px] text-[9px] mt-[6px] ">
             Campos marcados com asterisco são de preenchimento obrigatório.
           </p>
-          <form class="mt-[29px] flex items-end flex-col">
-            <div class="">
-              <label for="nomeInput">
-                <p class="font-bold text-[10px]">*Nome</p>
-                <input
-                  type="text"
-                  id="nomeInput"
-                  class="md:w-[468px] w-[333px] h-4 border border-base-200 text-[12px] focus:border-primary pl-2"
-                />
-              </label>
-              <label for="empresaInput">
-                <p class="font-bold text-[10px] pt-[30px]">Empresa</p>
-                <input
-                  type="text"
-                  id="empresaInput"
-                  class="md:w-[468px] w-[333px] h-4 border border-base-200 text-[12px] focus:border-primary pl-2"
-                />
-              </label>
-              <label for="emailInput">
-                <p class="font-bold text-[10px] pt-[30px]">*E-mail</p>
-                <input
-                  type="text"
-                  id="emailInput"
-                  class="md:w-[468px] w-[333px] h-4 border border-base-200 text-[12px] focus:border-primary pl-2"
-                />
-              </label>
-              <label for="telefoneInput">
-                <p class="font-bold text-[10px] pt-[30px]">Telefone</p>
-                <input
-                  type="text"
-                  id="telefoneInput"
-                  class="md:w-[468px] w-[333px] h-4 border border-base-200 text-[12px] focus:border-primary pl-2"
-                />
-              </label>
-              <label for="assuntoInput">
-                <p class="font-bold text-[10px] pt-[30px]">*Assunto</p>
-                <input
-                  type="text"
-                  id="assuntoInput"
-                  class="md:w-[468px] w-[333px] h-4 border border-base-200 text-[12px] focus:border-primary pl-2"
-                />
-              </label>
-              <label htmlFor="mensagemInput">
-                <p class="font-bold text-[10px] pt-[30px]">*Mensagem</p>
-              </label>
-              <textarea
-                id="mensagemInput"
-                rows={5}
-                cols={40}
-                class="md:w-[468px] w-[333px] h-[170px] border border-base-200 text-[12px] focus:border-primary pl-2"
-              />
-            </div>
-
-            <div class="btn w-[92px] h-[25px] flex items-center justify-center btn-accent rounded-sm mt-[26px] min-h-0">
-              <button class=" text-[9px] ">Enviar</button>
-            </div>
-          </form>
+          <ContactUs />
         </div>
 
         <div class="flex flex-col items-center md:w-[567px] w-screen">

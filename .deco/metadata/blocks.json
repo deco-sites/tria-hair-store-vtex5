@@ -426,5 +426,9 @@
   "/.deco/blocks/whatsapp.json": {
     "blockType": "sections",
     "__resolveType": "site/sections/whatsapp.tsx"
+  },
+  "/.deco/blocks/Preview%20vnda%2Floaders%2FproductList.ts.json": {
+    "blockType": "loaders",
+    "__resolveType": "vnda/loaders/productList.ts"
   }
 }

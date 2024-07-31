@@ -2,6 +2,7 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
+import * as $$$$$$$$$0 from "./actions/sendEmail.ts";
 import * as $$$$$$$$$$$0 from "./apps/deco/blog.ts";
 import * as $$$$$$$$$$$1 from "./apps/deco/vnda.ts";
 import * as $$$$$$$$$$$2 from "./apps/deco/vtex.ts";
@@ -150,6 +151,9 @@ const manifest = {
     "site/sections/TopBar.tsx": $$$$$$62,
     "site/sections/VideoPost.tsx": $$$$$$63,
     "site/sections/whatsapp.tsx": $$$$$$64,
+  },
+  "actions": {
+    "site/actions/sendEmail.ts": $$$$$$$$$0,
   },
   "apps": {
     "site/apps/deco/blog.ts": $$$$$$$$$$$0,
