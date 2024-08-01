@@ -1,6 +1,4 @@
-import { h } from "preact";
-import { useRef } from "preact/hooks";
-import emailjs from "emailjs";
+import { useRef, useState } from "preact/hooks";
 import { invoke } from "../runtime.ts";
 
 interface ContactUsProps {
@@ -19,13 +17,37 @@ interface EmailOptions {
   mensagem: string;
 }
 
-// const ContactUs: React.FC<ContactUsProps> = ({
-//   serviceId,
-//   templateId,
-//   publicKey,
-// }) => {
 const ContactUs = () => {
   const formRef = useRef<HTMLFormElement>(null);
+  const [isFormValid, setIsFormValid] = useState(false);
+ 
+
+  const validateForm = () => {
+    const nomeInput = formRef.current?.querySelector(
+      "#nomeInput"
+    ) as HTMLInputElement;
+    const emailInput = formRef.current?.querySelector(
+      "#emailInput"
+    ) as HTMLInputElement;
+    const assuntoInput = formRef.current?.querySelector(
+      "#assuntoInput"
+    ) as HTMLInputElement;
+    const mensagemInput = formRef.current?.querySelector(
+      "#mensagemInput"
+    ) as HTMLTextAreaElement;
+
+    const nome = nomeInput.value.trim().length > 2;
+    const email = emailInput.value.trim();
+    const assunto = assuntoInput.value.trim().length > 2;
+    const mensagem = mensagemInput.value?.trim().length > 3;
+
+    // Adicione mais validações conforme necessário
+   const isEmailValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?$/.test(email);
+
+    setIsFormValid(
+      nome && assunto && isEmailValid && mensagem
+    );
+  };
 
   const sendEmail = async (e: Event) => {
     e.preventDefault();
@@ -61,35 +83,25 @@ const ContactUs = () => {
       ) as HTMLTextAreaElement;
       const mensagem = mensagemInput.value?.trim() || "";
 
-      // const formData = {
+      // Verifica se o formulário é válido antes de enviar
+      if (isFormValid) {
+        await invoke({
+          key: "site/actions/sendEmail.ts",
+          props: { nome, empresa, email, telefone, assunto, mensagem },
+        });
+
+        formRef.current?.reset(); 
+      } else {
+        // Exibe uma mensagem de erro ou alerta ao usuário
+        console.error(
+          "Por favor, preencha todos os campos obrigatórios corretamente."
+        );
         
-      //   nome,
-      //   empresa,
-      //   email,
-      //   telefone,
-      //   assunto,
-      //   mensagem,
-      // };
-
-      await invoke({
-        key: "site/actions/sendEmail.ts",
-        props: { nome, empresa, email, telefone, assunto, mensagem },
-      });
-
-      // emailjs
-      //   .send(serviceId, templateId, formData, {
-      //     publicKey,
-      //   })
-      //   .then(() => {
-      //     console.log("SUCCESS!", mensagemInput);
-      //     formRef.current?.reset();
-      //   })
-      //   .catch((error: string) => {
-      //     console.log("FAILED...", error);
-      //   });
+      }
     }
   };
 
+  // Chama validateForm toda vez que um campo do formulário muda
   const handleInputChange = () => {
     validateForm();
   };
@@ -106,7 +118,8 @@ const ContactUs = () => {
           <input
             type="text"
             id="nomeInput"
-            class="md:w-[468px] w-[333px] h-4 border border-base-200 text-[12px] focus:border-primary pl-2"
+            onChange={handleInputChange}
+            class="md:w-[468px] w-[333px] h-5 border border-base-200 text-[12px] focus:border-primary pl-2"
           />
         </label>
         <label for="empresaInput">
@@ -114,7 +127,7 @@ const ContactUs = () => {
           <input
             type="text"
             id="empresaInput"
-            class="md:w-[468px] w-[333px] h-4 border border-base-200 text-[12px] focus:border-primary pl-2"
+            class="md:w-[468px] w-[333px] h-5 border border-base-200 text-[12px] focus:border-primary pl-2"
           />
         </label>
         <label for="emailInput">
@@ -122,7 +135,8 @@ const ContactUs = () => {
           <input
             type="text"
             id="emailInput"
-            class="md:w-[468px] w-[333px] h-4 border border-base-200 text-[12px] focus:border-primary pl-2"
+            onChange={handleInputChange}
+            class="md:w-[468px] w-[333px] h-5 border border-base-200 text-[12px] focus:border-primary pl-2"
           />
         </label>
         <label for="telefoneInput">
@@ -130,7 +144,7 @@ const ContactUs = () => {
           <input
             type="text"
             id="telefoneInput"
-            class="md:w-[468px] w-[333px] h-4 border border-base-200 text-[12px] focus:border-primary pl-2"
+            class="md:w-[468px] w-[333px] h-5 border border-base-200 text-[12px] focus:border-primary pl-2"
           />
         </label>
         <label for="assuntoInput">
@@ -138,7 +152,8 @@ const ContactUs = () => {
           <input
             type="text"
             id="assuntoInput"
-            class="md:w-[468px] w-[333px] h-4 border border-base-200 text-[12px] focus:border-primary pl-2"
+            onChange={handleInputChange}
+            class="md:w-[468px] w-[333px] h-5 border border-base-200 text-[12px] focus:border-primary pl-2"
           />
         </label>
         <label htmlFor="mensagemInput">
@@ -148,16 +163,17 @@ const ContactUs = () => {
           id="mensagemInput"
           rows={5}
           cols={40}
+          onChange={handleInputChange}
           class="md:w-[468px] w-[333px] h-[170px] border border-base-200 text-[12px] focus:border-primary pl-2"
         />
       </div>
 
       <div
-        class="btn w-[92px] h-[25px] flex items-center justify-center btn-accent rounded-sm mt-[26px] min-h-0"
+        class="btn w-[92px] h-[25px] flex items-center justify-center btn-accent rounded-sm mt-[26px] min-h-0 text-primary"
         // Desabilita o botão se o formulário não for válido
         disabled={!isFormValid}
       >
-        <input type="submit" value="Enviar" class=" text-[9px] " />
+        <input type="submit" value="Enviar" class=" text-[10px] " />
       </div>
     </form>
   );
