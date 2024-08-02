@@ -12,6 +12,7 @@ import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalytic
 import ProductSelector from "./ProductVariantSelector.tsx";
 
 import ImageGallerySlider from "../../components/product/Gallery/ImageSlider.tsx";
+import ProductDescription from "../../components/product/ProductDescription.tsx";
 import Image from "apps/website/components/Image.tsx";
 import Breadcrumb from "../ui/Breadcrumb.tsx";
 
@@ -26,6 +27,8 @@ interface Props {
     name?: "concat" | "productGroup" | "product";
   };
 }
+
+
 
 function ProductInfo({ page, layout }: Props) {
   const platform = usePlatform();
@@ -144,8 +147,8 @@ function ProductInfo({ page, layout }: Props) {
                 />
               </>
             ) : (
-                // <OutOfStock productID={productID} />
-                <p class="text-primary text-semibold">Produto Indisponível.</p>
+              // <OutOfStock productID={productID} />
+              <p class="text-primary text-semibold">Produto Indisponível.</p>
             )}
           </div>
           {/* Shipping Simulation */}
@@ -179,6 +182,7 @@ function ProductInfo({ page, layout }: Props) {
               )}
             </span>
           </div>
+
           {/* Analytics Event */}
           <SendEventOnView
             id={id}
@@ -193,6 +197,7 @@ function ProductInfo({ page, layout }: Props) {
           />
         </div>
       </div>
+        <ProductDescription />
     </div>
   );
 }

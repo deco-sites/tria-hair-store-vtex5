@@ -1,23 +1,15 @@
 import { useRef, useState } from "preact/hooks";
 import { invoke } from "../runtime.ts";
+import { Secret } from "apps/website/loaders/secret.ts";
 
-interface ContactUsProps {
+interface EmailJSProps {
   serviceId: string;
   templateId: string;
   publicKey: string;
+  privateKey: Secret;
 }
 
-interface EmailOptions {
-  publicKey: string;
-  nome: string;
-  empresa: string;
-  email: string;
-  telefone: string;
-  assunto: string;
-  mensagem: string;
-}
-
-const ContactUs = () => {
+const ContactUs = (sendEmailProps: EmailJSProps) => {
   const formRef = useRef<HTMLFormElement>(null);
   const [isFormValid, setIsFormValid] = useState(false);
  
@@ -87,7 +79,7 @@ const ContactUs = () => {
       if (isFormValid) {
         await invoke({
           key: "site/actions/sendEmail.ts",
-          props: { nome, empresa, email, telefone, assunto, mensagem },
+          props: { nome, empresa, email, telefone, assunto, mensagem, sendEmailProps },
         });
 
         formRef.current?.reset(); 

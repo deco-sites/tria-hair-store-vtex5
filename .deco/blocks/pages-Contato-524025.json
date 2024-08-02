@@ -17,7 +17,17 @@
       "textBox4": "Entre em contato conosco através do e-mail: troiahair@troiahair.com.br",
       "titleBox5": "Dados da empresa",
       "textBox5": "TROIA HAIR COSMETICOS LTDA CNPJ: 13.422.865/0001-98",
-      "titleGoogleMaps": "Nosso Endereço"
+      "titleGoogleMaps": "Nosso Endereço",
+      "sendEmailProps": {
+        "serviceId": "service_05i889q",
+        "templateId": "template_5am487o",
+        "publicKey": "KbgykvC1N_6NjztB9",
+        "privateKey": {
+          "__resolveType": "website/loaders/secret.ts",
+          "encrypted": "80fb836138a4bfd2f05dda1215aac6303eaa4a2fe70bd9752a74458be8db60d3",
+          "name": "emailJS"
+        }
+      }
     },
     {
       "__resolveType": "Footer - 05"
