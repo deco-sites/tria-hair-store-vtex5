@@ -44,9 +44,11 @@ export default function AddToCartButton(props: Props) {
   return (
     <Button
       {...btnProps}
-      class={props.variantStyle === "productPage"
-        ? "text-primary btn btn-accent "
-        : "font-semibold uppercase btn btn-primary p-0 w-[153px] h-[18px] text-[10px] text-base-100 rounded-md min-h-0"}
+      class={
+        props.variantStyle === "productPage"
+          ? "text-primary btn btn-accent min-h-0 h-[34px]"
+          : "font-semibold uppercase btn btn-primary p-0 w-[153px] h-[18px] text-[10px] text-base-100 rounded-md min-h-0"
+      }
     >
       COMPRAR
     </Button>

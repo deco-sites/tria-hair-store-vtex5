@@ -136,7 +136,7 @@ function ProductInfo({ page, layout }: Props) {
           </div>
 
           {/* Add to Cart and Favorites button */}
-          <div class="mt-4 sm:mt-10 flex flex-col gap-2 w-full min-h-[34px]">
+          <div class="mt-4 sm:mt-10 flex flex-col gap-2 w-full h-[34px]">
             {availability === "https://schema.org/InStock" ? (
               <>
                 <AddToCartButtonVNDA
@@ -176,7 +176,7 @@ function ProductInfo({ page, layout }: Props) {
                 //   />
                 // </details>
                 <div
-                  class="ml-2 text-sm text-primary h-[91px]"
+                  class="ml-2 text-[12px] text-primary h-[97px] overflow-y-auto"
                   dangerouslySetInnerHTML={{ __html: description }}
                 />
               )}
@@ -197,7 +197,7 @@ function ProductInfo({ page, layout }: Props) {
           />
         </div>
       </div>
-        <ProductDescription />
+      <ProductDescription />
     </div>
   );
 }
