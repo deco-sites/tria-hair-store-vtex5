@@ -12,8 +12,7 @@ export default function ProductDetails({ page }: Props) {
   if (!page?.seo) {
     return <NotFound />;
   }
- 
-  
+
   return (
     <div class="w-full container pb-8 flex flex-col gap-6 ">
       <div class="flex flex-col gap-6 lg:flex-row lg:justify-center">

@@ -12,20 +12,19 @@ interface EmailJSProps {
 const ContactUs = (sendEmailProps: EmailJSProps) => {
   const formRef = useRef<HTMLFormElement>(null);
   const [isFormValid, setIsFormValid] = useState(false);
- 
 
   const validateForm = () => {
     const nomeInput = formRef.current?.querySelector(
-      "#nomeInput"
+      "#nomeInput",
     ) as HTMLInputElement;
     const emailInput = formRef.current?.querySelector(
-      "#emailInput"
+      "#emailInput",
     ) as HTMLInputElement;
     const assuntoInput = formRef.current?.querySelector(
-      "#assuntoInput"
+      "#assuntoInput",
     ) as HTMLInputElement;
     const mensagemInput = formRef.current?.querySelector(
-      "#mensagemInput"
+      "#mensagemInput",
     ) as HTMLTextAreaElement;
 
     const nome = nomeInput.value.trim().length > 2;
@@ -34,10 +33,12 @@ const ContactUs = (sendEmailProps: EmailJSProps) => {
     const mensagem = mensagemInput.value?.trim().length > 3;
 
     // Adicione mais validações conforme necessário
-   const isEmailValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?$/.test(email);
+    const isEmailValid =
+      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?$/
+        .test(email);
 
     setIsFormValid(
-      nome && assunto && isEmailValid && mensagem
+      nome && assunto && isEmailValid && mensagem,
     );
   };
 
@@ -46,32 +47,32 @@ const ContactUs = (sendEmailProps: EmailJSProps) => {
 
     if (formRef.current) {
       const nomeInput = formRef.current.querySelector(
-        "#nomeInput"
+        "#nomeInput",
       ) as HTMLInputElement;
       const nome = nomeInput.value;
 
       const empresaInput = formRef.current.querySelector(
-        "#empresaInput"
+        "#empresaInput",
       ) as HTMLInputElement;
       const empresa = empresaInput.value;
 
       const emailInput = formRef.current.querySelector(
-        "#emailInput"
+        "#emailInput",
       ) as HTMLInputElement;
       const email = emailInput.value;
 
       const telefoneInput = formRef.current.querySelector(
-        "#telefoneInput"
+        "#telefoneInput",
       ) as HTMLInputElement;
       const telefone = telefoneInput.value;
 
       const assuntoInput = formRef.current.querySelector(
-        "#assuntoInput"
+        "#assuntoInput",
       ) as HTMLInputElement;
       const assunto = assuntoInput.value;
 
       const mensagemInput = formRef.current.querySelector(
-        "#mensagemInput"
+        "#mensagemInput",
       ) as HTMLTextAreaElement;
       const mensagem = mensagemInput.value?.trim() || "";
 
@@ -79,16 +80,23 @@ const ContactUs = (sendEmailProps: EmailJSProps) => {
       if (isFormValid) {
         await invoke({
           key: "site/actions/sendEmail.ts",
-          props: { nome, empresa, email, telefone, assunto, mensagem, sendEmailProps },
+          props: {
+            nome,
+            empresa,
+            email,
+            telefone,
+            assunto,
+            mensagem,
+            sendEmailProps,
+          },
         });
 
-        formRef.current?.reset(); 
+        formRef.current?.reset();
       } else {
         // Exibe uma mensagem de erro ou alerta ao usuário
         console.error(
-          "Por favor, preencha todos os campos obrigatórios corretamente."
+          "Por favor, preencha todos os campos obrigatórios corretamente.",
         );
-        
       }
     }
   };

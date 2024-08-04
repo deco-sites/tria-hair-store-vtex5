@@ -28,8 +28,6 @@ interface Props {
   };
 }
 
-
-
 function ProductInfo({ page, layout }: Props) {
   const platform = usePlatform();
   const id = useId();
@@ -37,7 +35,7 @@ function ProductInfo({ page, layout }: Props) {
   if (page === null) {
     throw new Error("Missing Product Details Page Info");
   }
- 
+
   const { breadcrumbList, product } = page;
   const {
     productID,
@@ -69,7 +67,9 @@ function ProductInfo({ page, layout }: Props) {
     listPrice,
   });
 
+  console.log("product info", product);
   
+
   return (
     <div class="flex flex-col  max-w-[1300px]" id={id}>
       {/* Code and name */}
@@ -136,7 +136,7 @@ function ProductInfo({ page, layout }: Props) {
           </div>
 
           {/* Add to Cart and Favorites button */}
-          <div class="mt-4 sm:mt-10 flex flex-col gap-2 w-full h-[34px]">
+          <div class="mt-4 sm:mt-10 flex flex-col gap-2 w-full h-[64px]">
             {availability === "https://schema.org/InStock" ? (
               <>
                 <AddToCartButtonVNDA
@@ -144,7 +144,9 @@ function ProductInfo({ page, layout }: Props) {
                   productID={productID}
                   // additionalProperty={additionalProperty}
                   variantStyle="productPage"
+                  showCounter={true}
                 />
+               
               </>
             ) : (
               // <OutOfStock productID={productID} />
@@ -197,7 +199,7 @@ function ProductInfo({ page, layout }: Props) {
           />
         </div>
       </div>
-      <ProductDescription />
+      {/* <ProductDescription /> */}
     </div>
   );
 }

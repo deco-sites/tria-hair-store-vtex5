@@ -40,7 +40,7 @@ export default function Slide({ content }: Props) {
           </div>
         </div>
       );
-    }
+    },
   );
   return (
     <div class="bg-primary relative w-full overflow-hidden h-[56px]">

@@ -185,7 +185,8 @@ export default function Footer({
               <div
                 class="text-[8px]"
                 dangerouslySetInnerHTML={{ __html: subscribe.instructions }}
-              ></div>
+              >
+              </div>
             </form>
           </div>
         </div>

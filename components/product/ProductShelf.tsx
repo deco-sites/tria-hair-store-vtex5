@@ -65,7 +65,7 @@ function ProductShelf({
         class={clx(
           "grid h-auto pt-2",
           layout?.showArrows && "grid-cols-[48px_1fr_48px] ",
-          "px-0 md:px-5 container"
+          "px-0 md:px-5 container",
         )}
       >
         <Slider class=" overflow-x-auto carousel carousel-center sm:carousel-end mx-auto">
@@ -76,8 +76,8 @@ function ProductShelf({
                 class={clx(
                   "carousel-item",
                   "justify-center ml-4 first:ml-0 ",
-                  slideDesktop[layout?.numberOfSliders?.desktop ?? 5],
-                  slideMobile[layout?.numberOfSliders?.mobile ?? 5]
+                  slideDesktop[layout?.numberOfSliders?.desktop ?? 2],
+                  slideMobile[layout?.numberOfSliders?.mobile ?? 5],
                 )}
               >
                 <div>

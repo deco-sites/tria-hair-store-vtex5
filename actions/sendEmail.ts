@@ -18,7 +18,7 @@ interface Props {
 export default async function action(
   props: Props,
   _req: Request,
-  _ctx: AppContext
+  _ctx: AppContext,
 ) {
   const serviceId = "service_05i889q";
   const templateId = "template_5am487o";
@@ -33,7 +33,7 @@ export default async function action(
     nome: props.nome,
     assunto: props.assunto,
     empresa: props.empresa,
-    telefone:props.telefone,
+    telefone: props.telefone,
     mendagem: props.mensagem,
   };
   console.log(template);
@@ -44,7 +44,7 @@ export default async function action(
     template_id: templateId,
     user_id: publicKey,
     template_params: {
-      ...props
+      ...props,
     },
     accessToken: privateKey,
   };
@@ -58,7 +58,7 @@ export default async function action(
           "Content-Type": "application/json",
         },
         body: JSON.stringify(emailData),
-      }
+      },
     );
 
     if (!response.ok) {
