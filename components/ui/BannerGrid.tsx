@@ -9,13 +9,13 @@ export interface Banner {
   srcMobile: ImageWidget;
   srcDesktop?: ImageWidget;
   /**
-   * @description Image alt text
+   * @description Descrição de acessibilidade e SEO
    */
   alt: string;
   /**
-   * @description When you click you go to
+   * @description Link opcional
    */
-  href: string;
+  href?: string;
 }
 
 export type BorderRadius =
@@ -30,16 +30,20 @@ export type BorderRadius =
 
 export interface Props {
   /**
-   * @description Default is 2 for mobile and all for desktop
+   * @title Banners por linha
+   * @description layout inicial de 1 banner para mobile e 2 para desktop
    */
   itemsPerLine: {
-    /** @default 2 */
+    /**
+     * @default 1
+     * @description tamanho da imagem 1 banner: largura 383px, altura 264px, 2 banners: largura 191px, altura 2
+     */
     mobile?: 1 | 2;
-    /** @default 4 */
+    /** @default 2 */
     desktop?: 1 | 2 | 4 | 6 | 8;
   };
   /**
-   * @description Item's border radius in px
+   * @title Arredondamento dos cantos da imagem
    */
   borderRadius: {
     /** @default none */
@@ -109,7 +113,7 @@ const DEFAULT_PROPS: Props = {
     desktop: "none",
   },
   itemsPerLine: {
-    mobile: 2,
+    mobile: 1,
     desktop: 2,
   },
 };
@@ -137,7 +141,7 @@ export default function BannnerGrid(props: Props) {
           >
             <Picture>
               <Source
-                media="(max-width: 767px)"
+                media="max-width: 767px h-264"
                 src={srcMobile}
                 width={383}
                 height={264}

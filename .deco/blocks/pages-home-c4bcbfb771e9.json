@@ -396,17 +396,16 @@
     {
       "__resolveType": "site/sections/Images/BannerGrid.tsx",
       "itemsPerLine": {
-        "mobile": 2,
+        "mobile": 1,
         "desktop": 2
       },
       "borderRadius": {
-        "mobile": "md",
+        "mobile": "sm",
         "desktop": "none"
       },
       "banners": [
         {
           "alt": "a",
-          "href": "a",
           "srcMobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/0ba803e2-d60e-4d7b-8bc3-659550d2ff72",
           "srcDesktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/0ba803e2-d60e-4d7b-8bc3-659550d2ff72"
         },

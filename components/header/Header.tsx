@@ -10,52 +10,115 @@ import Navbar from "./Navbar.tsx";
 // import { headerHeight } from "./constants.ts";
 
 export interface Logo {
+  /**
+   * @title Logo
+   * @description Imagem do logo
+   */
   src: ImageWidget;
+  /**
+   * @description Descrição de acessibilidade e SEO
+   */
   alt: string;
+  /**
+   * @title Largura
+   * @description largura 137px
+   */
   width?: number;
+  /**
+   * @title Altura
+   * @description altura 58px
+   */
   height?: number;
 }
 
 export interface Buttons {
+  /**
+   * @title Desabilitar botão de Pesquisa
+   */
   hideSearchButton?: boolean;
+  /**
+   * @title Desabilitar botão de Usuário
+   */
   hideAccountButton?: boolean;
-  hideWishlistButton?: boolean;
+  // hideWishlistButton?: boolean;
+  /**
+   * @title Desabilitar botão do Carrinho de Compra
+   */
   hideCartButton?: boolean;
 }
 
 export interface LinkTop {
+  /**
+   * @title Texto do Link
+   */
   label: string;
+  /**
+   * @title Link
+   */
   href: string;
 }
 
 export interface Discount {
-  image: ImageWidget;
+  /**
+   * @title Imagem
+   * @description Icone quadrado
+   */
+  image?: ImageWidget;
+  /**
+   * @title Texto
+   */
   text: string;
+  /**
+   * @title Link
+   */
   href: string;
 }
 
 export interface Props {
+  /**
+   * @title Alertas
+   * @description mensagem no topo do site
+   */
   alerts?: string[];
+  /**
+   * @title Autoplay intervalo entre os alertas
+   * @description tempo em segundos
+   */
+  interval?: number;
 
-  /** @title Search Bar */
+  /** @title Barra de Pesquisa */
   searchbar?: Omit<SearchbarProps, "platform">;
+  /**
+   * @title Links
+   * @description Links que ficam do lado direito da barra de Pesquisa
+   */
   linksTopBar?: LinkTop[];
+  /**
+   * @title Mini banner
+   * @description Foi inicialmente definido como desconto mas pode ser alterado.
+   */
   discountButton?: Discount;
 
   /**
-   * @title Navigation items
-   * @description Navigation items used both on mobile and desktop menus
+   * @title Barra de navegação
+   * @description Esta barra de navegação é usada no desktop e menu do celular
    */
   navItems?: SiteNavigationElement[] | null;
 
   /** @title Logo */
   logo?: Logo;
   logoPosition?: "left" | "center";
+  /**
+   * @title Elementos do Topo do site
+   * @description Habilita/Desabilita elementos
+   */
   buttons?: Buttons;
 }
 
 function Header({
+  
   alerts,
+  interval,
   searchbar,
   linksTopBar = [
     {
@@ -115,7 +178,7 @@ function Header({
         <Drawers menu={{ items }} searchbar={searchbar} platform={platform}>
           <div class="fixed left-0 w-full z-50 bg-base-100">
             <div class=" max-w-[1300px]   mx-auto ">
-              {alerts && alerts.length > 0 && <Alert alerts={alerts} />}
+              {alerts && alerts.length > 0 && <Alert alerts={alerts} interval={interval}/>}
               <Navbar
                 device={device}
                 items={items}
