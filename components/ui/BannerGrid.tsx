@@ -122,7 +122,7 @@ export default function BannnerGrid(props: Props) {
   } = { ...DEFAULT_PROPS, ...props };
 
   return (
-    <section class=" w-[1300px] px-4 md:px-0 mx-auto py-10">
+    <section class=" md:w-[1300px] px-4 md:px-0 mx-auto py-10 overflow-x-auto">
       <div
         class={`grid gap-4 md:gap-6 max-w-[1193px] mx-auto ${
           MOBILE_COLUMNS[itemsPerLine?.mobile ?? 2]
@@ -139,8 +139,8 @@ export default function BannnerGrid(props: Props) {
               <Source
                 media="(max-width: 767px)"
                 src={srcMobile}
-                width={290}
-                height={205}
+                width={383}
+                height={264}
               />
               <Source
                 media="(min-width: 768px)"

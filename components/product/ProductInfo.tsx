@@ -142,7 +142,7 @@ function ProductInfo({ page, layout }: Props) {
                 <AddToCartButtonVNDA
                   eventParams={{ items: [eventItem] }}
                   productID={productID}
-                  // additionalProperty={additionalProperty}
+                  additionalProperty={additionalProperty}
                   variantStyle="productPage"
                   showCounter={true}
                 />

@@ -16,10 +16,10 @@ export interface Props {
   title?: string;
   description?: string;
   layout?: {
-    numberOfSliders?: {
-      mobile?: 1 | 2 | 3 | 4 | 5;
-      desktop?: 1 | 2 | 3 | 4 | 5;
-    };
+    // numberOfSliders?: {
+    //   mobile?: 1 | 2 | 3 | 4 | 5;
+    //   desktop?: 1 | 2 | 3 | 4 | 5;
+    // };
     showArrows?: boolean;
   };
   rating?: ratingProps;
@@ -39,7 +39,7 @@ function ProductShelf({
     return null;
   }
   const slideDesktop = {
-    1: "md:w-full",
+    1: "md:w-4/5",
     2: "md:w-1/2",
     3: "md:w-1/3",
     4: "md:w-1/4",
@@ -53,32 +53,24 @@ function ProductShelf({
     4: "w-1/4",
     5: "w-1/5",
   };
+
   return (
-    <div class="md:max-w-[1400px]  py-16 flex flex-col gap-6 lg:py-10 mx-auto">
+    <div class="md:max-w-[1200px] w-screen py-16 flex flex-col gap-6 lg:py-10 mx-auto">
       <div class="flex flex-col items-center pb-8">
         <h2 class="text-2xl text-primary font-bold pb-2">{title}</h2>
         <p class="text-base text-primary">{description}</p>
       </div>
 
-      <div
-        id={id}
-        class={clx(
-          "grid h-auto pt-2",
-          layout?.showArrows && "grid-cols-[48px_1fr_48px] ",
-          "px-0 md:px-5 container",
-        )}
-      >
-        <Slider class=" overflow-x-auto carousel carousel-center sm:carousel-end mx-auto">
-          <div class="flex gap-3">
+      <div id={id} class=" h-auto pt-2    ">
+        <Slider class="md:max-w-[1200px] w-screen overflow-x-auto carousel carousel-center sm:carousel-end mx-auto">
+          <div class="flex gap-5 mx-auto px-5">
             {products?.map((product, index) => (
               <Slider.Item
                 index={index}
-                class={clx(
-                  "carousel-item",
-                  "justify-center ml-4 first:ml-0 ",
-                  slideDesktop[layout?.numberOfSliders?.desktop ?? 2],
-                  slideMobile[layout?.numberOfSliders?.mobile ?? 5],
-                )}
+                class="carousel-item justify-center ml-4 first:ml-0 "
+
+                // slideDesktop[layout?.numberOfSliders?.desktop ?? 2],
+                // slideMobile[layout?.numberOfSliders?.mobile ?? 5],
               >
                 <div>
                   <ProductCard
@@ -95,18 +87,18 @@ function ProductShelf({
         </Slider>
 
         {layout?.showArrows && (
-          <>
-            <div class="relative block z-10 col-start-1 row-start-3">
-              <Slider.PrevButton class="absolute w-12 h-12 flex justify-center items-center">
+          <div class="flex justify-between ">
+            <div class="relative block z-10">
+              <Slider.PrevButton class="absolute w-12 h-12 flex justify-center items-center text-primary">
                 <Icon size={24} id="ChevronLeft" strokeWidth={3} class="w-5" />
               </Slider.PrevButton>
             </div>
-            <div class="relative block z-10 col-start-3 row-start-3">
-              <Slider.NextButton class="absolute w-12 h-12 flex justify-center items-center">
+            <div class="relative block z-10">
+              <Slider.NextButton class="absolute w-12 h-12 flex justify-center items-center text-primary">
                 <Icon size={24} id="ChevronRight" strokeWidth={3} />
               </Slider.NextButton>
             </div>
-          </>
+          </div>
         )}
         <Slider.JS rootId={id} />
         <SendEventOnView

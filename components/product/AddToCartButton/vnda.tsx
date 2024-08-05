@@ -1,11 +1,11 @@
-//import { PropertyValue } from "apps/commerce/types.ts";
+import { PropertyValue } from "apps/commerce/types.ts";
 import { useCart } from "apps/vnda/hooks/useCart.ts";
 import Button, { Props as BtnProps } from "./common.tsx";
 import { useState } from "preact/hooks";
 
 export interface Props extends Omit<BtnProps, "onAddItem"> {
   productID: string;
-  // additionalProperty: PropertyValue[];
+  additionalProperty: PropertyValue[];
   showCounter?: boolean;
 }
 

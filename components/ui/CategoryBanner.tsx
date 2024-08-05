@@ -50,7 +50,7 @@ function Banner(props: SectionProps<ReturnType<typeof loader>>) {
   const { title, image } = banner;
 
   return (
-    <div class="mx-auto max-w-[1140px] max-h-[195px]">
+    <div class="mx-auto max-w-[1300px] max-h-[195px]">
       <Picture preload>
         <Source
           class=" object-cover object-top"
@@ -62,7 +62,7 @@ function Banner(props: SectionProps<ReturnType<typeof loader>>) {
         <Source
           class=" object-cover object-top"
           src={image.desktop}
-          width={1140}
+          width={1300}
           height={195}
           media="(min-width: 767px)"
         />

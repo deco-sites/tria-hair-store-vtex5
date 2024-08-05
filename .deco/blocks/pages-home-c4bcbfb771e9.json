@@ -281,7 +281,8 @@
         "tags": [],
         "typeTags": [],
         "ids": [],
-        "count": 7
+        "count": 7,
+        "wildcard": false
       },
       "cardLayout": {
         "layout": {
@@ -399,7 +400,7 @@
         "desktop": 2
       },
       "borderRadius": {
-        "mobile": "3xl",
+        "mobile": "md",
         "desktop": "none"
       },
       "banners": [
