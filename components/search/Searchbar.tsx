@@ -27,13 +27,12 @@ import Image from "apps/website/components/Image.tsx";
 export interface Props {
   /**
    * @title Placeholder
-   * @description Search bar default placeholder message
+   * @description Mensagem inicial da barra de pesquisa
   //  * @default What are you looking for?
    */
   placeholder?: string;
   /**
-   * @title Page path
-   * @description When user clicks on the search button, navigate it to
+   * @title Pagina do resultado de pesquisa
    * @default /s
    */
   action?: string;
@@ -45,7 +44,8 @@ export interface Props {
   name?: string;
 
   /**
-   * @title Suggestions Integration
+   * @title Sugestões de pesquisa
+   * @description Não esta disponível na plataforma VNDA
    * @todo: improve this typings ({query: string, count: number}) => Suggestions
    */
   loader: Resolved<Suggestion | null>;

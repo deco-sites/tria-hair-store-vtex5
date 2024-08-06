@@ -13,14 +13,17 @@ import { useId } from "../../sdk/useId.ts";
  * @titleBy alt
  */
 export interface Banner {
-  /** @description Imagem para descktop (largura: 1300px altura: 360px)*/
+  /** @description Imagem para desktop (largura: 1300px, altura: 360px)*/
   desktop: ImageWidget;
-  /** @description Imagem para descktop (largura: ? altura: ?)*/
+  /** @description Imagem para mobile (largura: 430px, altura: 590px)*/
   mobile: ImageWidget;
-  /** @description Descrição da imagem */
+  /** @description Descrição de acessibilidade e SEO */
   alt: string;
   action?: {
-    /** @description ao clicar link para a pagina */
+    /** 
+     * @title link
+     * @description ao clicar link para a pagina 
+     * */
     href: string;
     // /** @description Image text title */
     // title: string;

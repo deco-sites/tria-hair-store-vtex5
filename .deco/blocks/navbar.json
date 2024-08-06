@@ -130,6 +130,10 @@
       "image": [],
       "name": "Nossas Marcas",
       "url": "/nossas-marcas"
+    },
+    {
+      "children": [],
+      "image": []
     }
   ],
   "__resolveType": "commerce/loaders/navbar.ts"

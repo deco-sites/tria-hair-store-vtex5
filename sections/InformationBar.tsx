@@ -1,15 +1,38 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 
+/**
+   * @title Bloco de Informações
+   */
 export interface SlideProps {
-  title: string;
-  subtitle?: string;
+  /**
+   * @description Nome do elemento que irá aparecer na lista do admin
+   */
   label?: string;
+  /**
+   * @title Texto principal
+   */
+  title: string;
+  /**
+   * @title Subtítulo
+   */
+  subtitle?: string;
+  /**
+   * @title Repetição
+   * @description Número de vezes que o mesmo item vai repetir
+   */
   repeat?: number;
+  /**
+   * @title Icone
+   * @description icone (largura: 41px, altura: 41px)
+   */
   image?: ImageWidget;
 }
 
 export interface Props {
+  /**
+   * @title Items
+   */
   content?: SlideProps[];
 }
 
@@ -24,7 +47,8 @@ export default function Slide({ content }: Props) {
               .map(() => (
                 <div class="flex justify-center items-center bg-primary gap-5 h-[56px]">
                   <Image
-                    width={41}
+                    width={45}
+                    height={45}
                     class=""
                     src={image || ""}
                     alt={title}

@@ -18,10 +18,10 @@
     "action": "/s",
     "loader": {
       "data": {
-        "count": 4,
-        "__resolveType": "vtex/loaders/intelligentSearch/suggestions.ts",
+        "__resolveType": "commerce/loaders/product/extensions/suggestions.ts",
         "searches": [],
-        "products": []
+        "products": [],
+        "extensions": []
       },
       "__resolveType": "resolved"
     },

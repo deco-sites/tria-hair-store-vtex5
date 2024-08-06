@@ -4,30 +4,42 @@ import Icon from "../components/ui/Icon.tsx";
 import Slider from "../components/ui/Slider.tsx";
 import { useId } from "../sdk/useId.ts";
 
+/** @title Categoria ou Marcas*/
 export interface Categorie {
   content?: {
+    /** @title Nome da Categoria/Marca */
     categorieName: string;
     image: ImageWidget;
-    /** @description Descrição da imagem */
+    /** @title Descrição de acessibilidade e SEO */
     alt: string;
+    /** @title Link da Categoria */
     href: string;
   };
 }
 
 export interface Props {
-  title?: string;
+  /** @title Título */
+  title?: "Nossas Categorias" | "Nossas Marcas";
+  /**
+   * @title Items
+   * @description Insira cada Categoria/Marca
+   */
   categories?: Categorie[];
+  /**
+   * @title Quantidade de Items
+   * @description Escolha o numero de itens que vai aparecer inicialmente na tela se houver mais elementos vai criar uma barra de rolagem automaticamente
+   */
   layout?: {
     numberOfCategories?: {
-      mobile?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
-      desktop?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+      mobile?: 1 | 2 | 3;
+      desktop?: 1 | 2 | 3 | 4 | 5 | 6 | 7;
     };
     showArrows?: boolean;
   };
 }
 
 function Categories({
-  title = "CATEGORIES",
+  title = "Nossas Categorias",
   layout = {
     numberOfCategories: {
       mobile: 3,
@@ -186,7 +198,7 @@ function Categories({
           )}
 
           <div class="col-span-1">
-            <Slider class="lg:w-[1171px] carousel carousel-center  col-span-full row-span-full gap-[61px] overflow-x-auto w-screen md:px-3 lg-px-0">
+            <Slider class="lg:w-[1171px] carousel carousel-center  col-span-full row-span-full gap-[61px] overflow-x-auto w-screen px-3 lg-px-0">
               {categories?.map((slide, index) => (
                 <Slider.Item index={index} class="carousel-item">
                   <SliderItem slide={slide} id={`${id}::${index}`} />
