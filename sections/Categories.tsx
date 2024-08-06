@@ -6,15 +6,13 @@ import { useId } from "../sdk/useId.ts";
 
 /** @title Categoria ou Marcas*/
 export interface Categorie {
-  content?: {
-    /** @title Nome da Categoria/Marca */
-    categorieName: string;
-    image: ImageWidget;
-    /** @title Descrição de acessibilidade e SEO */
-    alt: string;
-    /** @title Link da Categoria */
-    href: string;
-  };
+  /** @title Nome da Categoria/Marca */
+  categorieName: string;
+  image: ImageWidget;
+  /** @title Descrição de acessibilidade e SEO */
+  alt: string;
+  /** @title Link da Categoria */
+  href: string;
 }
 
 export interface Props {
@@ -50,85 +48,67 @@ function Categories({
   } as Props["layout"],
   categories = [
     {
-      content: {
-        categorieName: "Product",
-        image:
-          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
-        alt: "Avatar",
-        href: "/",
-      },
+      categorieName: "Product",
+      image:
+        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+      alt: "Avatar",
+      href: "/",
     },
     {
-      content: {
-        categorieName: "Product",
-        image:
-          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
-        alt: "Avatar",
-        href: "/",
-      },
+      categorieName: "Product",
+      image:
+        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+      alt: "Avatar",
+      href: "/",
     },
     {
-      content: {
-        categorieName: "Product",
-        image:
-          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
-        alt: "Avatar",
-        href: "/",
-      },
+      categorieName: "Product",
+      image:
+        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+      alt: "Avatar",
+      href: "/",
     },
     {
-      content: {
-        categorieName: "Product",
-        image:
-          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
-        alt: "Avatar",
-        href: "/",
-      },
+      categorieName: "Product",
+      image:
+        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+      alt: "Avatar",
+      href: "/",
     },
     {
-      content: {
-        categorieName: "Product",
-        image:
-          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
-        alt: "Avatar",
-        href: "/",
-      },
+      categorieName: "Product",
+      image:
+        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+      alt: "Avatar",
+      href: "/",
     },
     {
-      content: {
-        categorieName: "Product",
-        image:
-          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
-        alt: "Avatar",
-        href: "/",
-      },
+      categorieName: "Product",
+      image:
+        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+      alt: "Avatar",
+      href: "/",
     },
     {
-      content: {
-        categorieName: "Product",
-        image:
-          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
-        alt: "Avatar",
-        href: "/",
-      },
+      categorieName: "Product",
+      image:
+        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+      alt: "Avatar",
+      href: "/",
     },
     {
-      content: {
-        categorieName: "Product",
-        image:
-          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
-        alt: "Avatar",
-        href: "/",
-      },
+      categorieName: "Product",
+      image:
+        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+      alt: "Avatar",
+      href: "/",
     },
     {
-      content: {
-        categorieName: "Product",
-        image:
-          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
-        alt: "Avatar",
-        href: "/",
-      },
+      categorieName: "Product",
+      image:
+        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+      alt: "Avatar",
+      href: "/",
     },
   ],
 }: Props) {
@@ -139,28 +119,28 @@ function Categories({
   }
 
   function SliderItem({ slide, id }: { slide: Categorie; id: string }) {
-    const { content } = slide;
+    const { categorieName, image, alt, href } = slide;
 
     return (
       <div id={id} class="relative overflow-y-hidden">
         <div class="flex flex-col items-center">
           <a
-            href={content?.href}
+            href={href}
             class="flex items-center justify-center w-[115px] h-[115px] rounded-full border border-primary hover:bg-accent"
           >
             <div>
               <Image
                 class="object-cover hover:w-[135px] hover:h-[135px]"
-                alt={content?.alt}
-                src={content?.image || ""}
+                alt={alt}
+                src={image || ""}
                 width={83}
                 height={83}
               />
             </div>
           </a>
-          <a href={content?.href}>
+          <a href={href}>
             <p class="text-[10px] text-primary text-center font-bold pt-2">
-              {content?.categorieName}
+              {categorieName}
             </p>
           </a>
         </div>

@@ -47,7 +47,7 @@ function Banner(props: SectionProps<ReturnType<typeof loader>>) {
     return null;
   }
 
-  const { title, image } = banner;
+  const { title, image, subtitle } = banner;
 
   return (
     <div class="mx-auto max-w-[1300px] max-h-[195px]">
@@ -69,10 +69,9 @@ function Banner(props: SectionProps<ReturnType<typeof loader>>) {
         <img class="w-full" src={image.desktop} alt={image.alt ?? title} />
       </Picture>
 
-      {
-        /* <div class="container flex flex-col items-center justify-center sm:items-start col-start-1 col-span-1 row-start-1 row-span-1 w-full">
+      <div class="container flex flex-col items-center justify-center sm:items-start  w-full">
         <h1>
-          <span class="text-5xl font-medium text-base-100">
+          <span class="text-5xl font-medium text-primary">
             {title}
           </span>
         </h1>
@@ -81,8 +80,8 @@ function Banner(props: SectionProps<ReturnType<typeof loader>>) {
             {subtitle}
           </span>
         </h2>
-      </div> */
-      }
+      </div> 
+      
     </div>
   );
 }

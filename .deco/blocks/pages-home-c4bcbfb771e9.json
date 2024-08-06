@@ -114,71 +114,107 @@
             "categorieName": "categorie01",
             "alt": "teste",
             "href": "/"
-          }
+          },
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+          "categorieName": "Loren Ipsum",
+          "alt": "a",
+          "href": "/"
         },
         {
           "content": {
             "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
-            "categorieName": "categorie",
+            "categorieName": "categorie01",
             "alt": "teste",
             "href": "/"
-          }
+          },
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+          "categorieName": "Loren Ipsum",
+          "alt": "a",
+          "href": "/"
         },
         {
           "content": {
             "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
-            "categorieName": "categorie",
+            "categorieName": "categorie01",
             "alt": "teste",
             "href": "/"
-          }
+          },
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+          "categorieName": "Loren Ipsum",
+          "alt": "a",
+          "href": "/"
         },
         {
           "content": {
             "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
-            "categorieName": "categorie",
+            "categorieName": "categorie01",
             "alt": "teste",
             "href": "/"
-          }
+          },
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+          "categorieName": "Loren Ipsum",
+          "alt": "a",
+          "href": "/"
         },
         {
           "content": {
             "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
-            "categorieName": "categorie",
+            "categorieName": "categorie01",
             "alt": "teste",
             "href": "/"
-          }
+          },
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+          "categorieName": "Loren Ipsum",
+          "alt": "a",
+          "href": "/"
         },
         {
           "content": {
             "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
-            "categorieName": "categorie",
+            "categorieName": "categorie01",
             "alt": "teste",
             "href": "/"
-          }
+          },
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+          "categorieName": "Loren Ipsum",
+          "alt": "a",
+          "href": "/"
         },
         {
           "content": {
             "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
-            "categorieName": "categorie",
+            "categorieName": "categorie01",
             "alt": "teste",
             "href": "/"
-          }
+          },
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+          "categorieName": "Loren Ipsum",
+          "alt": "a",
+          "href": "/"
         },
         {
           "content": {
             "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
-            "categorieName": "categorie",
+            "categorieName": "categorie01",
             "alt": "teste",
             "href": "/"
-          }
+          },
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+          "categorieName": "Loren Ipsum",
+          "alt": "a",
+          "href": "/"
         },
         {
           "content": {
             "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
-            "categorieName": "categorie",
+            "categorieName": "categorie01",
             "alt": "teste",
             "href": "/"
-          }
+          },
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+          "categorieName": "Loren Ipsum",
+          "alt": "a",
+          "href": "/"
         }
       ],
       "layout": {
@@ -186,7 +222,7 @@
           "mobile": 3,
           "desktop": 7
         },
-        "showArrows": true
+        "showArrows": false
       },
       "title": "Nossas Categorias"
     },
@@ -264,33 +300,9 @@
       }
     },
     {
-      "__resolveType": "Preview /sections/Categories.tsx"
-    },
-    {
-      "__resolveType": "site/sections/Category/CategoryBanner.tsx",
-      "banners": [
-        {
-          "image": {
-            "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/91102b71-4832-486a-b683-5f7b06f649af",
-            "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/ec597b6a-dcf1-48ca-a99d-95b3c6304f96"
-          },
-          "title": "Woman",
-          "matcher": "/feminino/*",
-          "subtitle": "As"
-        },
-        {
-          "image": {
-            "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/91102b71-4832-486a-b683-5f7b06f649af",
-            "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/ec597b6a-dcf1-48ca-a99d-95b3c6304f96"
-          },
-          "title": "Woman",
-          "matcher": "/*",
-          "subtitle": "As"
-        },
-        {
-          "image": {}
-        }
-      ]
+      "__resolveType": "site/sections/LongBanner.tsx",
+      "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/1af76ea3-1a79-494e-a56f-5f7dd508ad76",
+      "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/93159794-1ffe-4d62-819d-c62c74278331"
     },
     {
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
@@ -365,6 +377,127 @@
           "srcDesktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/7d8fdb6a-88ff-46f6-937f-b8424c9fdb54"
         }
       ]
+    },
+    {
+      "__resolveType": "site/sections/Categories.tsx",
+      "categories": [
+        {
+          "content": {
+            "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+            "categorieName": "categorie01",
+            "alt": "teste",
+            "href": "/"
+          },
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+          "categorieName": "Loren Ipsum",
+          "alt": "a",
+          "href": "/"
+        },
+        {
+          "content": {
+            "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+            "categorieName": "categorie01",
+            "alt": "teste",
+            "href": "/"
+          },
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+          "categorieName": "Loren Ipsum",
+          "alt": "a",
+          "href": "/"
+        },
+        {
+          "content": {
+            "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+            "categorieName": "categorie01",
+            "alt": "teste",
+            "href": "/"
+          },
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+          "categorieName": "Loren Ipsum",
+          "alt": "a",
+          "href": "/"
+        },
+        {
+          "content": {
+            "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+            "categorieName": "categorie01",
+            "alt": "teste",
+            "href": "/"
+          },
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+          "categorieName": "Loren Ipsum",
+          "alt": "a",
+          "href": "/"
+        },
+        {
+          "content": {
+            "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+            "categorieName": "categorie01",
+            "alt": "teste",
+            "href": "/"
+          },
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+          "categorieName": "Loren Ipsum",
+          "alt": "a",
+          "href": "/"
+        },
+        {
+          "content": {
+            "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+            "categorieName": "categorie01",
+            "alt": "teste",
+            "href": "/"
+          },
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+          "categorieName": "Loren Ipsum",
+          "alt": "a",
+          "href": "/"
+        },
+        {
+          "content": {
+            "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+            "categorieName": "categorie01",
+            "alt": "teste",
+            "href": "/"
+          },
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+          "categorieName": "Loren Ipsum",
+          "alt": "a",
+          "href": "/"
+        },
+        {
+          "content": {
+            "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+            "categorieName": "categorie01",
+            "alt": "teste",
+            "href": "/"
+          },
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+          "categorieName": "Loren Ipsum",
+          "alt": "a",
+          "href": "/"
+        },
+        {
+          "content": {
+            "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+            "categorieName": "categorie01",
+            "alt": "teste",
+            "href": "/"
+          },
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/4f1e6f28-09e1-4fff-b33a-56495902beec",
+          "categorieName": "Loren Ipsum",
+          "alt": "a",
+          "href": "/"
+        }
+      ],
+      "layout": {
+        "numberOfCategories": {
+          "mobile": 3,
+          "desktop": 7
+        },
+        "showArrows": false
+      },
+      "title": "Nossas Marcas"
     },
     {
       "__resolveType": "site/sections/Product/ProductShelf.tsx",

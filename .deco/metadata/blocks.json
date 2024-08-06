@@ -247,12 +247,6 @@
     "blockType": "loaders",
     "__resolveType": "commerce/loaders/navbar.ts"
   },
-  "/.deco/blocks/pages-aiassistant-c38e51d3049a.json": {
-    "name": "AI Assistant",
-    "path": "/ai-assistant-deco-test",
-    "blockType": "pages",
-    "__resolveType": "website/pages/Page.tsx"
-  },
   "/.deco/blocks/pages-category-7493d4326022.json": {
     "name": "Category",
     "path": "/category",
@@ -430,5 +424,9 @@
   "/.deco/blocks/Preview%20vnda%2Floaders%2FproductList.ts.json": {
     "blockType": "loaders",
     "__resolveType": "vnda/loaders/productList.ts"
+  },
+  "/.deco/blocks/Preview%20%2Fsections%2FLongBanner.tsx.json": {
+    "blockType": "sections",
+    "__resolveType": "site/sections/LongBanner.tsx"
   }
 }

@@ -40,20 +40,20 @@ import * as $$$$$$24 from "./sections/Content/RichText.tsx";
 import * as $$$$$$25 from "./sections/Content/Table.tsx";
 import * as $$$$$$26 from "./sections/Content/Testimonials.tsx";
 import * as $$$$$$27 from "./sections/Content/TextWithImage.tsx";
-import * as $$$$$$28 from "./sections/Footer.tsx";
-import * as $$$$$$29 from "./sections/Footer/Footer.tsx";
-import * as $$$$$$30 from "./sections/Gallery.tsx";
-import * as $$$$$$31 from "./sections/Header/Header.tsx";
-import * as $$$$$$32 from "./sections/History.tsx";
-import * as $$$$$$33 from "./sections/Images/BannerGrid.tsx";
-import * as $$$$$$34 from "./sections/Images/Carousel.tsx";
-import * as $$$$$$35 from "./sections/Images/ImageGallery.tsx";
-import * as $$$$$$36 from "./sections/Images/ShoppableBanner.tsx";
-import * as $$$$$$37 from "./sections/InformarionBarMobile.tsx";
-import * as $$$$$$38 from "./sections/InformationBar.tsx";
-import * as $$$$$$39 from "./sections/ItWorks.tsx";
-import * as $$$$$$40 from "./sections/Links/LinkTree.tsx";
-import * as $$$$$$41 from "./sections/Links/Shortcuts.tsx";
+import * as $$$$$$28 from "./sections/Footer/Footer.tsx";
+import * as $$$$$$29 from "./sections/Gallery.tsx";
+import * as $$$$$$30 from "./sections/Header/Header.tsx";
+import * as $$$$$$31 from "./sections/History.tsx";
+import * as $$$$$$32 from "./sections/Images/BannerGrid.tsx";
+import * as $$$$$$33 from "./sections/Images/Carousel.tsx";
+import * as $$$$$$34 from "./sections/Images/ImageGallery.tsx";
+import * as $$$$$$35 from "./sections/Images/ShoppableBanner.tsx";
+import * as $$$$$$36 from "./sections/InformarionBarMobile.tsx";
+import * as $$$$$$37 from "./sections/InformationBar.tsx";
+import * as $$$$$$38 from "./sections/ItWorks.tsx";
+import * as $$$$$$39 from "./sections/Links/LinkTree.tsx";
+import * as $$$$$$40 from "./sections/Links/Shortcuts.tsx";
+import * as $$$$$$41 from "./sections/LongBanner.tsx";
 import * as $$$$$$42 from "./sections/LongTextContent.tsx";
 import * as $$$$$$43 from "./sections/Marcas.tsx";
 import * as $$$$$$44 from "./sections/Miscellaneous/CampaignTimer.tsx";
@@ -114,20 +114,20 @@ const manifest = {
     "site/sections/Content/Table.tsx": $$$$$$25,
     "site/sections/Content/Testimonials.tsx": $$$$$$26,
     "site/sections/Content/TextWithImage.tsx": $$$$$$27,
-    "site/sections/Footer.tsx": $$$$$$28,
-    "site/sections/Footer/Footer.tsx": $$$$$$29,
-    "site/sections/Gallery.tsx": $$$$$$30,
-    "site/sections/Header/Header.tsx": $$$$$$31,
-    "site/sections/History.tsx": $$$$$$32,
-    "site/sections/Images/BannerGrid.tsx": $$$$$$33,
-    "site/sections/Images/Carousel.tsx": $$$$$$34,
-    "site/sections/Images/ImageGallery.tsx": $$$$$$35,
-    "site/sections/Images/ShoppableBanner.tsx": $$$$$$36,
-    "site/sections/InformarionBarMobile.tsx": $$$$$$37,
-    "site/sections/InformationBar.tsx": $$$$$$38,
-    "site/sections/ItWorks.tsx": $$$$$$39,
-    "site/sections/Links/LinkTree.tsx": $$$$$$40,
-    "site/sections/Links/Shortcuts.tsx": $$$$$$41,
+    "site/sections/Footer/Footer.tsx": $$$$$$28,
+    "site/sections/Gallery.tsx": $$$$$$29,
+    "site/sections/Header/Header.tsx": $$$$$$30,
+    "site/sections/History.tsx": $$$$$$31,
+    "site/sections/Images/BannerGrid.tsx": $$$$$$32,
+    "site/sections/Images/Carousel.tsx": $$$$$$33,
+    "site/sections/Images/ImageGallery.tsx": $$$$$$34,
+    "site/sections/Images/ShoppableBanner.tsx": $$$$$$35,
+    "site/sections/InformarionBarMobile.tsx": $$$$$$36,
+    "site/sections/InformationBar.tsx": $$$$$$37,
+    "site/sections/ItWorks.tsx": $$$$$$38,
+    "site/sections/Links/LinkTree.tsx": $$$$$$39,
+    "site/sections/Links/Shortcuts.tsx": $$$$$$40,
+    "site/sections/LongBanner.tsx": $$$$$$41,
     "site/sections/LongTextContent.tsx": $$$$$$42,
     "site/sections/Marcas.tsx": $$$$$$43,
     "site/sections/Miscellaneous/CampaignTimer.tsx": $$$$$$44,
