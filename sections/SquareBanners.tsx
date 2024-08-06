@@ -2,21 +2,51 @@ import Image from "apps/website/components/Image.tsx";
 import type { ImageWidget } from "apps/admin/widgets.ts";
 
 export interface BannerItem {
+  /**
+   * @description Nome do elemento que irá aparecer na lista do admin
+   */
+  label?: string;
+  /** @title Link */
   href: string;
+  /**
+   * @title Link
+   * @description Tamanho do Banner (comprimento: 300px, largura: 320px)
+   */
   banner: ImageWidget;
+  /**
+   * @description Descrição de acessibilidade e SEO
+   */
   alt?: string;
 }
 
 export interface LongBanner {
+  /** @title Link */
   href: string;
+  /**
+   * @title Imagem
+   * @description Tamanho do Banner (comprimento: 300px, largura: 320px)
+   */
   banner: ImageWidget;
-  alt: string;
+  /**
+   * @description Descrição de acessibilidade e SEO
+   */
+  alt?: string;
 }
 
 interface Props {
+  /**
+   * @title Tipo de Banner
+   * @description Escolher entre banner único grande ou 4 banners Pequenos
+   */
+  bannerType: "Banner Grande" | "Lista de banners";
+  /**
+   * @title Lista de Banners Pequenos
+   * @minItems 4 
+   * @maxItems 4
+   */
   bannerList?: BannerItem[];
+  /** @title Banner Grande */
   wideBanner?: LongBanner;
-  bannerType: "Banner comprido" | "Lista de banners";
 }
 
 export default function Section({ bannerList, wideBanner, bannerType }: Props) {
@@ -41,7 +71,7 @@ export default function Section({ bannerList, wideBanner, bannerType }: Props) {
           </div>
         </div>
       )}
-      {bannerType === "Banner comprido" && (
+      {bannerType === "Banner Grande" && (
         <div class="md:w-[1300px]  md:mx-auto w-screen pt-4 pb-4 md:px-auto">
           <a href={wideBanner?.href}>
             <Image

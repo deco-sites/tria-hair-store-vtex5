@@ -34,6 +34,7 @@ export interface Props {
       mobile?: 1 | 2 | 3;
       desktop?: 1 | 2 | 3 | 4 | 5 | 6 | 7;
     };
+    /** @title Mostrar setas de Navegação */
     showArrows?: boolean;
   };
 }
@@ -211,7 +212,7 @@ function Categories({
           {layout?.showArrows && (
             <>
               <div class="col-start-3 flex justify-center">
-                <Slider.NextButton class="w-12 h-12 flex justify-center items-center">
+                <Slider.NextButton class="w-12 h-12 flex justify-center items-center text-primary">
                   <Icon size={24} id="ChevronRight" strokeWidth={3} />
                 </Slider.NextButton>
               </div>

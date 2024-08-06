@@ -207,7 +207,8 @@
         },
         {
           "banner": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/efba4e5a-42d7-48ee-bdf6-018da4bfec5f",
-          "href": "/"
+          "href": "/",
+          "label": "04"
         }
       ],
       "bannerType": "Lista de banners"
@@ -285,6 +286,9 @@
           "title": "Woman",
           "matcher": "/*",
           "subtitle": "As"
+        },
+        {
+          "image": {}
         }
       ]
     },
