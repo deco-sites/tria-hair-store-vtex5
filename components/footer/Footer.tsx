@@ -5,7 +5,7 @@ import FooterItems from "../../components/footer/FooterItems.tsx";
 import Logo from "../../components/footer/Logo.tsx";
 import MobileApps from "../../components/footer/MobileApps.tsx";
 import PaymentMethods from "../../components/footer/PaymentMethods.tsx";
-import RegionSelector from "../../components/footer/RegionSelector.tsx";
+//import RegionSelector from "../../components/footer/RegionSelector.tsx";
 import Social from "../../components/footer/Social.tsx";
 import Newsletter from "../../islands/Newsletter.tsx";
 import { clx } from "../../sdk/clx.ts";
@@ -13,14 +13,23 @@ import type { ImageWidget } from "apps/admin/widgets.ts";
 import PoweredByDeco from "apps/website/components/PoweredByDeco.tsx";
 
 export type Item = {
+  /**
+   * @title Título
+   * @description Palavra que vai aparecer no site
+   */
   label: string;
+  /** @title Link(url) */
   href: string;
 };
 
+
 export type Section = {
+  /** @title Nome da Coluna de Link */
   label: string;
+  /** @title Links */
   items: Item[];
 };
+
 
 export interface SocialItem {
   label:
@@ -38,9 +47,9 @@ export interface PaymentItem {
 }
 
 export interface MobileApps {
-  /** @description Link to the app */
+  /** @description Link para o Aplicativo da Apple */
   apple?: string;
-  /** @description Link to the app */
+  /** @description Link para o Aplicativo Android */
   android?: string;
 }
 
@@ -62,7 +71,11 @@ export interface Layout {
     | "Secondary"
     | "Accent"
     | "Base 100"
-    | "Base 100 inverted";
+  | "Base 100 inverted";
+  
+  /** 
+   * @title Variações de Layout do Footer 
+   * */
   variation?:
     | "Variation 1"
     | "Variation 2"
@@ -76,16 +89,22 @@ export interface Layout {
     socialLinks?: boolean;
     paymentMethods?: boolean;
     mobileApps?: boolean;
-    regionOptions?: boolean;
+    //regionOptions?: boolean;
     extraLinks?: boolean;
     backToTheTop?: boolean;
   };
 }
 
 export interface Props {
+  /** @description Escolha entre colocar a Imagem do Logo e escrever o nome do site*/
   logo?: {
+    /**
+     * @title Imagem
+     * @description tamanho máximo (largura: 200px, altura: 64px) */
     image: ImageWidget;
-    textLogo: string;
+    /** @title Nome do site */
+    textLogo?: string;
+    /** @title Descrição ou Slogan do Site */
     description?: string;
   };
   newsletter?: {
@@ -94,18 +113,27 @@ export interface Props {
     description?: string;
     form?: NewsletterForm;
   };
+  /** @title Lista de Links */
   sections?: Section[];
+  /** @title Social Media Links */
   social?: {
+    /** @description Texto que vai em cima dos icones */
     title?: string;
+    /**
+     * @title Icone das Redes Sociais
+     * @description Escolher */
     items: SocialItem[];
   };
+  /** @title Formas de Pagamento */
   payments?: {
     title?: string;
     items: PaymentItem[];
   };
+  /** @title Links para o download dos aplicativos */
   mobileApps?: MobileApps;
-  regionOptions?: RegionOptions;
+  //regionOptions?: RegionOptions;
   extraLinks?: Item[];
+  /** @title Voltar para o topo */
   backToTheTop?: {
     text?: string;
   };
@@ -169,7 +197,7 @@ function Footer({
     items: [{ label: "Mastercard" }, { label: "Visa" }, { label: "Pix" }],
   },
   mobileApps = { apple: "/", android: "/" },
-  regionOptions = { currency: [], language: [] },
+  //regionOptions = { currency: [], language: [] },
   extraLinks = [],
   backToTheTop,
   layout = {
@@ -182,7 +210,7 @@ function Footer({
       socialLinks: false,
       paymentMethods: false,
       mobileApps: false,
-      regionOptions: false,
+      //regionOptions: false,
       extraLinks: false,
       backToTheTop: false,
     },
@@ -214,9 +242,9 @@ function Footer({
   const _apps = layout?.hide?.mobileApps
     ? <></>
     : <MobileApps content={mobileApps} />;
-  const _region = layout?.hide?.regionOptions
-    ? <></>
-    : <RegionSelector content={regionOptions} />;
+  // const _region = layout?.hide?.regionOptions
+  //   ? <></>
+  //   : <RegionSelector content={regionOptions} />;
   const _links = layout?.hide?.extraLinks
     ? <></>
     : <ExtraLinks content={extraLinks} />;
@@ -225,7 +253,7 @@ function Footer({
     <footer
       class={clx(
         "font-poppins lg:max-w-none w-screen mx-auto flex-col pt-[53px] pb-2 md:pb-10 flex justify-center items-center",
-        LAYOUT[layout?.backgroundColor ?? "Primary"],
+        LAYOUT[layout?.backgroundColor ?? "Primary"]
       )}
     >
       <div class="lg:w-[1153px] flex flex-col ">
@@ -242,7 +270,7 @@ function Footer({
               {_social}
               <div class="flex flex-col lg:flex-row gap-10 lg:gap-14 lg:items-end">
                 {_apps}
-                {_region}
+                {/* {_region} */}
               </div>
             </div>
             <Divider />
@@ -260,7 +288,7 @@ function Footer({
                 {_social}
                 {_payments}
                 {_apps}
-                {_region}
+                {/* {_region} */}
               </div>
               <div class="flex flex-col gap-10 lg:gap-20 lg:w-1/2 lg:pr-10">
                 {_newsletter}
@@ -290,7 +318,7 @@ function Footer({
                   {_sectionLinks}
                   {_social}
                 </div>
-                {_region}
+                {/* {_region} */}
               </div>
             </div>
             <Divider />
@@ -312,7 +340,7 @@ function Footer({
                   <div class="lg:flex-auto">{_social}</div>
                 </div>
                 <div class="flex flex-col gap-10 lg:gap-10">
-                  {_region}
+                  {/* {_region} */}
                   {_apps}
                 </div>
               </div>
@@ -331,7 +359,7 @@ function Footer({
 
             <div class="flex flex-col justify-between md:flex-row gap-6 lg:gap-20 md:justify-between mb-10 mt-[30px]">
               <div>
-                {_logo}
+                <a href="/">{_logo}</a>
                 {_sectionLinks}
               </div>
               <div class="flex flex-col gap-[30px] mr-[76px] w-[280px]">
@@ -342,18 +370,33 @@ function Footer({
             </div>
             <Divider />
             <div class="flex flex-col-reverse md:flex-row md:justify-between gap-10 md:items-center mt-[30px]">
-              <PoweredByDeco />
+              {/* <PoweredByDeco /> */}
+              <p class="text-[9px] text-base-200">
+                © Copyright Tróia Hair - 2024. Todos os direitos reservados.
+              </p>
+              <a href="https://tec3commerce.com.br/" target="blank">
+                <p class="text-[9px] text-base-200 pb-2">Desenvolvido por:</p>
+                <img
+                  loading="lazy"
+                  width="77"
+                  height="24"
+                  src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/a2ca2da9-c6b7-430a-9948-b80b58a5a1a5"
+                  alt="tec3 logo"
+                />
+              </a>
               <div class="flex flex-col md:flex-row gap-10 md:items-center">
                 {_links}
-                {_region}
+                {/* {_region} */}
               </div>
             </div>
           </div>
         )}
       </div>
-      {layout?.hide?.backToTheTop
-        ? <></>
-        : <BackToTop content={backToTheTop?.text} />}
+      {layout?.hide?.backToTheTop ? (
+        <></>
+      ) : (
+        <BackToTop content={backToTheTop?.text} />
+      )}
     </footer>
   );
 }
