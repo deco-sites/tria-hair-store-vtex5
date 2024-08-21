@@ -93,21 +93,17 @@ function ProductCard({
             </div>
 
             {/* Discount % */}
-            {listPrice && price
-              ? (
-                <div class="w-[44px] h-[13px] bg-red-600 rounded flex flex-col items-center ">
-                  <span class="font-bold text-[9px] text-white">
-                    {listPrice && price
-                      ? `${
-                        Math.round(((listPrice - price) / listPrice) * 100)
-                      }% `
-                      : ""}
-                  </span>
-                </div>
-              )
-              : (
-                ""
-              )}
+            {listPrice && price ? (
+              <div class="w-[44px] h-[13px] bg-red-600 rounded flex flex-col items-center ">
+                <span class="font-bold text-[9px] text-white">
+                  {listPrice && price
+                    ? `${Math.round(((listPrice - price) / listPrice) * 100)}% `
+                    : ""}
+                </span>
+              </div>
+            ) : (
+              ""
+            )}
 
             <a href="/" target="blank">
               <Image
@@ -126,7 +122,7 @@ function ProductCard({
             class={clx(
               " w-[182px] h-[182px] pb-3 pt-6",
               "grid grid-cols-1 grid-rows-1",
-              "w-full",
+              "w-full"
             )}
           >
             <Image
@@ -138,7 +134,7 @@ function ProductCard({
               class={clx(
                 "object-cover",
                 "rounded w-full",
-                "col-span-full row-span-full",
+                "col-span-full row-span-full"
               )}
               // sizes="(max-width: 640px) 50vw, 20vw"
               preload={preload}
@@ -155,7 +151,7 @@ function ProductCard({
                 "object-cover",
                 "rounded w-full",
                 "col-span-full row-span-full",
-                "transition-opacity opacity-0 lg:group-hover:opacity-100",
+                "transition-opacity opacity-0 lg:group-hover:opacity-100"
               )}
               // sizes="(max-width: 640px) 50vw, 20vw"
               loading="lazy"
@@ -164,8 +160,7 @@ function ProductCard({
           </a>
 
           {/* SKU Selector */}
-          {
-            /* <ul class="flex items-center justify-center gap-2">
+          {/* <ul class="flex items-center justify-center gap-2">
           {variants
             .map(([value, link]) => [value, relative(link)] as const)
             .map(([value, link]) => (
@@ -184,49 +179,43 @@ function ProductCard({
                 </a>
               </li>
             ))}
-        </ul> */
-          }
+        </ul> */}
 
           {/* Name/Description */}
           <div class="flex flex-col pt-3">
             <h2
-              class="font-bold text-[10px] text-primary text-center h-7 pb-4"
+              class="font-bold text-[10px] text-primary text-center h-12 pb-4"
               dangerouslySetInnerHTML={{ __html: name ?? "" }}
             />
 
-            {
-              /* <div
+            {/* <div
             class="truncate text-xs"
             dangerouslySetInnerHTML={{ __html: description ?? "" }}
-          /> */
-            }
+          /> */}
           </div>
 
           {/* Price from/to */}
-          <div class="flex gap-2 items-center justify-center  pb-5 ">
-            {
-              /* <span class="line-through text-sm text-primary">
+          <div class="flex gap-2 items-center justify-center  pb-2 ">
+            {/* <span class="line-through text-sm text-primary">
             {formatPrice(listPrice, offers?.priceCurrency)}
-          </span> */
-            }
+          </span> */}
             <span class="font-bold  text-primary text-center text-[20px]">
               {formatPrice(price, offers?.priceCurrency)}
             </span>
           </div>
-          <div class="flex flex-col gap-2 justify-betweem">
-            {
-              /* <a
+          <div class="flex flex-col gap-2 justify-betweem mx-auto">
+            {/* <a
               href={relativeUrl}
               aria-label="view product"
               class="font-semibold uppercase btn btn-primary p-0 w-[153px] h-[18px] text-[10px] text-base-100 rounded-md min-h-0"
             >
               comprar
-            </a> */
-            }
+            </a> */}
             <AddToCartButtonVNDA
               eventParams={{ items: [eventItem] }}
               productID={productID}
               // additionalProperty={additionalProperty}
+              additionalProperty={[]}
               variantStyle="productCard"
             />
             <a
@@ -240,11 +229,9 @@ function ProductCard({
         </div>
       </div>
       {/* Installments */}
-      {
-        /* <span class="text-[7px] text-primary  text-center pt-[9px]">
+      {/* <span class="text-[7px] text-primary  text-center pt-[9px]">
         ou {installments}
-      </span> */
-      }
+      </span> */}
     </div>
   );
 }

@@ -79,7 +79,7 @@ function ProductShelf({
                     platform={platform}
                     index={index}
                   />
-                  <Rating maxRating={rating.maxRating} rating={rating.rating} />
+                  {/* <Rating maxRating={rating.maxRating} rating={rating.rating} /> */}
                 </div>
               </Slider.Item>
             ))}
