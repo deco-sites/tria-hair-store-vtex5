@@ -59,6 +59,8 @@ function ProductCard({
     listPrice,
   });
 
+  console.log(product);
+  
   return (
     <div id={id} data-deco="view-product" class="card card-compact group ">
       <div class="">
